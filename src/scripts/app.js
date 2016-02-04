@@ -8,6 +8,7 @@
 		"ngSanitize",
 		"ngAria",
 		"ngMaterial",
+		'ngCookies',
 		"facebook",
 
 		/* 3rd party modules */

@@ -32,8 +32,8 @@ angular.module("app.login" , [])
 
 
 // Root Controller
-.controller("loginCtrl", ["$rootScope", "$scope", "$timeout", "$window", "Facebook", "UserFacebookID" ,
-        function($rs, $scope, $timeout, $window, Facebook, UserFacebookID) {
+.controller("loginCtrl", ["$rootScope", "$scope", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" ,
+        function($rs, $scope, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID) {
 
   //'loginCtrl', function($scope, $http, $timeout, $state, $cookies, $cookieStore, $window, Facebook, UserFacebookID
   //"$cookies", "$cookieStore",
@@ -148,9 +148,10 @@ angular.module("app.login" , [])
           console.log("cookie >> step 1... adding the user info to cookie");
           // Put cookie
           //$cookieStore.put('userCached', response);
-        /*  $cookies.userName =   UserFacebookID.user.name;
+          $cookies.userName =   UserFacebookID.user.name;
           $scope.platformCookie = $cookies.userName;
-          $cookieStore.put('userCached', response);*/
+          $cookieStore.put('userCached', response);
+          
           console.log("1. send the current user to sever");
           console.log(UserFacebookID.user);
           refreshProjectList();
@@ -169,7 +170,7 @@ angular.module("app.login" , [])
           $scope.logged = false;
           UserFacebookID.user = {};
           // Removing a cookie
-          //$cookieStore.remove('myFavorite');
+          cookieStore.remove('userCached');
           UserFacebookID.logged = false;
           userIsConnected = false;
           $location.path("/pages/signin");

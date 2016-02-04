@@ -16,7 +16,7 @@ angular.module("app.projectlist" , [])
             newproject.last_update = new Date();
             newproject.created_on = new Date();
             // change the add user_owner by and array
-            newproject.user_owner = [ { owner: '123456789', //UserFacebookID.user.id ,
+            newproject.user_owner = [ { owner: UserFacebookID.user.id ,
                                       role: 'admin' } ];
             // asign the name for the user
             newproject.user_name = "nombre temporal"; //UserFacebookID.user.name;
@@ -81,8 +81,11 @@ angular.module("app.projectlist" , [])
 
         $scope.refreshProjectList = function() {
         		console.log("------refreshProjectList------");
-        		//'UserFacebookID.user.id'
-        		$http.get('/refreshProjectWithUser/' + '123456789').success(function(response) {
+        		// Get cookie
+                UserFacebookID.user = $cookieStore.get('userCached');
+                console.log(UserFacebookID.user);
+        		
+        		$http.get('/refreshProjectWithUser/' + 'UserFacebookID.user.id').success(function(response) {
         			console.log("refresh");
         			$scope.projectlist = response;
         		});
