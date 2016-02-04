@@ -22,8 +22,8 @@ angular.module("app.login" , [])
         console.log("step 2... save current state " + current);
         UserFacebookID.scopeState = current;
         console.log("step 3... jump to login  " +   UserFacebookID.scopeState);
-      //  $location.path( "/pages/signin" );
-      //  event.preventDefault();
+        $location.path( "/pages/signin" );
+        event.preventDefault();
       }
     }
 
