@@ -66,8 +66,8 @@ angular.module("app.projectlist" , [])
 }])
 
 // Root Controller
-.controller("refreshProjectListCtrl", ["$scope", "$http", "UserFacebookID" ,
-        function($scope, $http, UserFacebookID) {
+.controller("refreshProjectListCtrl", ["$scope", "$http", "$cookies", "$cookieStore", "UserFacebookID" ,
+        function($scope, $http, $cookies, $cookieStore, UserFacebookID) {
 
           /*---- project selected and global variables ----*/
         	$scope.tabIndexLabel = 0;
