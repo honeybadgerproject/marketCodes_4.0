@@ -24,6 +24,13 @@
 			</a>
 		</div>
 	</li> <!-- #end site-logo -->
+	
+	<!-- logout button -->
+	<li>
+		<div class="site-logo visible-xs"  ng-controller="loginCtrl">
+		 	<button type="button" class="btn btn-danger btn-large" data-ng-show="logged" data-ng-disabled="!facebookReady" data-ng-click="logout()">Logout</button>
+		</div>
+	</li>
 
 	<!-- fullscreen -->
 	<li class="fullscreen hidden-xs" ng-click="goFullScreen()">
