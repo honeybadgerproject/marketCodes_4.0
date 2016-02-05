@@ -34,21 +34,23 @@
             <md-content md-theme="docs-dark" layout-padding>
               <form name="userForm">
               	<!-- title field -->
-      			<div layout layout-sm="column">
+      			<div layout layout-sm="column" ng-init="newproject.classification = 1">
         			<label for="clasification">proyect clasification:</label>
-        			<br>
-        			<div class="radio" ng-init="newproject.classification = 1">
+        			<br><br><br>
+        			<div class="radio">
           				<label>
             				<input type="radio" name="optionsRadios" id="optionsRadios1" ng-model="newproject.classification" ng-vale="1" checked>
             					1. In progress and with opotunity to participate.
           				</label>
         			</div>
+        			<br><br>
         			<div class="radio">
           				<label>
             				<input type="radio" name="optionsRadios" id="optionsRadios2" ng-model="newproject.classification" ng-vale="2">
             					2. Finished but not mature and with opotunity to add your own work.
           				</label>
         			</div>
+        			<br><br>
         			<div class="radio">
           				<label>
             				<input type="radio" name="optionsRadios" id="optionsRadios3" ng-model="newproject.classification" ng-vale="3">

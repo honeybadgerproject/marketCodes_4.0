@@ -200,7 +200,7 @@ angular.module("app.login" , [])
         $scope.$apply(function() {
           $scope.salutation = false;
           $scope.byebye     = true;
-
+          userIsConnected = false;
           // Dismiss byebye message after two seconds
           $timeout(function() {
             $scope.byebye = false;
