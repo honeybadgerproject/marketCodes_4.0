@@ -85,11 +85,11 @@
 	<!-- logout button -->
 	<li>
 		<div ng-controller="loginCtrl">
-		 	<a href="javascript:;" style="color:#fff"><span class="ion ion-power">&nbsp;&nbsp;</span>Logout</a>
+		 	<a href="#/pages/signin" data-ng-click="logout()" style="color:#fff"><span class="ion ion-power">&nbsp;&nbsp;</span>Logout</a>
 		</div>
 	</li>
 	<!-- profile drop -->
-	<li class="profile-drop hidden-xs dropdown" dropdown>
+	<!-- <li class="profile-drop hidden-xs dropdown" dropdown>
 		<a href dropdown-toggle>
 			<img src="images/admin.jpg" alt="admin-pic">
 		</a>
@@ -100,11 +100,11 @@
 			<li><a href="javascript:;"><span class="ion ion-lock-combination">&nbsp;&nbsp;</span>Lock Screen</a></li>
 			<li><a href="javascript:;"><span class="ion ion-power">&nbsp;&nbsp;</span>Logout</a></li>
 		</ul>
-	</li>
+	</li>-->
 	<!-- #end profile-drop -->
 
 	<!-- sidebar contact -->
-	<li class="floating-sidebar"  ng-class="{'open': floatingSidebar}">
+<!-- 	<li class="floating-sidebar"  ng-class="{'open': floatingSidebar}">
 		<a href ng-click="toggleFloatingSidebar()">
 			<i class="ion ion-grid"></i>
 		</a>
@@ -267,6 +267,6 @@
 			</tabset>
 
 		</div>
-	</li>
+	</li> -->
 </ul>
 
