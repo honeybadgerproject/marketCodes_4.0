@@ -170,7 +170,7 @@ angular.module("app.login" , [])
           $scope.logged = false;
           UserFacebookID.user = {};
           // Removing a cookie
-          cookieStore.remove('userCached');
+          $cookieStore.remove('userCached');
           UserFacebookID.logged = false;
           userIsConnected = false;
           $location.path("/pages/signin");
