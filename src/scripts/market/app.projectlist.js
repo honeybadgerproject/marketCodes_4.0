@@ -110,9 +110,9 @@ angular.module("app.projectlist" , [])
 
         $scope.returnIonTag = function(phase) {
         	console.log(">>>>> ion tag: " + phase);
-            if(phase == "1") "right ion ion-ios-flask-outline icon";
-            else if(phase == "2") "right ion ion-ios-pulse icon";
-            else "right ion ion-ios-cloud-download-outline icon";
+            if(phase == "1") return "right ion ion-ios-flask-outline icon";
+            else if(phase == "2") return "right ion ion-ios-pulse icon";
+            else return "right ion ion-ios-cloud-download-outline icon";
         };
 
         $scope.returnPanelFooter = function(phase) {
