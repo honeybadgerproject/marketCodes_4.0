@@ -94,7 +94,7 @@ angular.module("app.projectlist" , [])
             UserFacebookID.user = $cookieStore.get('userCached');
             console.log(UserFacebookID.user);
     		
-    		$http.get('/refreshProjectWithUser/' + 'UserFacebookID.user.id').success(function(response) {
+    		$http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
     			console.log("refresh");
     			$scope.projectlist = response;
     		});
