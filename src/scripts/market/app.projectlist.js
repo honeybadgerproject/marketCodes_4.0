@@ -88,7 +88,7 @@ angular.module("app.projectlist" , [])
         	refreshProjectList();
         };
         
-        var refreshProjectList = funtion() {
+        var refreshProjectList = function() {
         	console.log("------refreshProjectList------");
     		// Get cookie
             UserFacebookID.user = $cookieStore.get('userCached');
