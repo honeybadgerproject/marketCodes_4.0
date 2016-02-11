@@ -26,7 +26,7 @@ angular.module("app.projectlist" , [])
             // asign the name for the user
             newproject.user_name = "nombre temporal"; //UserFacebookID.user.name;
             newproject.project_style = "solid";
-            newproject.phase = "1";
+            newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-info";
 
             $http.post('/projectlist', newproject).success(function(response) {
               console.log(response);
