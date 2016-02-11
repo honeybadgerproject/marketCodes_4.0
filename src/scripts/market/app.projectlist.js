@@ -111,19 +111,19 @@ angular.module("app.projectlist" , [])
         $scope.returnIonTag = function(phase) {
         	var iontag = 'right ion ion-ios-flask-outline icon';
             if(phase === '1') {
-            	console.log("1");
+            	//console.log("1");
             	iontag = 'right ion ion-ios-flask-outline icon';
             }
             else if(phase === '2') {
-            	console.log("2");
+            	//console.log("2");
             	iontag = 'right ion ion-ios-pulse icon';
             }
             else { 
-            	console.log("3");
+            	//console.log("3");
             	iontag = 'right ion ion-ios-cloud-download-outline icon';
             }
             
-            console.log('>>>iontag: ' + iontag);
+           // console.log('>>>iontag: ' + iontag);
             return iontag;
         };
 
