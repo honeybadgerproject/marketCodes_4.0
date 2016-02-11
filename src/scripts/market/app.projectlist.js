@@ -109,28 +109,28 @@ angular.module("app.projectlist" , [])
         });
 
         $scope.returnIonTag = function(phase) {
-        	var iontag = "right ion ion-ios-flask-outline icon";
-            if(phase == "1") {
+        	var iontag = 'right ion ion-ios-flask-outline icon';
+            if(phase === '1') {
             	console.log("1");
-            	iontag = "right ion ion-ios-flask-outline icon";
+            	iontag = 'right ion ion-ios-flask-outline icon';
             }
-            else if(phase == "2") {
+            else if(phase === '2') {
             	console.log("2");
-            	iontag = "right ion ion-ios-pulse icon";
+            	iontag = 'right ion ion-ios-pulse icon';
             }
             else { 
             	console.log("3");
-            	iontag = "right ion ion-ios-cloud-download-outline icon";
+            	iontag = 'right ion ion-ios-cloud-download-outline icon';
             }
             
-            console.log(iontag);
+            console.log('>>>iontag: ' + iontag);
             return iontag;
         };
 
         $scope.returnPanelFooter = function(phase) {
-            if(phase == "1") "panel-footer clearfix panel-footer-sm panel-footer-info";
-            else if(phase == "2") "panel-footer clearfix panel-footer-sm panel-footer-success";
-            else "panel-footer clearfix panel-footer-sm panel-footer-pink";
+            if(phase === "1") return "panel-footer clearfix panel-footer-sm panel-footer-info";
+            else if(phase === "2") return "panel-footer clearfix panel-footer-sm panel-footer-success";
+            else return "panel-footer clearfix panel-footer-sm panel-footer-pink";
         };
 
         $scope.select = function(id) {
