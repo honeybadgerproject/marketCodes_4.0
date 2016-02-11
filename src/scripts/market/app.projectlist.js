@@ -109,10 +109,16 @@ angular.module("app.projectlist" , [])
         });
 
         $scope.returnIonTag = function(phase) {
-        	console.log(">>>>> ion tag: " + phase);
-            if(phase == "1") return "right ion ion-ios-flask-outline icon";
-            else if(phase == "2") return "right ion ion-ios-pulse icon";
-            else return "right ion ion-ios-cloud-download-outline icon";
+        	var iontag = "right ion ion-ios-flask-outline icon";
+            if(phase == "1") {
+            	iontag = "right ion ion-ios-flask-outline icon";
+            }
+            else if(phase == "2") { 
+            	iontag = "right ion ion-ios-pulse icon";
+            }
+            else iontag = "right ion ion-ios-cloud-download-outline icon";
+            
+            return iontag;
         };
 
         $scope.returnPanelFooter = function(phase) {
