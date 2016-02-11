@@ -9,6 +9,11 @@ angular.module("app.projectlist" , [])
         function($rs, $scope, $http, $timeout, $window, Facebook, UserFacebookID) {
 
 
+		///// >>> emit
+    	var refreshProjectList = function(){
+    		console.log("/////>>>> refreshProjectList in emit");
+    		$scope.$emit('refreshProjectList', {});// res - your data
+    	};
 
           $scope.addnewproject = function(newproject) {
             console.log("------addnewproject------");
@@ -80,17 +85,28 @@ angular.module("app.projectlist" , [])
         	};*/
 
         $scope.refreshProjectList = function() {
-        		console.log("------refreshProjectList------");
-        		// Get cookie
-                UserFacebookID.user = $cookieStore.get('userCached');
-                console.log(UserFacebookID.user);
-        		
-        		$http.get('/refreshProjectWithUser/' + 'UserFacebookID.user.id').success(function(response) {
-        			console.log("refresh");
-        			$scope.projectlist = response;
-        		});
+        	refreshProjectList();
+        };
+        
+        var refreshProjectList = funtion() {
+        	console.log("------refreshProjectList------");
+    		// Get cookie
+            UserFacebookID.user = $cookieStore.get('userCached');
+            console.log(UserFacebookID.user);
+    		
+    		$http.get('/refreshProjectWithUser/' + 'UserFacebookID.user.id').success(function(response) {
+    			console.log("refresh");
+    			$scope.projectlist = response;
+    		});
 
         };
+        
+        
+        //// >> on for emit
+        $scope.$on('refreshProjectList', function () {
+          console.log("////>> called by emit " );
+          refreshProjectList();
+        });
 
         $scope.returnIonTag = function(phase) {
             if(phase == "1") "right ion ion-ios-flask-outline icon";
