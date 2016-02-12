@@ -20,6 +20,15 @@
         res.json(doc);
       });
     });
+    
+    // delete a project
+    appProjectList.delete('/projectlist/:id', function(req, res) {
+    	var id = req.params.id;
+        console.log(id);
+        db.projectlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
+          res.json(doc);
+        });
+    });
 };
 
 
