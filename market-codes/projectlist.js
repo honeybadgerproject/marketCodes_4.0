@@ -22,7 +22,7 @@
     });
     
     // delete a project
-    appProjectList.delete('/projectlist/:id', function(req, res) {
+    app.delete('/projectlist/:id', function(req, res) {
     	var id = req.params.id;
         console.log(id);
         db.projectlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
