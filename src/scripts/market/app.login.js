@@ -33,6 +33,7 @@ angular.module("app.login" , [])
         event.preventDefault();
       }
     }
+    else $location.path( "/dashboard" );
 
   });
 })
