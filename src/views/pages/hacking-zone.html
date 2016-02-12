@@ -33,7 +33,7 @@
 					<div class="panel-body" ng-controller="SubheaderCtrl" style="padding: 0; margin: 5px 0">
 						<md-content style="height: 200px;">
 							<section>
-								<md-subheader class="md-primary">+ add new resource</md-subheader>
+								<md-subheader class="md-primary" ng-click="openDialogResource()">+ add new resource (github, asana, etc..)</md-subheader>
 								<md-list layout-padding>
 									<md-list-item class="md-3-line" ng-repeat="message in messages">
 										<img ng-src="{{message.face}}" class="md-avatar circle" alt="{{message.who}}">

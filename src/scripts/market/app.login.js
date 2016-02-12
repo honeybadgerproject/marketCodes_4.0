@@ -13,6 +13,13 @@ angular.module("app.login" , [])
     var current = $location.path();
     console.log("step 1... about to authenticate - toState: " + current  + " logged: " + UserFacebookID.logged);
 
+    // Get cookie
+    UserFacebookID.user = $cookieStore.get('userCached');
+    if(UserFacebookID.user.status == "connected") {
+    	UserFacebookID.logged == true;
+        console.log(UserFacebookID.user);
+    }
+    
     if ( UserFacebookID.logged == false ) {
       // no logged user, we should be going to #login (current path equal to signin)
       if ( current == "/pages/signin" ) {
