@@ -34,8 +34,8 @@
 
 			<div class="col-md-6 col-sm-6" ng-init="refreshProjectList()">
 				<div ng-repeat="project in projectlist" class="panel panel-default mb20 mini-box panel-hovered">
+					<div class="right ion-android-delete" ng-click="remove(project._id)"></div>
 					<div class="panel-body">
-						<div class="right ion ion-android-delete" ng-click="remove(project._id)"></div>
 						<div class="clearfix">
 							<div class="info left">
 								<h4 class="mt0 text-primary text-bold">{{project.title}}</h4>
