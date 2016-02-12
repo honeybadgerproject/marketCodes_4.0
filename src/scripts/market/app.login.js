@@ -5,7 +5,7 @@
 angular.module("app.login" , [])
 
 // disable spinner in loading-bar
-.run(function($rootScope, $location, UserFacebookID) {
+.run(function($rootScope, $location, $cookies, $cookieStore, UserFacebookID) {
 
   // register listener to watch route changes
   $rootScope.$on( "$routeChangeStart", function(event, next) {
