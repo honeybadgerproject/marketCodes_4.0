@@ -34,7 +34,6 @@
 
 			<div class="col-md-6 col-sm-6" ng-init="refreshProjectList()">
 				<div ng-repeat="project in projectlist" class="panel panel-default mb20 mini-box panel-hovered">
-					<div class="right ion ion-android-delete" ng-click="remove(project._id)"></div>
 					<div class="panel-body">
 						<div class="clearfix">
 							<div class="info left">
@@ -49,6 +48,7 @@
 					<div ng-class="project.phase">
 						<p class="mt0 mb0 left"><a ng-click="select(project._id)" href="#/pages/hacking-zone" style="color: inherit">Hacking Zone</a></p>
 						<span sparkline class="right" type="bar" bar-color="#fff" width="1.15em" height="1.15em">10,8,9,3,5,8,5</span>
+						<div style="color: inherit" class="right ion ion-android-delete" ng-click="remove(project._id)"></div>
 					</div>
 				</div>
 			</div>
