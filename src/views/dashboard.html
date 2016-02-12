@@ -35,13 +35,14 @@
 			<div class="col-md-6 col-sm-6" ng-init="refreshProjectList()">
 				<div ng-repeat="project in projectlist" class="panel panel-default mb20 mini-box panel-hovered">
 					<div class="panel-body">
+						<div class="right ion ion-android-delete" ng-click="remove(project._id)"></div>
 						<div class="clearfix">
 							<div class="info left">
 								<h4 class="mt0 text-primary text-bold">{{project.title}}</h4>
 								<h5 class="text-light mb0">{{project.overview}}</h5>
 							</div>
 							<!-- class="right ion ion-ios-pulse icon" -->
-							<div ng-class="project.phase"></div>
+							<div ng-class="project.icon_phase"></div>
 						</div>
 					</div>
 					<!-- class="panel-footer clearfix panel-footer-sm panel-footer-primary" -->

@@ -26,8 +26,23 @@ angular.module("app.projectlist" , [])
             // asign the name for the user
             newproject.user_name = "nombre temporal"; //UserFacebookID.user.name;
             newproject.project_style = "solid";
-            newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-info";
-
+            
+            newproject.phase = "";
+            newproject.icon_phase = "";
+            
+            if(newproject.classification === "1") {
+            	newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-info";
+                newproject.icon_phase = "right ion ion-ios-flask-outline icon";
+            }
+            else if(newproject.classification === "2") {
+            	newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-success";
+            	newproject.icon_phase = "right ion ion-ios-pulse icon";
+            }
+            else {
+            	newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-pink";
+            	newproject.icon_phase = "right ion ion-ios-cloud-download-outline icon";
+            }
+            
             $http.post('/projectlist', newproject).success(function(response) {
               console.log(response);
               refreshProjectList();
@@ -108,34 +123,17 @@ angular.module("app.projectlist" , [])
           refreshProjectList();
         });
 
-        $scope.returnIonTag = function(phase) {
-        	var iontag = 'right ion ion-ios-flask-outline icon';
-            if(phase === '1') {
-            	//console.log("1");
-            	iontag = 'right ion ion-ios-flask-outline icon';
-            }
-            else if(phase === '2') {
-            	//console.log("2");
-            	iontag = 'right ion ion-ios-pulse icon';
-            }
-            else { 
-            	//console.log("3");
-            	iontag = 'right ion ion-ios-cloud-download-outline icon';
-            }
-            
-           // console.log('>>>iontag: ' + iontag);
-            return iontag;
-        };
-
-        $scope.returnPanelFooter = function(phase) {
-            if(phase === "1") return "panel-footer clearfix panel-footer-sm panel-footer-info";
-            else if(phase === "2") return "panel-footer clearfix panel-footer-sm panel-footer-success";
-            else return "panel-footer clearfix panel-footer-sm panel-footer-pink";
-        };
 
         $scope.select = function(id) {
           console.log("into select");
           UserFacebookID.project_id = id;
+        };
+        
+        $scope.remove = function(id) {
+          console.log(id);
+          $http.delete('/projectlist/' + id).success(function(response) {
+        	  refreshProjectList();
+          });
         };
 
 }])
