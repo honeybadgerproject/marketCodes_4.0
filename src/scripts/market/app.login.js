@@ -5,7 +5,7 @@
 angular.module("app.login" , [])
 
 // disable spinner in loading-bar
-.run(function($rootScope, $location, $cookies, $cookieStore, UserFacebookID) {
+.run(function($rootScope, $location, UserFacebookID) {
 
   // register listener to watch route changes
   $rootScope.$on( "$routeChangeStart", function(event, next) {
@@ -14,11 +14,11 @@ angular.module("app.login" , [])
     console.log("step 1... about to authenticate - toState: " + current  + " logged: " + UserFacebookID.logged);
 
     // Get cookie
-    UserFacebookID.user = $cookieStore.get('userCached');
+   /* UserFacebookID.user = $cookieStore.get('userCached');
     if(UserFacebookID.user.status == "connected") {
     	UserFacebookID.logged == true;
         console.log(UserFacebookID.user);
-    }
+    }*/
     
     if ( UserFacebookID.logged == false ) {
       // no logged user, we should be going to #login (current path equal to signin)
@@ -195,11 +195,12 @@ angular.module("app.login" , [])
         $scope.$apply(function() {
           $scope.salutation = true;
           $scope.byebye     = false;
-
+          
           //$scope.user   = {};
           $scope.logged = true;
           //UserFacebookID.user = {};
           UserFacebookID.logged = true;
+          $location.path("/dashboard");
           refreshProjectList();
 
         });
