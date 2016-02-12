@@ -33,7 +33,9 @@ angular.module("app.login" , [])
         event.preventDefault();
       }
     }
-    else $location.path( "/dashboard" );
+    else {
+    	if(current == "/pages/signin") $location.path( "/dashboard" );
+    }
 
   });
 })
@@ -162,7 +164,7 @@ angular.module("app.login" , [])
           
           console.log("1. send the current user to sever");
           console.log(UserFacebookID.user);
-          refreshProjectList();
+          //refreshProjectList();
 
         });
       });
@@ -202,7 +204,7 @@ angular.module("app.login" , [])
           //UserFacebookID.user = {};
           UserFacebookID.logged = true;
           $location.path("/dashboard");
-          refreshProjectList();
+          //refreshProjectList();
 
         });
       } else {
