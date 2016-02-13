@@ -5,7 +5,7 @@
 			<div class="col-md-6">
 				<h3 class="text-light">Collaborators</h3>
 				<div class="panel panel-lined panel-hovered panel-stacked mb20">
-					<div class="panel-body" ng-controller="hackingCtrl" ng-init="refreshHackingZoneList()" style="padding: 0; margin: 5px 0">
+					<div class="panel-body" style="padding: 0; margin: 5px 0">
 						<md-content style="height: 200px;">
 							<section>
 								<md-subheader class="md-primary">+ add new collaborator</md-subheader>
@@ -27,13 +27,14 @@
 				</div>
 			</div> <!-- #end sub-header -->
       <!-- sub-header -->
-			<div class="col-md-6">
+			<div class="col-md-6"  ng-controller="hackingCtrl">
 				<h3 class="text-light">Resources</h3>
 				<div class="panel panel-lined panel-hovered panel-stacked mb20">
-					<div class="panel-body" ng-controller="hackingCtrl" style="padding: 0; margin: 5px 0">
+					<div class="panel-body" style="padding: 0; margin: 5px 0">
 						<md-content style="height: 200px;">
 							<section>
-								<md-subheader class="md-primary"><a  style="color: inherit" ng-click="openDialogResource()">+ add new resource (github, asana, etc..)</a></md-subheader>
+								<!--  <a  style="color: inherit" ng-click="openDialogResource()"> -->
+								<md-subheader class="md-primary">+ add new resource (github, asana, etc..)</md-subheader>
 								<md-list layout-padding>
 									<md-list-item class="md-3-line" ng-repeat="message in messages">
 										<img ng-src="{{message.face}}" class="md-avatar circle" alt="{{message.who}}">
