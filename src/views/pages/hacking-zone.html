@@ -1,11 +1,11 @@
 <div class="page page-ui-buttons">
-  <div class="page-wrap" ng-init="refreshHackingZoneList()">
+  <div class="page-wrap">
     <div class="row">
       <!-- sub-header -->
 			<div class="col-md-6">
 				<h3 class="text-light">Collaborators</h3>
 				<div class="panel panel-lined panel-hovered panel-stacked mb20">
-					<div class="panel-body" ng-controller="SubheaderCtrl" style="padding: 0; margin: 5px 0">
+					<div class="panel-body" ng-controller="hackingCtrl" ng-init="refreshHackingZoneList()" style="padding: 0; margin: 5px 0">
 						<md-content style="height: 200px;">
 							<section>
 								<md-subheader class="md-primary">+ add new collaborator</md-subheader>
@@ -30,7 +30,7 @@
 			<div class="col-md-6">
 				<h3 class="text-light">Resources</h3>
 				<div class="panel panel-lined panel-hovered panel-stacked mb20">
-					<div class="panel-body" ng-controller="SubheaderCtrl" style="padding: 0; margin: 5px 0">
+					<div class="panel-body" ng-controller="hackingCtrl" style="padding: 0; margin: 5px 0">
 						<md-content style="height: 200px;">
 							<section>
 								<md-subheader class="md-primary" ng-click="openDialogResource()">+ add new resource (github, asana, etc..)</md-subheader>

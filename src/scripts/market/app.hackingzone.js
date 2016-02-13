@@ -5,32 +5,15 @@ angular.module("app.hackingzone" , [])
 
 
 // Root Controller
-.controller("refreshProjectListCtrl", ["$scope", "$http", "UserFacebookID" ,
+.controller("hackingCtrl", ["$scope", "$http", "UserFacebookID" ,
         function($scope, $http, UserFacebookID) {
 
-          /*---- project selected and global variables ----*/
-        	$scope.collaboratorlist = {};
-        	$scope.resourcelist = {};
-          $scope.collaborator = {};
+        /*---- project selected and global variables ----*/
+        $scope.collaboratorlist = {};
+        $scope.resourcelist = {};
+        $scope.collaborator = {};
 
-        /*  var refreshResourceList = function() {
-
-            if(UserFacebookID.user.id) {
-
-              var listParams = {
-                user_owner: UserFacebookID.user.id,
-                project_id: UserFacebookID.project_id
-              };
-
-              $http.post('/resourcelistowner', listParams ).success(function(response) {
-                console.log("refresh");
-                $scope.resourcelist = response;
-                $scope.resource = "";
-              });
-            }
-          };*/
-
-
+       
 
         $scope.addnewresource = function(newresource) {
           console.log(newresource);
@@ -49,12 +32,27 @@ angular.module("app.hackingzone" , [])
             });
           }
         };
+        
+        $scope.openDialogResource = function() {
+
+            $scope.modalInstance = $modal.open({
+                    templateUrl: 'views/ui/modalResource.html',
+                    scope: $scope
+                });
+                console.log('modal opened');
+                $scope.modalInstance.result.then(function () {
+                    console.log($scope.selected);
+                }, function () {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+
+        };
 
         $scope.refreshHackingZoneList = function() {
 
           console.log("------refreshHackingList------");
 
-          if(UserFacebookID.user.id) {
+          /*if(UserFacebookID.user.id) {
 
             var listParams = {
               user_owner: UserFacebookID.user.id,
@@ -67,7 +65,7 @@ angular.module("app.hackingzone" , [])
               $scope.contributorslist = response;
               console.log($scope.contributorslist);
             });
-          }
+          }*/
 
         };
 

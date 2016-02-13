@@ -157,7 +157,7 @@ angular.module("app.login" , [])
 
           console.log("cookie >> step 1... adding the user info to cookie");
           // Put cookie
-          $cookieStore.put('userCached', response);
+          //$cookieStore.put('userCached', response);
           $cookies.userName =   UserFacebookID.user.name;
           $scope.platformCookie = $cookies.userName;
           $cookieStore.put('userCached', response);
