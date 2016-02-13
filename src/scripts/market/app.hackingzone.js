@@ -5,13 +5,14 @@ angular.module("app.hackingzone" , [])
 
 
 // Root Controller
-.controller("hackingCtrl", ["$scope", "$http", "UserFacebookID" ,
-        function($scope, $http, UserFacebookID) {
+.controller("hackingCtrl", ["$scope", "$http", "$modal","UserFacebookID",
+        function($scope, $http, $modal, UserFacebookID) {
 
         /*---- project selected and global variables ----*/
         $scope.collaboratorlist = {};
         $scope.resourcelist = {};
         $scope.collaborator = {};
+        $scope.resource = {};
 
        
 
@@ -32,6 +33,24 @@ angular.module("app.hackingzone" , [])
             });
           }
         };
+        
+        $scope.addnewresource = function(newresource) {
+            console.log(newresource);
+            console.log($scope.resource);
+            if(UserFacebookID.user.id) {
+
+              newresource.user_owner = UserFacebookID.user.id;
+              newresource.id_project = UserFacebookID.project_id;
+              $http.post('/resourcelist', newresource).success(function(response) {
+                console.log(response);
+                if($scope.modalInstance)
+                {
+                  $scope.modalInstance.close();
+                }
+                refreshResourceList();
+              });
+            }
+          };
         
         $scope.openDialogResource = function() {
 
