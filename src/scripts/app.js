@@ -23,6 +23,7 @@
 		"app.ctrls",
 		"app.login",
 		"app.projectlist",
+		"app.hackingzone",
 		"app.directives",
 		"app.ui.ctrls",
 		"app.ui.directives",
