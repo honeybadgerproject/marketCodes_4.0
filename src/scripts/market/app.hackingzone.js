@@ -50,7 +50,7 @@ angular.module("app.hackingzone" , [])
 
         };
         
-        $scope.refreshResourceList()t = function() {
+        $scope.refreshResourceList = function() {
 
             console.log("------refreshResourceList------");
 
