@@ -32,11 +32,11 @@ angular.module("app.hackingzone" , [])
             //newresource.id_project = UserFacebookID.project_id;
             $http.post('/resourcelist', resource_project).success(function(response) {
               console.log(response);
-              if($scope.modalInstance)
+              /*if($scope.modalInstance)
               {
                   $scope.modalInstance.close();
               }
-              refreshResourceList();
+              refreshResourceList();*/
             });
           }
         };
