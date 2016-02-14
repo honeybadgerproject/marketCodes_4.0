@@ -18,12 +18,19 @@ angular.module("app.hackingzone" , [])
 
         $scope.addnewresource = function(newresource) {
           console.log(newresource);
-          console.log($scope.resource);
+          //console.log($scope.resource);
           if(UserFacebookID.user.id) {
-
-            newresource.user_owner = UserFacebookID.user.id;
-            newresource.id_project = UserFacebookID.project_id;
-            $http.post('/resourcelist', newresource).success(function(response) {
+        	console.log(UserFacebookID.user.id);
+        	console.log(UserFacebookID.project_id);
+        	var resource_project = {
+        		resource_name: newresource.resource_name,
+        		user_owner: UserFacebookID.user.id,
+            	id_project: UserFacebookID.project_id
+        	}
+        	console.log(resource_project);
+            //newresource.user_owner = UserFacebookID.user.id;
+            //newresource.id_project = UserFacebookID.project_id;
+            $http.post('/resourcelist', resource_project).success(function(response) {
               console.log(response);
               if($scope.modalInstance)
               {
