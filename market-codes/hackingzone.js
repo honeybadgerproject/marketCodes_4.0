@@ -24,11 +24,11 @@
 		});
 	});
 	
-	app.delete('/resourcelist/:id', function(req, res) {
+	/*app.delete('/resourcelist/:id', function(req, res) {
 	    var id = req.params.id;
 	    console.log(id);
 	    dbsrc.resourcelist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
 	      res.json(doc);
 	    });
-	 });
+	 });*/
   };
