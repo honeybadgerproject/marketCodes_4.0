@@ -1,8 +1,4 @@
-  /**** start projects section ****/
-  var mongojs = require('mongojs');
-  var db = mongojs('projectlist', ['projectlist']);
-
-  exports.setProjectList = function(app) {
+  exports.setProjectList = function(app, db) {
 
     app.get('/refreshProjectWithUser/:id', function(req, res) {
       var id = req.params.id;

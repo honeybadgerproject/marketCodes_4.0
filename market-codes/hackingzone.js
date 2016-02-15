@@ -1,8 +1,4 @@
-/**** start projects section ****/
-  var mongojs = require('mongojs');
-  var dbsrc = mongojs('resourcelist', ['resourcelist']);
-
-  exports.setHackingList = function(app) {
+exports.setHackingList = function(app, dbsrc) {
 	  
 	/**** start resource section ****/
 
