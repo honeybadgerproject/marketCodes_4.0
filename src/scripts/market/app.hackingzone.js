@@ -14,7 +14,7 @@ angular.module("app.hackingzone" , [])
         $scope.collaborator = {};
         $scope.resource = {};
 
-       
+
 
         $scope.addnewresource = function(newresource) {
           console.log(newresource);
@@ -32,16 +32,16 @@ angular.module("app.hackingzone" , [])
             //newresource.id_project = UserFacebookID.project_id;
             $http.post('/resourcelist', resource_project).success(function(response) {
               console.log(response);
-              /*if($scope.modalInstance)
+              if($scope.modalInstance)
               {
                   $scope.modalInstance.close();
               }
-              refreshResourceList();*/
+              refreshResourceList();
             });
           }
         };
-        
-       
+
+
         $scope.openDialogResource = function() {
 
             $scope.modalInstance = $modal.open({
@@ -56,7 +56,7 @@ angular.module("app.hackingzone" , [])
                 });
 
         };
-        
+
         $scope.refreshResourceList = function() {
 
             console.log("------refreshResourceList------");
@@ -67,7 +67,7 @@ angular.module("app.hackingzone" , [])
                 user_owner: UserFacebookID.user.id,
                 project_id: UserFacebookID.project_id
               };
-              
+
               console.log(listParams);
 
               $http.post('/resourcelistowner/', listParams).success(function(response) {
