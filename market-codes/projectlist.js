@@ -1,4 +1,6 @@
-  exports.setProjectList = function(app, db) {
+module.exports = (function (app, db) {
+		    'use strict';
+
 
     app.get('/refreshProjectWithUser/:id', function(req, res) {
       var id = req.params.id;
@@ -25,7 +27,7 @@
           res.json(doc);
         });
     });
-};
+}());
 
 
   /*exports.setProjectList = function(app) {

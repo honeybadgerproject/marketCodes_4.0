@@ -1,4 +1,7 @@
-exports.setHackingList = function(app, dbsrc) {
+module.exports = (function (app, dbsrc) {
+	    'use strict';
+
+
 	  
 	/**** start resource section ****/
 
@@ -27,4 +30,4 @@ exports.setHackingList = function(app, dbsrc) {
 	      res.json(doc);
 	    });
 	 });*/
-  };
+}());
