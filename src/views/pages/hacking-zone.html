@@ -1,4 +1,4 @@
-<div class="page page-ui-buttons">
+<div class="page page-ui-buttons"  ng-controller="hackingCtrl">
   <div class="page-wrap">
     <div class="row">
       <!-- sub-header -->
@@ -27,7 +27,7 @@
 				</div>
 			</div> <!-- #end sub-header -->
       <!-- sub-header -->
-			<div class="col-md-6"  ng-controller="hackingCtrl" ng-init="refreshResourceList()">
+			<div class="col-md-6"  ng-init="refreshResourceList()">
 				<h3 class="text-light">Resources</h3>
 				<div class="panel panel-lined panel-hovered panel-stacked mb20">
 					<div class="panel-body" style="padding: 0; margin: 5px 0">
@@ -38,7 +38,8 @@
 								<md-list layout-padding>
 									<md-list-item class="md-3-line" ng-repeat="message in contributorslist">
 										<!--  alt="{{message.who}}" -->
-										<img ng-src="{{message.face}}" class="md-avatar circle">
+										<!--<img ng-src="{{message.face}}" class="md-avatar circle">-->
+                    <div style="color: inherit" class="right ion ion-android-delete" ng-click="removeresource(resource._id)"></div>
 										<div class="md-list-item-text">
 											<h3>{{message.resource_name}}</h3>
 											<!--  <h4>{{message.who}}</h4>
@@ -62,9 +63,10 @@
       <div class="col-md-6 mb20">
         <div class="page-tabs-lead mb20">
           <h4 class="text-light">Public Notes</h4>
+          	<md-subheader class="md-primary"><a  style="color: inherit" ng-click="addnewtab()">+ add new public tab</a></md-subheader>
         </div>
         <tabset class="tabs-vertical">
-          <tab heading="Home">
+          <tab ng-repeat="tabs in notelist" heading="{{tabs.tab_name}}" ng-click="selectTab($index)">
             <div class="clearfix">
               <div class="panel panel-default panel-hovered panel-stacked mb20">
 
@@ -74,12 +76,13 @@
       									<span class="input-group-addon ion ion-compose"></span>
       									<input type="email" class="form-control" placeholder="Enter tab name here...">
       								</div>
-      							  <textarea ng-model="newproject.overview" columns="1" style="height: 100%; min-height: 300px; width: 100%"></textarea>
+      							  <textarea ng-model="tabs.tab_content" columns="1" style="height: 100%; min-height: 300px; width: 100%">{{tabs.tab_content}}</textarea>
       							</div>
       						</form>
 
       				</div> <!-- #end panel -->
-              <button type="submit" class="btn btn-pink btn-sm">Save</button>
+              <button type="submit" class="btn btn-pink btn-sm" ng-click="updatetab(tabs)">Save</button>
+              <div style="color: inherit" class="right ion ion-android-delete" ng-click="removetab(tabs._id)"></div>
 
             </div>
           </tab>
@@ -91,9 +94,10 @@
       <div class="col-md-6 mb20">
         <div class="page-tabs-lead mb20">
           <h4 class="text-light">Private Notes</h4>
+          	<md-subheader class="md-primary"><a  style="color: inherit" ng-click="addnewtabprivate()">+ add new private tab</a></md-subheader>
         </div>
         <tabset class="tabs-vertical-right">
-          <tab heading="Home">
+          <tab ng-repeat="tabs in notelistprivate" heading="{{tabs.tab_name}}" ng-click="selectTabPrivate($index)">
             <div class="clearfix">
               <div class="panel panel-default panel-hovered panel-stacked mb20">
 
@@ -103,12 +107,13 @@
       									<span class="input-group-addon ion ion-compose"></span>
       									<input type="email" class="form-control" placeholder="Enter tab name here...">
       								</div>
-      							  <textarea ng-model="newproject.overview" columns="1" style="height:100%;min-height:300px;width:100%"></textarea>
+      							  <textarea ng-model="tabs.tab_content" columns="1" style="height:100%;min-height:300px;width:100%">{{tabs.tab_content}}</textarea>
       							</div>
       						</form>
 
       				</div> <!-- #end panel -->
-              <button type="submit" class="btn btn-pink btn-sm">Save</button>
+              <button type="submit" class="btn btn-pink btn-sm" ng-click="updatetabprivate(tabs)">Save</button>
+              <div style="color: inherit" class="right ion ion-android-delete" ng-click="removetabprivate(tabs._id)"></div>
 
             </div>
           </tab>
