@@ -2,7 +2,7 @@ module.exports = (function (app, dbsrc) {
 	    'use strict';
 
 
-	  
+
 	/**** start resource section ****/
 
 	app.post('/resourcelistowner', function(req, res) {
@@ -15,14 +15,15 @@ module.exports = (function (app, dbsrc) {
 	      res.json(docs);
 	    });
 	});
-	  
+
 	app.post('/resourcelist', function(req, res) {
 		console.log(req.body);
 		dbsrc.resourcelist.insert(req.body, function(err, doc) {
 			res.json(doc);
 		});
 	});
-	
+
+
 	/*app.delete('/resourcelist/:id', function(req, res) {
 	    var id = req.params.id;
 	    console.log(id);
