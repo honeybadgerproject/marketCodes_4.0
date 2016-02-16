@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 /********  models *********/
 
 /******** projectlist ******/
-/*
+
 app.get('/refreshProjectWithUser/:id', function(req, res) {
   var id = req.params.id;
 
@@ -39,11 +39,11 @@ app.delete('/projectlist/:id', function(req, res) {
     db.projectlist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
       res.json(doc);
     });
-});*/
+});
 
 /******* hackingzonelist (resources) **********/
 
-/*app.post('/resourcelistowner', function(req, res) {
+app.post('/resourcelistowner', function(req, res) {
     console.log("request");
     var id = req.body.user_owner;
     var id2 = req.body.project_id;
@@ -67,12 +67,12 @@ app.delete('/resourcelist/:id', function(req, res) {
     dbsrc.resourcelist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
       res.json(doc);
     });
- });*/
+ });
 
 
 
-var projectlist = require('./market-codes/projectlist')(app, db);
-var hackinglist = require('./market-codes/hackingzone')(app, dbsrc);
+//var projectlist = require('./market-codes/projectlist')(app, db);
+//var hackinglist = require('./market-codes/hackingzone')(app, dbsrc);
 
 
 /**************************/
