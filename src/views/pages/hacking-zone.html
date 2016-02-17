@@ -62,11 +62,10 @@
       <!-- variation one -->
       <div class="col-md-6 mb20">
         <div class="page-tabs-lead mb20">
-          <h4 class="text-light">Public Notes</h4>
-          <a  style="color: inherit" ng-click="addnewtab()">+ add new public tab</a>
+          <h4 class="text-light">Public Notes  &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtab()">+ add new public tab</a></h4>
         </div>
         <tabset class="tabs-vertical">
-          <tab ng-repeat="tabs in notelist" heading="{{tabs.tab_name}}" ng-click="selectTab($index)">
+          <tab ng-repeat="tabs in notelist" heading="tabs.tab_name" ng-click="selectTab($index)">
             <div class="clearfix">
               <div class="panel panel-default panel-hovered panel-stacked mb20">
 
@@ -93,7 +92,7 @@
       <!-- variation two -->
       <div class="col-md-6 mb20">
         <div class="page-tabs-lead mb20">
-          <h4 class="text-light">Private Notes<a  style="color: inherit" ng-click="addnewtabprivate()">+ add new private tab</a></h4>
+          <h4 class="text-light">Private Notes &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtabprivate()">+ add new private tab</a></h4>
         </div>
         <tabset class="tabs-vertical-right">
           <tab ng-repeat="tabs in notelistprivate" heading="{{tabs.tab_name}}" ng-click="selectTabPrivate($index)">
