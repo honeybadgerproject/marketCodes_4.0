@@ -59,6 +59,8 @@ angular.module("app.hackingzone" , [])
 
         $scope.refreshResourceList = function() {
             refreshHackingZoneList();
+            refreshNoteList();
+            refreshNoteListPrivate();
         };
 
         var refreshHackingZoneList = function() {
@@ -110,29 +112,6 @@ angular.module("app.hackingzone" , [])
               project_id: UserFacebookID.project_id
             };
 
-            $http.post('/notelistowner/' , listParams).success(function(response) {
-              console.log("refresh tab");
-              $scope.notelist = response;
-              console.log($scope.notelist);
-              $scope.note = {
-                user_owner: "",
-                id_tab: "note",
-                tab_name: "note",
-                tab_content: ""
-              };
-            });
-          }
-        };
-
-/*
-        var refreshNoteList = function() {
-          if(UserFacebookID.user.id) {
-
-            var listParams = {
-              user_owner: UserFacebookID.user.id,
-              project_id: UserFacebookID.project_id
-            };
-
             $http.post('/notelistowner' , listParams).success(function(response) {
               console.log("refresh tab");
               $scope.notelist = response;
@@ -145,7 +124,7 @@ angular.module("app.hackingzone" , [])
               };
             });
           }
-        };*/
+        };
 
       //  refreshNoteList();
 
@@ -218,7 +197,7 @@ angular.module("app.hackingzone" , [])
         };
 
 
-      /*  var refreshNoteListPrivate = function() {
+        var refreshNoteListPrivate = function() {
           if(UserFacebookID.user.id) {
 
             var listParams = {
@@ -233,7 +212,7 @@ angular.module("app.hackingzone" , [])
               $scope.noteprivate = "";
             });
           }
-        };*/
+        };
 
       //  refreshNoteListPrivate();
 
