@@ -65,7 +65,7 @@
           <h4 class="text-light">Public Notes  &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtab()">+ add new public tab</a></h4>
         </div>
         <tabset class="tabs-vertical">
-          <tab ng-repeat="tabs in notelist" heading="tabs.tab_name" ng-click="selectTab($index)">
+          <tab ng-repeat="tabs in notelist" heading="{{tabs.tab_name}}" ng-click="selectTab($index)">
             <div class="clearfix">
               <div class="panel panel-default panel-hovered panel-stacked mb20">
 
@@ -73,7 +73,7 @@
       							<div class="form-group">
       								<div class="input-group">
       									<span class="input-group-addon ion ion-compose"></span>
-      									<input type="email" class="form-control" placeholder="Enter tab name here...">
+      									<input type="email" class="form-control" placeholder="Enter tab name here..." ng-model="tabs.tab_name">
       								</div>
       							  <textarea ng-model="tabs.tab_content" columns="1" style="height: 100%; min-height: 300px; width: 100%">{{tabs.tab_content}}</textarea>
       							</div>
@@ -103,7 +103,7 @@
       							<div class="form-group">
       								<div class="input-group">
       									<span class="input-group-addon ion ion-compose"></span>
-      									<input type="email" class="form-control" placeholder="Enter tab name here...">
+      									<input type="email" class="form-control" placeholder="Enter tab name here..." ng-model="tabs.tab_name">
       								</div>
       							  <textarea ng-model="tabs.tab_content" columns="1" style="height:100%;min-height:300px;width:100%">{{tabs.tab_content}}</textarea>
       							</div>
