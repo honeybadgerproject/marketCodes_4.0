@@ -63,7 +63,7 @@
       <div class="col-md-6 mb20">
         <div class="page-tabs-lead mb20">
           <h4 class="text-light">Public Notes</h4>
-          	<md-subheader class="md-primary"><a  style="color: inherit" ng-click="addnewtab()">+ add new public tab</a></md-subheader>
+          <a  style="color: inherit" ng-click="addnewtab()">+ add new public tab</a>
         </div>
         <tabset class="tabs-vertical">
           <tab ng-repeat="tabs in notelist" heading="{{tabs.tab_name}}" ng-click="selectTab($index)">
@@ -93,8 +93,7 @@
       <!-- variation two -->
       <div class="col-md-6 mb20">
         <div class="page-tabs-lead mb20">
-          <h4 class="text-light">Private Notes</h4>
-          	<md-subheader class="md-primary"><a  style="color: inherit" ng-click="addnewtabprivate()">+ add new private tab</a></md-subheader>
+          <h4 class="text-light">Private Notes<a  style="color: inherit" ng-click="addnewtabprivate()">+ add new private tab</a></h4>
         </div>
         <tabset class="tabs-vertical-right">
           <tab ng-repeat="tabs in notelistprivate" heading="{{tabs.tab_name}}" ng-click="selectTabPrivate($index)">

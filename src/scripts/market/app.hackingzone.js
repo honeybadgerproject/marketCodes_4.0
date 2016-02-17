@@ -102,7 +102,29 @@ angular.module("app.hackingzone" , [])
           return $scope.tabIndex === checkTab;
         };
 
+        var refreshNoteList = function() {
+          if(UserFacebookID.user.id) {
 
+            var listParams = {
+              user_owner: UserFacebookID.user.id,
+              project_id: UserFacebookID.project_id
+            };
+
+            $http.post('/notelistowner/' , listParams).success(function(response) {
+              console.log("refresh tab");
+              $scope.notelist = response;
+              console.log($scope.notelist);
+              $scope.note = {
+                user_owner: "",
+                id_tab: "note",
+                tab_name: "note",
+                tab_content: ""
+              };
+            });
+          }
+        };
+
+/*
         var refreshNoteList = function() {
           if(UserFacebookID.user.id) {
 
@@ -123,9 +145,9 @@ angular.module("app.hackingzone" , [])
               };
             });
           }
-        };
+        };*/
 
-        refreshNoteList();
+      //  refreshNoteList();
 
 
         $scope.addnewtab = function() {
@@ -196,7 +218,7 @@ angular.module("app.hackingzone" , [])
         };
 
 
-        var refreshNoteListPrivate = function() {
+      /*  var refreshNoteListPrivate = function() {
           if(UserFacebookID.user.id) {
 
             var listParams = {
@@ -211,9 +233,9 @@ angular.module("app.hackingzone" , [])
               $scope.noteprivate = "";
             });
           }
-        };
+        };*/
 
-        refreshNoteListPrivate();
+      //  refreshNoteListPrivate();
 
 
         $scope.addnewtabprivate = function() {
