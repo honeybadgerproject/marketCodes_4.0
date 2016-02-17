@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
 var db = mongojs('projectlist', ['projectlist']);
 var dbsrc = mongojs('resourcelist', ['resourcelist']);
+var dbtab = mongojs('notelist', ['notelist']);
+var dbtabprivte = mongojs('notelistprivate', ['notelistprivate']);
+
 
 
 
