@@ -6,7 +6,7 @@ var mongojs = require('mongojs');
 var db = mongojs('projectlist', ['projectlist']);
 var dbsrc = mongojs('resourcelist', ['resourcelist']);
 var dbtab = mongojs('notelist', ['notelist']);
-var dbtabprivte = mongojs('notelistprivate', ['notelistprivate']);
+var dbtabprivate = mongojs('notelistprivate', ['notelistprivate']);
 
 
 
@@ -124,7 +124,8 @@ app.delete('/resourcelist/:id', function(req, res) {
 
  /**** start tab private section ****/
 
- app.post('/notelistownerprivate/:listParams', function(req, res) {
+ app.post('/notelistownerprivate', function(req, res) {
+
    var id = req.body.user_owner;
    var id2 = req.body.project_id;
 
