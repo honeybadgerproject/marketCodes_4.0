@@ -39,9 +39,8 @@
 									<md-list-item class="md-3-line" ng-repeat="message in contributorslist">
 										<!--  alt="{{message.who}}" -->
 										<!--<img ng-src="{{message.face}}" class="md-avatar circle">-->
-                    <div style="color: inherit" class="right ion ion-android-delete" ng-click="removeresource(resource._id)"></div>
 										<div class="md-list-item-text">
-											<h3>{{message.resource_name}}</h3>
+											<div style="color: inherit" class="ion ion-android-delete" ng-click="removeresource(resource._id)"><h3> &nbsp;&nbsp;{{message.resource_name}}</h3></div>
 											<!--  <h4>{{message.who}}</h4>
 											<p>
 												{{message.notes}}

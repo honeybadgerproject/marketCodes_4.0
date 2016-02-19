@@ -19,7 +19,7 @@ angular.module("app.login" , [])
     	UserFacebookID.logged == true;
         console.log(UserFacebookID.user);
     }*/
-    
+
     if ( UserFacebookID.logged == false ) {
       // no logged user, we should be going to #login (current path equal to signin)
       if ( current == "/pages/signin" ) {
@@ -154,6 +154,8 @@ angular.module("app.login" , [])
         $scope.$apply(function() {
           $scope.user = response;
           UserFacebookID.user = response;
+          console.log(response);
+          console.log(response.email);
 
           console.log("cookie >> step 1... adding the user info to cookie");
           // Put cookie
@@ -161,7 +163,7 @@ angular.module("app.login" , [])
           $cookies.userName =   UserFacebookID.user.name;
           $scope.platformCookie = $cookies.userName;
           $cookieStore.put('userCached', response);
-          
+
           console.log("1. send the current user to sever");
           console.log(UserFacebookID.user);
           //refreshProjectList();
@@ -198,7 +200,7 @@ angular.module("app.login" , [])
         $scope.$apply(function() {
           $scope.salutation = true;
           $scope.byebye     = false;
-          
+
           //$scope.user   = {};
           $scope.logged = true;
           //UserFacebookID.user = {};
