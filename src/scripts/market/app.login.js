@@ -11,7 +11,7 @@ angular.module("app.login" , [])
   $rootScope.$on( "$routeChangeStart", function(event, next) {
 
     var current = $location.path();
-    if(current == "/404") current = "/dashboard";
+    if(current == "/404") current = "/pages/signi";
     console.log("step 1... about to authenticate - toState: " + current  + " logged: " + UserFacebookID.logged);
 
     // Get cookie
@@ -21,6 +21,7 @@ angular.module("app.login" , [])
         console.log(UserFacebookID.user);
     }*/
 
+    console.log(UserFacebookID.logged);
     if ( UserFacebookID.logged == false ) {
       // no logged user, we should be going to #login (current path equal to signin)
       if ( current == "/pages/signin" ) {
