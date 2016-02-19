@@ -5,7 +5,7 @@
 angular.module("app.login" , [])
 
 // disable spinner in loading-bar
-.run(function($rootScope, $location, UserFacebookID) {
+.run(function($rootScope, $location, $cookieStore, UserFacebookID) {
 
   // register listener to watch route changes
   $rootScope.$on( "$routeChangeStart", function(event, next) {
@@ -24,6 +24,7 @@ angular.module("app.login" , [])
       // no logged user, we should be going to #login (current path equal to signin)
       if ( current == "/pages/signin" ) {
         // already going to #login, no redirect needed
+          $cookieStore.remove('userCached');
       } else {
         // not going to #login, we should redirect now (current path different to signin)
         console.log("step 2... save current state " + current);
@@ -130,6 +131,7 @@ angular.module("app.login" , [])
           $scope.logged = true;
           UserFacebookID.logged = true;
 
+
           $scope.me();
 
           console.log("step 5... jumping to the previus state");
@@ -196,7 +198,6 @@ angular.module("app.login" , [])
     ///
     $scope.$on('Facebook:statusChange', function(ev, data) {
       console.log('Status: ', data);
-          console.log('Status: ', ev);
       if (data.status == 'connected') {
         $scope.$apply(function() {
           $scope.salutation = true;
