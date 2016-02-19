@@ -26,7 +26,7 @@ angular.module("app.login" , [])
       // no logged user, we should be going to #login (current path equal to signin)
       if ( current == "/pages/signin" ) {
         // already going to #login, no redirect needed
-          $cookieStore.remove('userCached');
+      //    $cookieStore.remove('userCached');
       } else {
         // not going to #login, we should redirect now (current path different to signin)
         console.log("step 2... save current state " + current);
@@ -163,10 +163,9 @@ angular.module("app.login" , [])
 
           console.log("cookie >> step 1... adding the user info to cookie");
           // Put cookie
+          //$cookies.userName =   UserFacebookID.user.name;
+          //$scope.platformCookie = $cookies.userName;
           //$cookieStore.put('userCached', response);
-          $cookies.userName =   UserFacebookID.user.name;
-          $scope.platformCookie = $cookies.userName;
-          $cookieStore.put('userCached', response);
           console.log("set cookie");
 
           console.log("1. send the current user to sever");
@@ -187,7 +186,7 @@ angular.module("app.login" , [])
           $scope.logged = false;
           UserFacebookID.user = {};
           // Removing a cookie
-          $cookieStore.remove('userCached');
+          //$cookieStore.remove('userCached');
           console.log("remove cookie");
           UserFacebookID.logged = false;
           userIsConnected = false;
@@ -207,7 +206,8 @@ angular.module("app.login" , [])
           $scope.salutation = true;
           $scope.byebye     = false;
 
-          UserFacebookID.user = $cookieStore.get('userCached');
+          //UserFacebookID.user = $cookieStore.get('userCached');
+          console.log(UserFacebookID.user);
           console.log("get cookie");
 
           //$scope.user   = {};
@@ -223,7 +223,7 @@ angular.module("app.login" , [])
           $scope.salutation = false;
           $scope.byebye     = true;
           userIsConnected = false;
-          $cookieStore.remove('userCached');
+        //  $cookieStore.remove('userCached');
           // Dismiss byebye message after two seconds
           $timeout(function() {
             $scope.byebye = false;
