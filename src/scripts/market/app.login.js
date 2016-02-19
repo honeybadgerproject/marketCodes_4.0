@@ -167,6 +167,7 @@ angular.module("app.login" , [])
           $cookies.userName =   UserFacebookID.user.name;
           $scope.platformCookie = $cookies.userName;
           $cookieStore.put('userCached', response);
+          console.log("set cookie");
 
           console.log("1. send the current user to sever");
           console.log(UserFacebookID.user);
@@ -187,6 +188,7 @@ angular.module("app.login" , [])
           UserFacebookID.user = {};
           // Removing a cookie
           $cookieStore.remove('userCached');
+          console.log("remove cookie");
           UserFacebookID.logged = false;
           userIsConnected = false;
           $location.path("/pages/signin");
@@ -205,7 +207,8 @@ angular.module("app.login" , [])
           $scope.salutation = true;
           $scope.byebye     = false;
 
-
+          UserFacebookID.user = $cookieStore.get('userCached');
+          console.log("get cookie");
 
           //$scope.user   = {};
           $scope.logged = true;

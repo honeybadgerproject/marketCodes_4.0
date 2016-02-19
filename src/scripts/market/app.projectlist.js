@@ -26,10 +26,10 @@ angular.module("app.projectlist" , [])
             // asign the name for the user
             newproject.user_name = "nombre temporal"; //UserFacebookID.user.name;
             newproject.project_style = "solid";
-            
+
             newproject.phase = "";
             newproject.icon_phase = "";
-            
+
             if(newproject.classification === "1") {
             	newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-info";
                 newproject.icon_phase = "right ion ion-ios-flask-outline icon";
@@ -42,7 +42,7 @@ angular.module("app.projectlist" , [])
             	newproject.phase = "panel-footer clearfix panel-footer-sm panel-footer-pink";
             	newproject.icon_phase = "right ion ion-ios-cloud-download-outline icon";
             }
-            
+
             $http.post('/projectlist', newproject).success(function(response) {
               console.log(response);
               refreshProjectList();
@@ -102,21 +102,20 @@ angular.module("app.projectlist" , [])
         $scope.refreshProjectList = function() {
         	refreshProjectList();
         };
-        
+
         var refreshProjectList = function() {
         	console.log("------refreshProjectList------");
     		// Get cookie
-            UserFacebookID.user = $cookieStore.get('userCached');
             console.log(UserFacebookID.user);
-    		
+
     		$http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
     			console.log("refresh");
     			$scope.projectlist = response;
     		});
 
         };
-        
-        
+
+
         //// >> on for emit
         $scope.$on('refreshProjectList', function () {
           console.log("////>> called by emit " );
@@ -128,7 +127,7 @@ angular.module("app.projectlist" , [])
           console.log("into select");
           UserFacebookID.project_id = id;
         };
-        
+
         $scope.remove = function(id) {
           console.log(id);
           $http.delete('/projectlist/' + id).success(function(response) {
