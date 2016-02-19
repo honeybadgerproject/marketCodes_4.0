@@ -196,14 +196,12 @@ angular.module("app.login" , [])
     ///
     $scope.$on('Facebook:statusChange', function(ev, data) {
       console.log('Status: ', data);
+          console.log('Status: ', ev);
       if (data.status == 'connected') {
         $scope.$apply(function() {
           $scope.salutation = true;
           $scope.byebye     = false;
 
-          $cookies.userName =   UserFacebookID.user.name;
-          $scope.platformCookie = $cookies.userName;
-          $cookieStore.put('userCached', response);
 
 
           //$scope.user   = {};
