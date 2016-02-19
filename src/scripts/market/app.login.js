@@ -201,6 +201,10 @@ angular.module("app.login" , [])
           $scope.salutation = true;
           $scope.byebye     = false;
 
+          $cookies.userName =   UserFacebookID.user.name;
+          $scope.platformCookie = $cookies.userName;
+          $cookieStore.put('userCached', response);
+
 
           //$scope.user   = {};
           $scope.logged = true;
