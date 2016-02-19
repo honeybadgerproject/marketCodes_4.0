@@ -11,6 +11,7 @@ angular.module("app.login" , [])
   $rootScope.$on( "$routeChangeStart", function(event, next) {
 
     var current = $location.path();
+    if(current == "/404") current = "/dashboard";
     console.log("step 1... about to authenticate - toState: " + current  + " logged: " + UserFacebookID.logged);
 
     // Get cookie
