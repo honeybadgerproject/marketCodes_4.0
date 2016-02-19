@@ -201,6 +201,7 @@ angular.module("app.login" , [])
           $scope.salutation = true;
           $scope.byebye     = false;
 
+
           //$scope.user   = {};
           $scope.logged = true;
           //UserFacebookID.user = {};
@@ -214,6 +215,7 @@ angular.module("app.login" , [])
           $scope.salutation = false;
           $scope.byebye     = true;
           userIsConnected = false;
+          $cookieStore.remove('userCached');
           // Dismiss byebye message after two seconds
           $timeout(function() {
             $scope.byebye = false;
