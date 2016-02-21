@@ -113,7 +113,7 @@ angular.module("app.login" , [])
           }
         }
 
-      }, {scope: 'email,user_likes'});
+      }, {scope: 'email'});
     };
 
     ///// >>> emit
@@ -144,7 +144,7 @@ angular.module("app.login" , [])
           }
         }
 
-      }, {scope: 'email,user_likes'});
+      }, {scope: 'email'});
     };
 
     ///
@@ -158,6 +158,8 @@ angular.module("app.login" , [])
 
         console.log("authenticate log 4.. inside me");
         console.log(response);
+        console.log(response.user);
+        console.log(response.email);
 
         console.log("step 6... adding the user info");
         $scope.$apply(function() {
