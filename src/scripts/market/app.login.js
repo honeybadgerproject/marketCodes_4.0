@@ -156,6 +156,9 @@ angular.module("app.login" , [])
         /// Using $scope.$apply since this happens outside angular framework.
         ///
 
+        console.log("authenticate log 4.. inside me");
+        console.log(response);
+
         console.log("step 6... adding the user info");
         $scope.$apply(function() {
           $scope.user = response;
