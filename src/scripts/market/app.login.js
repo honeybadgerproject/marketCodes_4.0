@@ -144,7 +144,7 @@ angular.module("app.login" , [])
           }
         }
 
-      });
+      }, {scope: 'email,user_likes'});
     };
 
     ///
