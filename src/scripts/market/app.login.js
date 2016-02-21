@@ -160,8 +160,9 @@ angular.module("app.login" , [])
         $scope.$apply(function() {
           $scope.user = response;
           UserFacebookID.user = response;
+          console.log("authenticate log 3.. inside me");
           console.log(response);
-          console.log(response.email);
+        //  console.log(response.email);
 
           console.log("cookie >> step 1... adding the user info to cookie");
           // Put cookie
