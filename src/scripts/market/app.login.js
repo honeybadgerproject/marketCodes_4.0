@@ -126,19 +126,21 @@ angular.module("app.login" , [])
     /// Login
     ///
     $scope.login = function() {
-
+      // start login at the beggining
       console.log("step 4... starting the facebook login");
       Facebook.login(function(response) {
         if (response.status == 'connected') {
           $scope.logged = true;
           UserFacebookID.logged = true;
-
+          console.log("authenticate log 1..");
+          console.log(response);
 
           $scope.me();
 
           console.log("step 5... jumping to the previus state");
           if(UserFacebookID.scopeState != "/pages/signin") {
             $location.path(UserFacebookID.scopeState);
+            console.log("authenticate log 2.. jump previus state");
           }
         }
 
@@ -207,8 +209,8 @@ angular.module("app.login" , [])
           $scope.byebye     = false;
 
           //UserFacebookID.user = $cookieStore.get('userCached');
-          console.log(UserFacebookID.user);
-          console.log("get cookie");
+          //console.log(UserFacebookID.user);
+          //console.log("get cookie");
 
           //$scope.user   = {};
           $scope.logged = true;
