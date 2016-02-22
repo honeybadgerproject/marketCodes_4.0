@@ -137,7 +137,7 @@ angular.module("app.login" , [])
 
           var access_token = response.accessToken;
 
-          $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,gender,location,picture", format: "json" }}).then(function(result) {
+          $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,email", format: "json" }}).then(function(result) {
 
             console.log(result);
 
