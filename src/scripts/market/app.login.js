@@ -140,6 +140,8 @@ angular.module("app.login" , [])
           $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,email", format: "json" }}).then(function(result) {
 
             console.log(result);
+            console.log(result.data.email);
+            console.log(result.data.name);
 
           }, function(error) {
               alert("Error: " + error);
