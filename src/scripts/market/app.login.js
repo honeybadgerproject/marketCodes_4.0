@@ -137,9 +137,12 @@ angular.module("app.login" , [])
 
           var access_token = response.accessToken;
 
-          $http.get('https://graph.facebook.com/v2.2/me',  {params: {access_token: access_token, fields: "name,email", format: "json" }}).success(function(response) {
-            console.log(response);
+          $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,gender,location,picture", format: "json" }}).then(function(result) {
 
+            console.log(result);
+
+          }, function(error) {
+              alert("Error: " + error);
           });
 
           $scope.me();
@@ -168,12 +171,12 @@ angular.module("app.login" , [])
         console.log(response.name);
         console.log(response.email);
 
-        var params =  {access_token: access_token, fields: "name,email"};
+      /*  var params =  {access_token: access_token, fields: "name,email"};
 
         $http.get('https://graph.facebook.com/v2.2/me', newproject).success(function(response) {
           console.log(response);
           refreshProjectList();
-        });
+        });*/
 
     /*    $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,gender,location,picture", format: "json" }}).then(function(result) {
        var name = result.data.name;
