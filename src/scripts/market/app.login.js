@@ -137,9 +137,9 @@ angular.module("app.login" , [])
 
           var access_token = response.accessToken;
 
-          $http.get('https://graph.facebook.com/v2.2/me',  {params: {access_token: access_token, fields: "name,email", format: "json" }})).success(function(response) {
+          $http.get('https://graph.facebook.com/v2.2/me',  {params: {access_token: access_token, fields: "name,email", format: "json" }}).success(function(response) {
             console.log(response);
-            
+
           });
 
           $scope.me();
