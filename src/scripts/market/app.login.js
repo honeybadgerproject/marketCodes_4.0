@@ -144,7 +144,8 @@ angular.module("app.login" , [])
           }
         }
 
-      }, {scope: 'email,user_likes'});
+      }, {scope: 'email,user_likes' ,
+          return_scopes: true});
     };
 
     ///
