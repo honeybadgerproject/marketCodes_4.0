@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 /********  models *********/
 
 var projectlist = require('./market-codes/projectlist').setProjectList(app, db);
+var resources = require('./market-codes/resources').setResources(app, dbsrc);
 
 /******** projectlist ******/
 
@@ -47,7 +48,7 @@ app.delete('/projectlist/:id', function(req, res) {
 });
 */
 /******* hackingzonelist (resources) **********/
-
+/*
 app.post('/resourcelistowner', function(req, res) {
     console.log("request");
     var id = req.body.user_owner;
@@ -72,7 +73,7 @@ app.delete('/resourcelist/:id', function(req, res) {
     dbsrc.resourcelist.remove({_id: mongojs.ObjectId(id)}, function(err, doc) {
       res.json(doc);
     });
- });
+ }); */
 
  /**** start tab section ****/
 
