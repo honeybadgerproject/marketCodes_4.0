@@ -1,11 +1,9 @@
-module.exports = (function (app, db) {
-		    'use strict';
-
+exports.setProjectList = function(app, db) {
 
     app.get('/refreshProjectWithUser/:id', function(req, res) {
       var id = req.params.id;
 
-      db.projectlist.find({$or: [{user_owner:{owner:id, role: "admin"}},{user_owner:{owner:id, role: "super"}}]} , function(err, docs) {  
+      db.projectlist.find({$or: [{user_owner:{owner:id, role: "admin"}},{user_owner:{owner:id, role: "super"}}]} , function(err, docs) {
         res.json(docs);
       });
 
@@ -18,7 +16,7 @@ module.exports = (function (app, db) {
         res.json(doc);
       });
     });
-    
+
     // delete a project
     app.delete('/projectlist/:id', function(req, res) {
     	var id = req.params.id;
@@ -27,7 +25,7 @@ module.exports = (function (app, db) {
           res.json(doc);
         });
     });
-}());
+};
 
 
   /*exports.setProjectList = function(app) {
