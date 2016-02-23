@@ -16,9 +16,11 @@ app.use(bodyParser.json());
 
 /********  models *********/
 
+var projectlist = require('./market-codes/projectlist').setProjectList(app, db);
+
 /******** projectlist ******/
 
-app.get('/refreshProjectWithUser/:id', function(req, res) {
+/*app.get('/refreshProjectWithUser/:id', function(req, res) {
   var id = req.params.id;
 
   db.projectlist.find({$or: [{user_owner:{owner:id, role: "admin"}},{user_owner:{owner:id, role: "super"}}]} , function(err, docs) {
@@ -43,7 +45,7 @@ app.delete('/projectlist/:id', function(req, res) {
       res.json(doc);
     });
 });
-
+*/
 /******* hackingzonelist (resources) **********/
 
 app.post('/resourcelistowner', function(req, res) {
