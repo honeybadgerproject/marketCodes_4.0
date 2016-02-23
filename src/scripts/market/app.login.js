@@ -135,9 +135,9 @@ angular.module("app.login" , [])
           console.log("authenticate log 1..");
           console.log(response);
 
-          var access_token = response.authResponse.accessToken;
+          UserFacebookID.access_token = response.authResponse.accessToken;
 
-          $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,email", format: "json" }}).then(function(result) {
+          /*$http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,email", format: "json" }}).then(function(result) {
 
             console.log(result);
             console.log(result.data.email);
@@ -145,7 +145,7 @@ angular.module("app.login" , [])
 
           }, function(error) {
               alert("Error: " + error);
-          });
+          });*/
 
           $scope.me();
 
@@ -170,33 +170,11 @@ angular.module("app.login" , [])
 
         console.log("authenticate log 4.. inside me");
         console.log(response);
-        console.log(response.name);
-        console.log(response.email);
-
-      /*  var params =  {access_token: access_token, fields: "name,email"};
-
-        $http.get('https://graph.facebook.com/v2.2/me', newproject).success(function(response) {
-          console.log(response);
-          refreshProjectList();
-        });*/
-
-    /*    $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: access_token, fields: "name,gender,location,picture", format: "json" }}).then(function(result) {
-       var name = result.data.name;
-       var gender = result.data.gender;
-       var picture = result.data.picture;
-
-       var html = '<table id="table" data-role="table" data-mode="column" class="ui-responsive"><thead><tr><th>Field</th><th>Info</th></tr></thead><tbody>';
-       html = html + "<tr><td>" + "Name" + "</td><td>" + name + "</td></tr>";
-       html = html + "<tr><td>" + "Gender" + "</td><td>" + gender + "</td></tr>";
-       html = html + "<tr><td>" + "Picture" + "</td><td><img src='" + picture.data.url + "' /></td></tr>";
-
-       html = html + "</tbody></table>";
-
-       document.getElementById("listTable").innerHTML = html;
-       $.mobile.changePage($("#profile"), "slide", true, true);
-   }, function(error) {
-       alert("Error: " + error);
-   });*/
+        $scope.user = response;
+        UserFacebookID.user = response;
+        $cookies.userName =   UserFacebookID.user.name;
+        $scope.platformCookie = $cookies.userName;
+        $cookieStore.put('userCached', response);
 
         console.log("step 6... adding the user info");
         $scope.$apply(function() {
@@ -206,7 +184,8 @@ angular.module("app.login" , [])
           console.log(response);
         //  console.log(response.email);
 
-          console.log("cookie >> step 1... adding the user info to cookie");
+          console.log("cookie >> step 1..
+          . adding the user info to cookie");
           // Put cookie
           //$cookies.userName =   UserFacebookID.user.name;
           //$scope.platformCookie = $cookies.userName;
@@ -231,7 +210,7 @@ angular.module("app.login" , [])
           $scope.logged = false;
           UserFacebookID.user = {};
           // Removing a cookie
-          //$cookieStore.remove('userCached');
+          $cookieStore.remove('userCached');
           console.log("remove cookie");
           UserFacebookID.logged = false;
           userIsConnected = false;

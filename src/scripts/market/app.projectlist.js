@@ -43,6 +43,18 @@ angular.module("app.projectlist" , [])
             	newproject.icon_phase = "right ion ion-ios-cloud-download-outline icon";
             }
 
+            /** get email **/
+            var email;
+            $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: UserFacebookID.access_token, fields: "email", format: "json" }}).then(function(result) {
+              console.log(result);
+              console.log(result.data.email);
+              email = result.data.email;
+            }, function(error) {
+                alert("Error: " + error);
+            });
+
+            newproject.email = email;
+
             $http.post('/projectlist', newproject).success(function(response) {
               console.log(response);
               refreshProjectList();
@@ -106,7 +118,8 @@ angular.module("app.projectlist" , [])
         var refreshProjectList = function() {
         	console.log("------refreshProjectList------");
     		// Get cookie
-            console.log(UserFacebookID.user);
+        UserFacebookID.user = $cookieStore.get('userCached');
+          console.log(UserFacebookID.user);
 
     		$http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
     			console.log("refresh");

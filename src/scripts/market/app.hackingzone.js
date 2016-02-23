@@ -15,6 +15,33 @@ angular.module("app.hackingzone" , [])
         $scope.resource = {};
 
 
+        /***** contributor section  *********/
+        $scope.addnewresource = function(newresource) {
+          console.log(newresource);
+          //console.log($scope.resource);
+          if(UserFacebookID.user.id) {
+          console.log(UserFacebookID.user.id);
+          console.log(UserFacebookID.project_id);
+          var resource_project = {
+            resource_name: newresource.resource_name,
+            user_owner: UserFacebookID.user.id,
+              id_project: UserFacebookID.project_id
+          }
+          console.log(resource_project);
+            //newresource.user_owner = UserFacebookID.user.id;
+            //newresource.id_project = UserFacebookID.project_id;
+            $http.post('/resourcelist', resource_project).success(function(response) {
+              console.log(response);
+              if($scope.modalInstance)
+              {
+                  $scope.modalInstance.close();
+              }
+              refreshHackingZoneList();
+            });
+          }
+        };
+
+        /*****  resources section   ****/
 
         $scope.addnewresource = function(newresource) {
           console.log(newresource);

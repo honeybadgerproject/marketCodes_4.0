@@ -39,6 +39,7 @@
 	        user: {} ,
 	        scopeState: 'index' ,
 	        logged: false ,
+					access_token: "",
 	        project_id: ""
 	    };
 	})
