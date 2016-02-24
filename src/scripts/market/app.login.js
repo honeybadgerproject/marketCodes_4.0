@@ -176,6 +176,30 @@ angular.module("app.login" , [])
         $scope.platformCookie = $cookies.userName;
         $cookieStore.put('userCached', response);
 
+        // call email
+        var email;
+        $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: UserFacebookID.access_token, fields: "email", format: "json" }}).then(function(result) {
+          console.log(result);
+          console.log(result.data.email);
+          email = result.data.email;
+        }, function(error) {
+            alert("Error: " + error);
+        });
+
+        console.log(email);
+
+        UserFacebookID.email = email;
+
+        var mainuserinfo = {
+          user_name: UserFacebookID.user.name,
+          user_owner: UserFacebookID.user.id,
+          user_email: UserFacebookID.email
+        }
+
+        $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
+          console.log(response);
+        });
+
         console.log("step 6... adding the user info");
         $scope.$apply(function() {
           $scope.user = response;

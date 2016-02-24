@@ -44,16 +44,16 @@ angular.module("app.projectlist" , [])
             }
 
             /** get email **/
-            var email;
+          /*  var email;
             $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: UserFacebookID.access_token, fields: "email", format: "json" }}).then(function(result) {
               console.log(result);
               console.log(result.data.email);
               email = result.data.email;
             }, function(error) {
                 alert("Error: " + error);
-            });
+            });*/
 
-            newproject.email = email;
+            newproject.email = UserFacebookID.email;
 
             $http.post('/projectlist', newproject).success(function(response) {
               console.log(response);

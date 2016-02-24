@@ -37,6 +37,7 @@
 	.factory('UserFacebookID', function() {
 	    return {
 	        user: {} ,
+					email: "",
 	        scopeState: 'index' ,
 	        logged: false ,
 					access_token: "",
