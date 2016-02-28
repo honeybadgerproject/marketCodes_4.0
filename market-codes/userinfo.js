@@ -12,7 +12,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
       user_email: UserFacebookID.email
     }*/
 
-    db.projectlist.findOne({user_email: req.body.user_email}, function(err, doc) {
+    dbuserinfo.userinfo.findOne({user_email: req.body.user_email}, function(err, doc) {
       res.json(doc);
       console.log(doc);
       if(doc == {}) {
