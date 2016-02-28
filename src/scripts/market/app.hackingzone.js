@@ -16,29 +16,74 @@ angular.module("app.hackingzone" , [])
 
 
         /***** contributor section  *********/
-        $scope.addnewresource = function(newresource) {
-          console.log(newresource);
-          //console.log($scope.resource);
+
+        var refreshContributorsList = function() {
+
           if(UserFacebookID.user.id) {
-          console.log(UserFacebookID.user.id);
-          console.log(UserFacebookID.project_id);
-          var resource_project = {
-            resource_name: newresource.resource_name,
-            user_owner: UserFacebookID.user.id,
-              id_project: UserFacebookID.project_id
-          }
-          console.log(resource_project);
-            //newresource.user_owner = UserFacebookID.user.id;
-            //newresource.id_project = UserFacebookID.project_id;
-            $http.post('/resourcelist', resource_project).success(function(response) {
-              console.log(response);
-              if($scope.modalInstance)
-              {
-                  $scope.modalInstance.close();
-              }
-              refreshHackingZoneList();
+
+            var listParams = {
+              user_owner: UserFacebookID.user.id,
+              project_id: UserFacebookID.project_id
+            };
+              console.log(listParams);
+
+            $http.post('/contributorslistowner/', listParams).success(function(response) {
+              console.log("refresh contributor list");
+              $scope.contributorslist = response;
+              $scope.contributor = "";
+              console.log($scope.contributorslist);
             });
           }
+        };
+
+        refreshContributorsList();
+
+
+        $scope.addnewcontributor = function(newcontributor) {
+          console.log(newcontributor);
+          console.log($scope.contributor);
+
+
+          if(UserFacebookID.user.id) {
+
+            var arrayContributor = { id: UserFacebookID.project_id  ,
+                                    linkContributor: { owner: newcontributor.top_user , role: 'super' } };
+
+            //newcontributor.user_owner = UserFacebookID.user.id;
+            //newcontributor.id_project = UserFacebookID.project_id;
+            $http.post('/contributorslist', arrayContributor).success(function(response) {
+              console.log(response);
+
+              if($scope.modalInstance)
+              {
+                $scope.modalInstance.close();
+              }
+
+              refreshContributorsList();
+            });
+          };
+        };
+
+        $scope.removecontributor = function(id) {
+          console.log(id);
+          $http.delete('/contributorslist/' + id).success(function(response) {
+            refreshContributorsList();
+          });
+        };
+
+        $scope.openDialogContributor = function() {
+
+            $scope.modalInstance = $modal.open({
+                    templateUrl: 'views/ui/modalContributor.html',
+                    scope: $scope
+                });
+                console.log('modal opened');
+                $scope.modalInstance.result.then(function () {
+                    console.log($scope.selected);
+                }, function () {
+                    console.log('Modal dismissed at: ' + new Date());
+                });
+
         };
 
         /*****  resources section   ****/
