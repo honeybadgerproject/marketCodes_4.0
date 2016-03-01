@@ -14,7 +14,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
     }*/
 
     console.log("find a user by.....");
-    dbuserinfo.userinfo.findOne({user_email: req.body.id}, function(err, doc) {
+    dbuserinfo.userinfo.findOne({user_owner: req.body.user_owner}, function(err, doc) {
       res.json(doc);
       console.log(doc);
       if(doc == {}) {
@@ -33,7 +33,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
         console.log(doc);
         console.log("inserted");
       });
-    
+
     }
   });
 
