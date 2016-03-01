@@ -192,9 +192,12 @@ angular.module("app.login" , [])
 
         var mainuserinfo = {
           user_name: UserFacebookID.user.name,
-          user_owner: UserFacebookID.user.id,
-          user_email: UserFacebookID.email
+          user_email: UserFacebookID.email,
+          user_owner: UserFacebookID.user.id
         }
+
+        console.log(">>>>>>  1. insert user");
+        console.log(mainuserinfo);
 
         $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
           console.log(response);
