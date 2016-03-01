@@ -13,7 +13,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
       user_email: UserFacebookID.email
     }*/
 
-    console.log(find a user by);
+    console.log("find a user by.....");
     dbuserinfo.userinfo.findOne({user_email: req.body.id}, function(err, doc) {
       res.json(doc);
       console.log(doc);
