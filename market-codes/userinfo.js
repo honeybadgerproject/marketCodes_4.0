@@ -2,6 +2,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
 
   // create a new project
   app.post('/mainuserinfo', function(req, res) {
+    console.log("2.>>>>>> inserting mainuserinfo");
     console.log(req.body);
     // check if the user exist if not insert
     var exist = false;
@@ -12,7 +13,8 @@ exports.setUserInfo = function(app, dbuserinfo) {
       user_email: UserFacebookID.email
     }*/
 
-    dbuserinfo.userinfo.findOne({user_email: req.body.user_email}, function(err, doc) {
+    console.log(find a user by);
+    dbuserinfo.userinfo.findOne({user_email: req.body.id}, function(err, doc) {
       res.json(doc);
       console.log(doc);
       if(doc == {}) {
