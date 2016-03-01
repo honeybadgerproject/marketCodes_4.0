@@ -27,10 +27,13 @@ exports.setUserInfo = function(app, dbuserinfo) {
 
     console.log(exist);
 
-    if(exist === false) {
+    if(exist == false) {
       dbuserinfo.userinfo.insert(req.body, function(err, doc) {
         res.json(doc);
+        console.log(doc);
+        console.log("inserted");
       });
+    
     }
   });
 
