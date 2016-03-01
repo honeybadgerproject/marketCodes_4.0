@@ -182,26 +182,29 @@ angular.module("app.login" , [])
           console.log(result);
           console.log(result.data.email);
           email = result.data.email;
+
+          /******** new user *******/
+          console.log(email);
+
+          UserFacebookID.email = email;
+
+          var mainuserinfo = {
+            user_name: UserFacebookID.user.name,
+            user_email: UserFacebookID.email,
+            user_owner: UserFacebookID.user.id
+          }
+
+          console.log(">>>>>>  1. insert user");
+          console.log(mainuserinfo);
+
+          $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
+            console.log(response);
+          });
+          //********* end insert user  ******/
         }, function(error) {
             alert("Error: " + error);
         });
 
-        console.log(email);
-
-        UserFacebookID.email = email;
-
-        var mainuserinfo = {
-          user_name: UserFacebookID.user.name,
-          user_email: UserFacebookID.email,
-          user_owner: UserFacebookID.user.id
-        }
-
-        console.log(">>>>>>  1. insert user");
-        console.log(mainuserinfo);
-
-        $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
-          console.log(response);
-        });
 
         console.log("step 6... adding the user info");
         $scope.$apply(function() {
