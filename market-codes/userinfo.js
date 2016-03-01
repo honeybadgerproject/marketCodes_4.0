@@ -17,7 +17,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
     dbuserinfo.userinfo.findOne({user_owner: req.body.user_owner}, function(err, doc) {
       res.json(doc);
       console.log(doc);
-      if(doc == {}) {
+      if(doc === null) {
         dbuserinfo.userinfo.insert(req.body, function(err, doc) {
           res.json(doc);
           console.log(doc);
