@@ -19,11 +19,11 @@ exports.setUserInfo = function(app, dbuserinfo) {
       res.json(doc);
       console.log(doc);
       if(doc === null) {
-        dbuserinfo.userinfo.insert(bodyInfo, function(err, doc) {
+      /*  dbuserinfo.userinfo.insert(bodyInfo, function(err, doc) {
           res.json(doc);
           console.log(doc);
           console.log("inserted");
-        });
+        });*/
       }
       else {
         console.log("not inserted");
