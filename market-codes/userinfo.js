@@ -6,6 +6,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
     console.log(req.body);
     // check if the user exist if not insert
     var exist = false;
+    var bodyInfo = req.body;
 
 /*    var mainuserinfo = {
       user_name: UserFacebookID.user.name,
@@ -18,7 +19,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
       res.json(doc);
       console.log(doc);
       if(doc === null) {
-        dbuserinfo.userinfo.insert(req.body, function(err, doc) {
+        dbuserinfo.userinfo.insert(bodyInfo, function(err, doc) {
           res.json(doc);
           console.log(doc);
           console.log("inserted");
