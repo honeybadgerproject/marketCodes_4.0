@@ -36,18 +36,26 @@ angular.module("app.hackingzone" , [])
           }
         };
 
-        refreshContributorsList();
+
 
 
         $scope.addnewcontributor = function(newcontributor) {
           console.log(newcontributor);
           console.log($scope.contributor);
 
+          /*
+          {_id: "56de2ad0bf89ad822824470b", user_owner: "10206398373092349", user_name: "Yabin Monroy", user_email: "wombath_x@hotmail.com"}
+          */
+
+          // update the projectlist with the new user
+
 
           if(UserFacebookID.user.id) {
 
-            var arrayContributor = { id: UserFacebookID.project_id  ,
-                                    linkContributor: { owner: newcontributor.top_user , role: 'super' } };
+            var arrayContributor = { id_project: UserFacebookID.project_id  ,
+                                    user_owner: { owner: newcontributor.top_user , role: "super" } };
+            console.log(">>>>>   top user");
+            console.log(arrayContributor);
 
             //newcontributor.user_owner = UserFacebookID.user.id;
             //newcontributor.id_project = UserFacebookID.project_id;
@@ -59,7 +67,7 @@ angular.module("app.hackingzone" , [])
                 $scope.modalInstance.close();
               }
 
-              refreshContributorsList();
+              //refreshContributorsList();
             });
           };
         };
@@ -133,6 +141,7 @@ angular.module("app.hackingzone" , [])
             refreshHackingZoneList();
             refreshNoteList();
             refreshNoteListPrivate();
+            //refreshContributorsList();
         };
 
         var refreshHackingZoneList = function() {
