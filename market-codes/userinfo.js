@@ -6,7 +6,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
     console.log(req.body);
     // check if the user exist if not insert
     var exist = false;
-    var bodyInfo = req.body;
+    //var bodyInfo = req.body;
 
 /*    var mainuserinfo = {
       user_name: UserFacebookID.user.name,
@@ -15,19 +15,13 @@ exports.setUserInfo = function(app, dbuserinfo) {
     }*/
 
     console.log("find a user by.....");
-    dbuserinfo.userinfo.findOne({user_owner: req.body.user_owner}, function(err, doc) {
-      res.json(doc);
-      console.log(doc);
-      if(doc === null) {
-      /*  dbuserinfo.userinfo.insert(bodyInfo, function(err, doc) {
-          res.json(doc);
-          console.log(doc);
-          console.log("inserted");
-        });*/
-      }
-      else {
-        console.log("not inserted");
-      }
+    dbuserinfo.userinfo.findAndModify({
+      query: {user_owner: user_owner: req.body.user_owner},
+      update: {
+        $setOnInsert: { user_name: req.body.user_name, user_email: req.body.user_email, user_owner: req.body.user_owner }
+      },
+      new: true,
+      upsert: true
     });
 
   });
