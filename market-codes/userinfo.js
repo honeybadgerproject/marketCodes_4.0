@@ -21,7 +21,8 @@ exports.setUserInfo = function(app, dbuserinfo) {
         $setOnInsert: { user_name: req.body.user_name, user_email: req.body.user_email, user_owner: req.body.user_owner }
       },
       new: true,
-      upsert: true
+      upsert: true} , function(err, doc) {
+      res.json(doc);
     });
 
   });
