@@ -25,6 +25,31 @@ exports.setProjectList = function(app, db) {
           res.json(doc);
         });
     });
+
+    // get a new contributor
+    app.post('/contributorslist', function(req, res) {
+      console.log(req.body);
+      db.projectlist.update({"_id" : req.body.id_project } ,
+                                    { $push: { "user_owner": req.body.user_owner  }} ,
+                                  function(err, doc) {
+                                      res.json(doc);
+      });
+    });
+
+    app.post('/contributorslistowner', function(req, res) {
+
+      console.log(req.body.project_id);
+      console.log(req.body.user_owner);
+      var id = req.body.user_owner;
+      var id2 = req.body.project_id;
+
+      dbctr.contributorslist.find({ "user_owner": id , "id_project": id2} , function(err, docs) {
+        console.log("request for contributors");
+        console.log(docs);
+        res.json(docs);
+      });
+    });
+
 };
 
 
