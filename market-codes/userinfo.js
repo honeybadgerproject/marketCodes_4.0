@@ -16,7 +16,7 @@ exports.setUserInfo = function(app, dbuserinfo) {
 
     console.log("find a user by.....");
     dbuserinfo.userinfo.findAndModify({
-      query: {user_owner: user_owner: req.body.user_owner},
+      query: {user_owner: req.body.user_owner},
       update: {
         $setOnInsert: { user_name: req.body.user_name, user_email: req.body.user_email, user_owner: req.body.user_owner }
       },
