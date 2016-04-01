@@ -137,14 +137,14 @@ angular.module("app.hackingzone" , [])
 
         };
 
-        $scope.refreshResourceList = function() {
-            refreshHackingZoneList();
+        $scope.refreshHackingZoneList = function() {
+            refreshResourceList();
             refreshNoteList();
             refreshNoteListPrivate();
-            //refreshContributorsList();
+            refreshContributorsList();
         };
 
-        var refreshHackingZoneList = function() {
+        var refreshResourceList = function() {
           console.log("------refreshResourceList------");
 
           if(UserFacebookID.user.id) {
@@ -158,8 +158,8 @@ angular.module("app.hackingzone" , [])
 
             $http.post('/resourcelistowner/', listParams).success(function(response) {
               console.log("refresh contributor list");
-              $scope.contributorslist = response;
-              console.log($scope.contributorslist);
+              $scope.resourcelist = response;
+              console.log($scope.resourcelist);
             });
           }
         };
