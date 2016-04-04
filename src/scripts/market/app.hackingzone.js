@@ -116,7 +116,7 @@ angular.module("app.hackingzone" , [])
               {
                   $scope.modalInstance.close();
               }
-              refreshHackingZoneList();
+              refreshResourceZoneList();
             });
           }
         };
