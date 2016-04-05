@@ -11,6 +11,8 @@ angular.module("app.hackingzone" , [])
         /*---- project selected and global variables ----*/
         $scope.collaboratorlist = {};
         $scope.resourcelist = {};
+        $scope.contributorlist = {};
+        $scope.contributor = {};
         $scope.collaborator = {};
         $scope.resource = {};
 
@@ -56,7 +58,7 @@ angular.module("app.hackingzone" , [])
           if(UserFacebookID.user.id) {
 
             var arrayContributor = { id_project: UserFacebookID.project_id  ,
-                                    user_buddy: newcontributor.top_user ,
+                                    user_buddy: newcontributor.user_buddy ,
                                     role: "super"  };
 
             /*var arrayContributor = { id_project: UserFacebookID.project_id  ,
