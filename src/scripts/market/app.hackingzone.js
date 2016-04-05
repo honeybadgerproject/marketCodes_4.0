@@ -19,6 +19,8 @@ angular.module("app.hackingzone" , [])
 
         var refreshContributorsList = function() {
 
+          console.log("-------- refreshContributorList ---------");
+
           if(UserFacebookID.user.id) {
 
             var listParams = {
