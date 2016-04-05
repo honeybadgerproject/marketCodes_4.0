@@ -23,7 +23,7 @@ var userinfo = require('./market-codes/userinfo').setUserInfo(app, dbuserinfo);
 
 var projectlist = require('./market-codes/projectlist').setProjectList(app, db);
 var resources = require('./market-codes/resources').setResources(app, dbsrc);
-var resources = require('./market-codes/contributor').setContributor(app, dbbuddy);
+var contributor = require('./market-codes/contributor').setContributor(app, dbbuddy);
 var tabs = require('./market-codes/tablist').setTabs(app, dbtab);
 var privatetabs = require('./market-codes/privatetablist').setPrivateTabs(app, dbtabprivate);
 
