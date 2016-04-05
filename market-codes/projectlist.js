@@ -15,6 +15,12 @@ exports.setProjectList = function(app, db) {
       db.projectlist.insert(req.body, function(err, doc) {
         res.json(doc);
       });
+
+      /* insert admib in dbbuddy
+      var arrayContributor = { id_project: UserFacebookID.project_id  ,
+                              user_buddy: newcontributor.top_user ,
+                              role: "super"  };
+      */
     });
 
     // delete a project
