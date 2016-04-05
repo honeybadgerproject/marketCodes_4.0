@@ -25,13 +25,14 @@ angular.module("app.hackingzone" , [])
               user_owner: UserFacebookID.user.id,
               project_id: UserFacebookID.project_id
             };
-              console.log(listParams);
+
+            console.log(listParams);
 
             $http.post('/contributorslistowner/', listParams).success(function(response) {
               console.log("refresh contributor list");
-              $scope.contributorslist = response;
+              $scope.contributorlist = response;
               $scope.contributor = "";
-              console.log($scope.contributorslist);
+              console.log($scope.contributorlist);
             });
           }
         };
@@ -139,7 +140,7 @@ angular.module("app.hackingzone" , [])
 
         $scope.refreshHackingZoneList = function() {
             refreshResourceList();
-          //  refreshContributorsList();
+            refreshContributorsList();
             refreshNoteList();
             refreshNoteListPrivate();
 
