@@ -56,7 +56,11 @@ angular.module("app.hackingzone" , [])
           if(UserFacebookID.user.id) {
 
             var arrayContributor = { id_project: UserFacebookID.project_id  ,
-                                    user_owner: { owner: newcontributor.top_user , role: "super" } };
+                                    user_buddy: newcontributor.top_user ,
+                                    role: "super"  };
+
+            /*var arrayContributor = { id_project: UserFacebookID.project_id  ,
+                                    user_owner: { owner: newcontributor.top_user , role: "super" } };*/
             console.log(">>>>>   top user");
             console.log(arrayContributor);
 
