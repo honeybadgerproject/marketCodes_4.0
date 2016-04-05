@@ -43,7 +43,7 @@ exports.setProjectList = function(app, db) {
       var id = req.body.user_owner;
       var id2 = req.body.project_id;
 
-      dbc.projectlist.find({ "user_owner": id , "id_project": id2} , function(err, docs) {
+      db.projectlist.find({ "user_owner": id , "id_project": id2} , function(err, docs) {
         console.log("request for contributors");
         console.log(docs);
         res.json(docs);
