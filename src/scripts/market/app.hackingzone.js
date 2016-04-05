@@ -139,9 +139,10 @@ angular.module("app.hackingzone" , [])
 
         $scope.refreshHackingZoneList = function() {
             refreshResourceList();
+          //  refreshContributorsList();
             refreshNoteList();
             refreshNoteListPrivate();
-            refreshContributorsList();
+
         };
 
         var refreshResourceList = function() {
