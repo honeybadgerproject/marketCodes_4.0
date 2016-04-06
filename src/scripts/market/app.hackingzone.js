@@ -11,8 +11,8 @@ angular.module("app.hackingzone" , [])
         /*---- project selected and global variables ----*/
         $scope.collaboratorlist = {};
         $scope.resourcelist = {};
-        $scope.contributorlist = {};
-        $scope.contributor = {};
+        $scope.buddylist = {};
+        $scope.buddy = {};
         $scope.collaborator = {};
         $scope.resource = {};
 
@@ -32,7 +32,7 @@ angular.module("app.hackingzone" , [])
 
             console.log(listParams);
 
-            $http.post('/contributorslistowner/', listParams).success(function(response) {
+            $http.post('/buddylistowner/', listParams).success(function(response) {
               console.log("refresh contributor list");
               $scope.contributorlist = response;
               $scope.contributor = "";
@@ -68,7 +68,7 @@ angular.module("app.hackingzone" , [])
 
             //newcontributor.user_owner = UserFacebookID.user.id;
             //newcontributor.id_project = UserFacebookID.project_id;
-            $http.post('/contributorslist', arrayContributor).success(function(response) {
+            $http.post('/buddylist', arrayContributor).success(function(response) {
               console.log(response);
 
               if($scope.modalInstance)
@@ -76,14 +76,14 @@ angular.module("app.hackingzone" , [])
                 $scope.modalInstance.close();
               }
 
-              //refreshContributorsList();
+              refreshContributorsList();
             });
           };
         };
 
         $scope.removecontributor = function(id) {
           console.log(id);
-          $http.delete('/contributorslist/' + id).success(function(response) {
+          $http.delete('/cbuddylistowner/' + id).success(function(response) {
             refreshContributorsList();
           });
         };
