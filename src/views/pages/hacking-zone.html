@@ -108,5 +108,53 @@
       <!-- #end variation one -->
     </div>
     <!-- #end row -->
+    <script>
+
+$(function() {
+    $( "#sortable" ).sortable({
+      revert: true
+    });
+    $( "#draggable" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, li" ).disableSelection();
+  });
+
+
+/*  minimize */
+$("#button").click(function(){
+    if($(this).html() == "-"){
+        $(this).html("+");
+    }
+    else{
+        $(this).html("-");
+    }
+    $("#box").slideToggle();
+});
+
+/*  minimize */
+$("#button2").click(function(){
+    if($(this).html() == "-"){
+        $(this).html("+");
+    }
+    else{
+        $(this).html("-");
+    }
+    $("#box2").slideToggle();
+});
+
+  /// add new panel
+
+  function myAdd() {
+    //document.getElementById("demo").innerHTML = "Hello World";
+    alert("working");
+  }
+
+
+
+  </script>
+ 
   </div>
 </div>
