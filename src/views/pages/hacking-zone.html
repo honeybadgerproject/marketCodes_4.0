@@ -28,44 +28,61 @@
 					</div>
 				</div>
 			</div> <!-- #end sub-header -->
-      <!-- sub-header -->
-			<div class="col-md-6">
-				<h3 class="text-light">Resources</h3>
-				<div class="panel panel-lined panel-hovered panel-stacked mb20">
-					<div class="panel-body" style="padding: 0; margin: 5px 0">
-						<md-content style="height: 200px;">
-							<section>
-								<!--  <a  style="color: inherit" ng-click="openDialogResource()"> -->
-								<md-subheader class="md-primary"><a  style="color: inherit" ng-click="openDialogResource()">+ add new resource (github, asana, etc..)</a></md-subheader>
-								<md-list layout-padding>
-									<md-list-item class="md-3-line" ng-repeat="message in resourcelist">
-										<!--  alt="{{message.who}}" -->
-										<!--<img ng-src="{{message.face}}" class="md-avatar circle">-->
-										<div class="md-list-item-text">
-
-											<!--  <h4>{{message.who}}</h4> -->
-
-												<h3><div style="color: inherit" class="ion ion-android-delete" ng-click="removeresource(resource._id)"> &nbsp;&nbsp;{{message.resource_name}}</div></h3>
-
-										</div>
-									</md-list-item>
-								</md-list>
-							</section>
-						</md-content>
-					</div>
-				</div>
-			</div> <!-- #end sub-header -->
     </div> <!--  #end row tag -->
     <!-- row -->
     <!-- tab orientations -->
     <div class="row">
       <h3 class="text-uppercase small text-bold mb20 ml15">Tabs</h3>
       <!-- variation one -->
-      <div class="col-md-6 mb20">
+      <div class="col-md-12 mb20">
         <div class="page-tabs-lead mb20">
-          <h4 class="text-light">Public Notes  &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtab()">+ add new public tab</a></h4>
+          <h4 class="text-light">Public Notes  &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtab()">+ add resource</a></h4>
         </div>
-        <tabset class="tabs-vertical">
+        <!-- panels sortables -->
+        <div class="row" id="sortable">
+          <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcePanelList">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <!--   media heading  -->
+                <div class="media">
+                  <div class="media-left">
+                    <img class="media-object" src="evernote.jpg" alt="..." style=" width: 35px; height: 35px;">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading<div id="button">-</div></h4>
+                  </div>
+                </div>
+                <div id="box{{$index}}">
+                  <br>
+                  <p>jjsajadsbjsabjsadjj asjhjash jsj  jajsns;sajsndj kka'jksa'jk</p>
+                </div>
+                <!-- end media heading -->
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <!--   media heading  -->
+                <div class="media">
+                  <div class="media-left">
+                    <img class="media-object" src="slack.jpg" alt="..." style=" width: 35px; height: 35px;">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Media heading<div id="button2">-</div></h4>
+                  </div>
+                </div>
+                <div id="box2">
+                  <br>
+                  <p>jjsajadsbjsabjsadjj asjhjash jsj  jajsns;sajsndj kka'jksa'jk</p>
+                </div>
+                <!-- end media heading -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end panels sortables -->
+      <!--  <tabset class="tabs-vertical">
           <tab ng-repeat="tabs in notelist" heading="{{tabs.tab_name}}" ng-click="selectTab($index)">
             <div class="clearfix">
               <div class="panel panel-default panel-hovered panel-stacked mb20">
@@ -80,45 +97,15 @@
       							</div>
       						</form>
 
-      				</div> <!-- #end panel -->
+      				</div>
               <button type="submit" class="btn btn-pink btn-sm" ng-click="updatetab(tabs)">Save</button>
               <div style="color: inherit" class="right ion ion-android-delete" ng-click="removetab(tabs._id)"></div>
 
             </div>
           </tab>
-        </tabset>
+        </tabset> -->
       </div>
       <!-- #end variation one -->
-
-      <!-- variation two -->
-      <div class="col-md-6 mb20">
-        <div class="page-tabs-lead mb20">
-          <h4 class="text-light">Private Notes &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtabprivate()">+ add new private tab</a></h4>
-        </div>
-        <tabset class="tabs-vertical-right">
-          <tab ng-repeat="tabs in notelistprivate" heading="{{tabs.tab_name}}" ng-click="selectTabPrivate($index)">
-            <div class="clearfix">
-              <div class="panel panel-default panel-hovered panel-stacked mb20">
-
-      						<form class="form-inline" role="form">
-      							<div class="form-group">
-      								<div class="input-group">
-      									<span class="input-group-addon ion ion-compose"></span>
-      									<input type="text" class="form-control" placeholder="Enter tab name here..." ng-model="tabs.tab_name">
-      								</div>
-      							  <textarea ng-model="tabs.tab_content" columns="1" style="height:100%;min-height:300px;width:100%">{{tabs.tab_content}}</textarea>
-      							</div>
-      						</form>
-
-      				</div> <!-- #end panel -->
-              <button type="submit" class="btn btn-pink btn-sm" ng-click="updatetabprivate(tabs)">Save</button>
-              <div style="color: inherit" class="right ion ion-android-delete" ng-click="removetabprivate(tabs._id)"></div>
-
-            </div>
-          </tab>
-        </tabset>
-      </div>
-      <!-- #end variation two -->
     </div>
     <!-- #end row -->
   </div>
