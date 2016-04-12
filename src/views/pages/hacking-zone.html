@@ -2,14 +2,16 @@
   <div class="page-wrap">
     <div class="row">
       <!-- sub-header -->
-			<div class="col-md-6">
-				<a ng-click="addnewtab()"><h3 class="text-light">+ add a member</h3></a>
+			<div class="col-md-2">
+				<a ng-click="addnewtab()"><h3 class="text-light text-bold">+ Add a member</h3></a>
+      </div>
+      <div class="col-md-6"> <!-- subheader -->
 				<div class="panel panel-lined panel-hovered panel-stacked mb20">
 					<div class="panel-body" style="padding: 0; margin: 5px 0">
 						<md-content style="height: 200px;">
               <section>
 								<!--  <a  style="color: inherit" ng-click="openDialogResource()"> -->
-								<md-subheader class="md-primary"><a  style="color: inherit" ng-click="openDialogContributor()">+ add the email of your buddy</a></md-subheader>
+								<!--<md-subheader class="md-primary"><a  style="color: inherit" ng-click="openDialogContributor()">+ add the email of your buddy</a></md-subheader>-->
 								<md-list layout-padding>
 									<md-list-item class="md-3-line" ng-repeat="message in contributorlist">
 										<!--  alt="{{message.who}}" -->
