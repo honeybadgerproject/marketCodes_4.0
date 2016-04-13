@@ -8,7 +8,7 @@
 				<div class="dash-head clearfix mt15 mb20">
 					<div class="left">
 						<h4 class="mb5 text-light">Welcome to Market Codes</h4>
-						<p class="small"><strong>AngularJS</strong> admin app</p>
+						<p class="small"><strong>Sell, Find and Collaborate</strong></p>
 					</div>
 					<div class="right mt10">
 						<span sparkline type="bar" bar-color="#4CAF50">10,8,4,10,7,0,3,4,6,5,9,12,9</span>
@@ -48,7 +48,9 @@
 					<div ng-class="project.phase">
 						<p class="mt0 mb0 left"><a ng-click="select(project._id)" href="#/pages/hacking-zone" style="color: inherit">Hacking Zone</a></p>
 						<!--  <span sparkline class="right" type="bar" bar-color="#fff" width="1.15em" height="1.15em">10,8,9,3,5,8,5</span>-->
-						<div style="color: inherit" class="right ion ion-android-delete" ng-click="remove(project._id)"></div>
+						<div style="color: inherit" class="right ion ion-gear-b">
+							<a  style="color: inherit" ng-click="select(project._id)" href="#/editproject"></a>
+						</div><!--"remove(project._id)"-->
 					</div>
 				</div>
 			</div>
