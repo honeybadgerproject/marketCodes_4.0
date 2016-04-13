@@ -18,9 +18,9 @@ angular.module("app.hackingzone" , [])
 
         $scope.resourcePanelList = { number1: '1', number2: '2', number3: '3', number4:'4',number5:'5' };
 
-        $scope.person = {};
+        $scope.resource = {};
     		// demo one
-    		$scope.people = [
+    		$scope.resourceTypes = [
     		    { name: 'github',     logo: 'images/resource/github.jpg'},
     		    { name: 'asana',      logo: 'images/resource/asana.jpg'},
     		    { name: 'bitbucket',  logo: 'images/resource/bitbucket.jpg'},
