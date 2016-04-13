@@ -18,6 +18,16 @@ angular.module("app.hackingzone" , [])
 
         $scope.resourcePanelList = { number1: '1', number2: '2', number3: '3', number4:'4',number5:'5' };
 
+        $scope.person = {};
+    		// demo one
+    		$scope.people = [
+    		    { name: 'github',     logo: 'images/resource/github.jpg'},
+    		    { name: 'asana',      logo: 'images/resource/asana.jpg'},
+    		    { name: 'bitbucket',  logo: 'images/resource/bitbucket.jpg'},
+    		    { name: 'slack',      logo: 'images/resource/slack.jpg'},
+    		    { name: 'evernote',   logo: 'images/resource/evernote.jpg'},
+    		];
+
         /***** contributor section  *********/
 
         var refreshContributorsList = function() {
