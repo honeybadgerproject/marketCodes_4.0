@@ -7,35 +7,89 @@
 
 
 	<div class="page-wrap">
-    <div class="row" ng-controller="refreshProjectListCtrl">
-      <div class="col-md-3">
+    <div class="row">
+			<div class="col-md-3">
         <nav class="email-nav clearfix">
-          <div class="xsmall nav-text-lead text-uppercase text-muted mb10">Action</div>
+          <div class="xsmall nav-text-lead text-uppercase text-muted mb10">Project Settings</div>
           <ul class="list-unstyled navigation mb15">
-            <li class="active"><a href="javascript:;"><span class="ion ion-android-close"></span>Return to Dashboard</a></li>
+            <li class="active"><a ng-click="update()" href="#/dashboard"><span class="ion ion-paper-airplane"></span>Update</a></li>
+            <li><a ng-click="remove(project._id)" href="#/dashboard"><span class="ion ion-android-delete">Delete</span>Delete</a></li>
           </ul>
         </nav>
       </div>
 
-      <!-- #start mini boxes -->
-      <div class="col-md-6 col-sm-6" ng-init="refreshProjectList()">
-        <div ng-repeat="project in projectlist" class="panel panel-default mb20 mini-box panel-hovered">
-          <div class="panel-body">
-            <div class="clearfix">
-              <div class="info left">
-                <h4 class="mt0 text-primary text-bold">$30,200</h4>
-                <h5 class="text-light mb0">All Earnings</h5>
-              </div>
-              <div class="right ion ion-ios-pulse icon"></div>
-            </div>
-          </div>
-          <div class="panel-footer clearfix panel-footer-sm panel-footer-primary">
-            <p class="mt0 mb0 left">Edit</p>
-            <span sparkline class="right" type="bar" bar-color="#fff" width="1.15em" height="1.15em">10,8,9,3,5,8,5</span>
-          </div>
-        </div>
-      </div>   <!-- #col -->
-      <!-- #end mini boxes -->
+
+			      <!-- input form -->
+			      <div class="col-md-9">
+			        <div class="panel panel-lined panel-hovered panel-stacked mb20">
+			          <!--<div class="panel-heading">Basic Usage</div>-->
+			          <div class="panel-body" ng-controller="MdInputDemo">
+			            <md-content md-theme="docs-dark" layout-padding>
+			              <form name="userForm">
+			              	<!-- title field -->
+			      			<div>
+			        			<label>proyect clasification:</label>
+			        			<br><br>
+			        			<div class="radio">
+			          				<label>
+			            				<input type="radio" name="optionsRadios" value="1" ng-model="newproject.classification" ng-vale="1">
+			            					1. In progress and with opotunity to participate.
+			          				</label>
+			        			</div>
+			        			<br>
+			        			<div class="radio">
+			          				<label>
+			            				<input type="radio" name="optionsRadios" value="2" ng-model="newproject.classification" ng-vale="2">
+			            					2. Finished but not mature and with opotunity to add your own work.
+			          				</label>
+			        			</div>
+			        			<br>
+			        			<div class="radio">
+			          				<label>
+			            				<input type="radio" name="optionsRadios" value="3" ng-model="newproject.classification" ng-vale="3">
+			            					3. Finished and mature project, ready to use.
+			          				</label>
+			        			</div>
+
+			      			</div>
+									<br>
+			                <div layout layout-sm="column">
+			                  <md-input-container>
+			                    <label>Title</label>
+			                    <input ng-model="newproject.title" md-maxlength="50">
+			                  </md-input-container>
+			                </div>
+			                <div layout layout-sm="column">
+			                  <md-input-container style="width:80%">
+			                    <label>Overview</label>
+			                    <textarea ng-model="newproject.overview" columns="1" md-maxlength="150"></textarea> <!-- disable -->
+			                  </md-input-container>
+			                </div>
+			                <div layout layout-sm="column">
+			                  <md-input-container flex>
+			                    <label>Content</label>
+			                    <textarea ng-model="newproject.content" columns="1" md-maxlength="350"></textarea>
+			                  </md-input-container>
+			                </div>
+											<div class="ui-radio ui-radio-pink">
+												<label class="ui-radio-inline">
+													<input type="radio" ng-model="newproject.price" value="none">
+													<span>Not Rated</span>
+												</label>
+												<label class="ui-radio-inline">
+													<input type="radio" ng-model="newproject.price" value="free">
+													<span>Free</span>
+												</label>
+												<label class="ui-radio-inline">
+													<input type="radio" ng-model="newproject.price" value="cost">
+													<span>Price $:<input ng-model="newproject.price"></span>
+												</label>
+											</div>
+			              </form>
+			            </md-content>
+			          </div>
+			        </div>
+			      </div> <!-- #col -->
     </div> <!-- row -->
 
   </div> <!-- #end page-wrap -->
