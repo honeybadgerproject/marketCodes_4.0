@@ -180,8 +180,8 @@ angular.module("app.hackingzone" , [])
         $scope.refreshHackingZoneList = function() {
             refreshResourceList();
             refreshContributorsList();
-            refreshNoteList();
-            refreshNoteListPrivate();
+          //  refreshNoteList();
+          //  refreshNoteListPrivate();
 
         };
 
