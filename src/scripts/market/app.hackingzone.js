@@ -16,7 +16,7 @@ angular.module("app.hackingzone" , [])
         $scope.collaborator = {};
         $scope.resource = {};
 
-        $scope.resourcePanelList = { number1: '1', number2: '2', number3: '3', number4:'4',number5:'5' };
+      //  $scope.resourcePanelList = { number1: '1', number2: '2', number3: '3', number4:'4',number5:'5' };
 
         $scope.resource = {};
     		// demo one

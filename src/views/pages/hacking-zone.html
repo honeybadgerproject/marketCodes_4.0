@@ -42,21 +42,21 @@
         </div>-->
         <!-- panels sortables -->
         <div class="row" id="sortable">
-          <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcePanelList">
+          <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
             <div class="panel panel-default">
               <div class="panel-body">
                 <!--   media heading  -->
                 <div class="media">
                   <div class="media-left">
-                    <img class="media-object" src="images/resource/evernote.jpg" alt="..." style=" width: 35px; height: 35px;">
+                    <img class="media-object" src="{{resourcePanel.resource_logo}}" alt="..." style=" width: 35px; height: 35px;">
                   </div>
                   <div class="media-body">
-                    <h4 class="media-heading">Media heading<div id="button" style=" width: 25px;height: 23px;float:right;cursor:pointer;">-</div></h4>
+                    <h4 class="media-heading">{{resourcePanel.resource_title}}<div id="button" style=" width: 25px;height: 23px;float:right;cursor:pointer;">-</div></h4>
                   </div>
                 </div>
                 <div id="box{{$index}}">
                   <br>
-                  <p>jjsajadsbjsabjsadjj asjhjash jsj  jajsns;sajsndj kka'jksa'jk</p>
+                  <p>{{resourcePanel.resource_target}}</p>
                 </div>
                 <!-- end media heading -->
               </div>
