@@ -234,7 +234,7 @@
 
 		// calendar plugin
 		// "scripts/lazyload/apps/calendarDemo.js"
-		$routeProvider.when("/calendar", {
+		$routeProvider.when("/videos", {
 			templateUrl: "views/calendar.html",
 			controller: "CalendarDemoCtrl",
 			resolve: {
@@ -252,7 +252,7 @@
 
 
 		// Material Controller (For demo)
-		$routeProvider.when("/material", {
+		$routeProvider.when("/profile", {
 			templateUrl: "views/material.html",
 			resolve: {
 				deps: ["$ocLazyLoad", function(a) {

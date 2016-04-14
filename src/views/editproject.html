@@ -13,7 +13,7 @@
           <div class="xsmall nav-text-lead text-uppercase text-muted mb10">Project Settings</div>
           <ul class="list-unstyled navigation mb15">
             <li class="active"><a ng-click="update()" href="#/dashboard"><span class="ion ion-paper-airplane"></span>Update</a></li>
-            <li><a ng-click="remove(project._id)" href="#/dashboard"><span class="ion ion-android-delete">Delete</span>Delete</a></li>
+            <li><a ng-click="remove(project._id)" href="#/dashboard"><span class="ion ion-android-delete"></span>Delete</a></li>
           </ul>
         </nav>
       </div>
@@ -32,21 +32,21 @@
 			        			<br><br>
 			        			<div class="radio">
 			          				<label>
-			            				<input type="radio" name="optionsRadios" value="1" ng-model="newproject.classification" ng-vale="1">
+			            				<input type="radio" name="optionsRadios" value="1" ng-model="project.classification" ng-vale="1">
 			            					1. In progress and with opotunity to participate.
 			          				</label>
 			        			</div>
 			        			<br>
 			        			<div class="radio">
 			          				<label>
-			            				<input type="radio" name="optionsRadios" value="2" ng-model="newproject.classification" ng-vale="2">
+			            				<input type="radio" name="optionsRadios" value="2" ng-model="project.classification" ng-vale="2">
 			            					2. Finished but not mature and with opotunity to add your own work.
 			          				</label>
 			        			</div>
 			        			<br>
 			        			<div class="radio">
 			          				<label>
-			            				<input type="radio" name="optionsRadios" value="3" ng-model="newproject.classification" ng-vale="3">
+			            				<input type="radio" name="optionsRadios" value="3" ng-model="project.classification" ng-vale="3">
 			            					3. Finished and mature project, ready to use.
 			          				</label>
 			        			</div>
@@ -56,33 +56,33 @@
 			                <div layout layout-sm="column">
 			                  <md-input-container>
 			                    <label>Title</label>
-			                    <input ng-model="newproject.title" md-maxlength="50">
+			                    <input ng-model="project.title" md-maxlength="50">
 			                  </md-input-container>
 			                </div>
 			                <div layout layout-sm="column">
 			                  <md-input-container style="width:80%">
 			                    <label>Overview</label>
-			                    <textarea ng-model="newproject.overview" columns="1" md-maxlength="150"></textarea> <!-- disable -->
+			                    <textarea ng-model="project.overview" columns="1" md-maxlength="150"></textarea> <!-- disable -->
 			                  </md-input-container>
 			                </div>
 			                <div layout layout-sm="column">
 			                  <md-input-container flex>
 			                    <label>Content</label>
-			                    <textarea ng-model="newproject.content" columns="1" md-maxlength="350"></textarea>
+			                    <textarea ng-model="project.content" columns="1" md-maxlength="350"></textarea>
 			                  </md-input-container>
 			                </div>
 											<div class="ui-radio ui-radio-pink">
 												<label class="ui-radio-inline">
-													<input type="radio" ng-model="newproject.price" value="none">
+													<input type="radio" ng-model="project.price" value="none">
 													<span>Not Rated</span>
 												</label>
 												<label class="ui-radio-inline">
-													<input type="radio" ng-model="newproject.price" value="free">
+													<input type="radio" ng-model="project.price" value="free">
 													<span>Free</span>
 												</label>
 												<label class="ui-radio-inline">
-													<input type="radio" ng-model="newproject.price" value="cost">
-													<span>Price $:<input ng-model="newproject.price"></span>
+													<input type="radio" ng-model="project.price" value="cost">
+													<span>Price $:<input ng-model="project.price"></span>
 												</label>
 											</div>
 			              </form>
