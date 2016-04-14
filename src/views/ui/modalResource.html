@@ -6,18 +6,21 @@
 		<label for="resource">{resource}:</label>
 		<div class="input-group">
 		 	<div class="input-group-btn">
-			 	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></button>
-			 		<ul class="dropdown-menu">
-				 		<li><a ng-model="resource.resource_name" value='github'>Github</a></li>
-						<li><a ng-model="resource.resource_name" value='slack'>Slack</a></li>
-				 		<li><a ng-model="resource.resource_name" value='trello'>Trello</a></li>
-				 		<li><a ng-model="resource.resource_name" value='evernote'>Evernote</a></li>
-				 		<li><a ng-model="resource.resource_name" value='asana'>Asana</a></li>
-						<li><a ng-model="resource.resource_name" value='bitbucket'>Bitbucket</a></li>
-						<li><a ng-model="resource.resource_name" value='blank'>Blank</a></li>
+			 <!--	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></button> -->
+			 <div class="dropdown">
+			 <button class="btn btn-primary dropdown-toggle" type="button" data-toogle="dropdown">Type<span class="caret"></span></button>
+					<ul class="dropdown-menu">
+				 		<li><a ng-model="resource.resource_name" value='github' href="#">Github</a></li>
+						<li><a ng-model="resource.resource_name" value='slack' href="#">Slack</a></li>
+				 		<li><a ng-model="resource.resource_name" value='trello'href="#">Trello</a></li>
+				 		<li><a ng-model="resource.resource_name" value='evernote' href="#">Evernote</a></li>
+				 		<li><a ng-model="resource.resource_name" value='asana' href="#">Asana</a></li>
+						<li><a ng-model="resource.resource_name" value='bitbucket' href="#">Bitbucket</a></li>
+						<li><a ng-model="resource.resource_name" value='blank' href="#">Blank</a></li>
 			 		</ul>
-		 		</div><!-- /btn-group -->
-		 		<input type="text" class="form-control" aria-label="..." value="{{resource.resource_name}}">
+				</div>
+		 	</div><!-- /btn-group -->
+		 	<input type="text" class="form-control" aria-label="..." value="{{resource.resource_name}}">
 	 		</div><!-- /input-group -->
 			<br>
 			<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
