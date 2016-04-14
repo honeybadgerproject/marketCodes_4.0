@@ -51,10 +51,12 @@
                     <img class="media-object" src="{{resourcePanel.resource_logo}}" alt="..." style=" width: 35px; height: 35px;">
                   </div>
                   <div class="media-body">
-                    <h4 class="media-heading">{{resourcePanel.resource_title}}<div id="button" ng-click="item.isVisible = !item.isVisible;" style=" width: 25px;height: 23px;float:right;cursor:pointer;">-</div></h4>
+                    <h4 class="media-heading">{{resourcePanel.resource_title}}
+                      <div id="buttonPanel{{$index}}"  ng-click="show_me($index)" style=" width: 25px;height: 23px;float:right;cursor:pointer;">-</div>
+                    </h4>
                   </div>
                 </div>
-                <div id="box{{$index}}" ng-show="item.show" ng-animate="'animate'" style="display:none">
+                <div id="boxPanel{{$index}}" ng-show="item.show" ng-animate="'animate'" style="display:none">
                   <br>
                   <p>{{resourcePanel.resource_target}}</p>
                 </div>

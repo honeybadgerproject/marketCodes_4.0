@@ -3,14 +3,6 @@
 
 angular.module("app.hackingzone" , [])
 
-.directive('toggle', function() {
-    return function(scope, elem, attrs) {
-        scope.$on('event:toggle', function() {
-            elem.slideToggle();
-        });
-    };
-})
-
 
 // Root Controller
 .controller("hackingCtrl", ["$scope", "$http", "$modal","UserFacebookID",
@@ -38,8 +30,17 @@ angular.module("app.hackingzone" , [])
 
         /*******  toggle   ***/
 
-        $scope.toggle = function() {
-          $scope.$broadcast('event:toggle');
+        $scope.show_me = function (index) {
+      //  var box = event.target.parentElement;
+        var article = angular.element(box).find('#boxPanel'+ index);
+        var articles = angular.element(box).find('#buttonPanel'+ index);
+        // if already shown, hide it
+        if (article.hasClass('show'))
+            article.removeClass('show')
+        else // elsif not shown, hide all and show it
+        {
+            articles.removeClass('show');
+            article.addClass('show');
         }
 
         /***** contributor section  *********/
