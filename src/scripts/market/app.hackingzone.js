@@ -32,8 +32,8 @@ angular.module("app.hackingzone" , [])
 
         $scope.show_me = function (index) {
       //  var box = event.target.parentElement;
-        var article = angular.element(box).find('#boxPanel'+ index);
-        var articles = angular.element(box).find('#buttonPanel'+ index);
+        var article = angular.element('.sortable').find('#boxPanel'+ index);
+        var articles = angular.element('.sortable').find('#buttonPanel'+ index);
         // if already shown, hide it
         if (article.hasClass('show'))
             article.removeClass('show')
@@ -42,6 +42,7 @@ angular.module("app.hackingzone" , [])
             articles.removeClass('show');
             article.addClass('show');
         }
+      }
 
         /***** contributor section  *********/
 
