@@ -9,6 +9,8 @@ angular.module("app.ctrls", [])
 	var mm = window.matchMedia("(max-width: 767px)");
 	$rs.isMobile = mm.matches ? true: false;
 
+		$scope.facebookProfile = {};
+
 	$rs.safeApply = function(fn) {
 		var phase = this.$root.$$phase;
 		if(phase == '$apply' || phase == '$digest') {
@@ -111,14 +113,18 @@ angular.module("app.ctrls", [])
 	};
 
 	/***** nav bar ***/
-	$scope.facebookProfile = {
-            name: UserFacebookID.user.name,
-            picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
-            role: 'wizard'
-          }
 
-          console.log(">>>>>> facebookProfile");
-          console.log($scope.facebookProfile);
+	$scope.$apply(function () {
+		$scope.facebookProfile = {
+							name: UserFacebookID.user.name,
+							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
+							role: 'wizard'
+						}
+
+						console.log(">>>>>> facebookProfile");
+						console.log($scope.facebookProfile);
+        });
+
 
 
 }])
