@@ -202,6 +202,9 @@ angular.module("app.login" , [])
             role: 'wizard'
           }
 
+          console.log(">>>>>> facebookProfile");
+          console.log(facebookProfile);
+
           console.log(">>>>>>  1. insert user");
           console.log(mainuserinfo);
 
