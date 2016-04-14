@@ -65,6 +65,8 @@ angular.module("app.login" , [])
     $scope.byebye = false;
     $scope.salutation = false;
 
+    $scope.facebookProfile = {};
+
 
     ///
     /// Watch for Facebook to be ready.
@@ -192,6 +194,12 @@ angular.module("app.login" , [])
             user_name: UserFacebookID.user.name,
             user_email: UserFacebookID.email,
             user_owner: UserFacebookID.user.id
+          }
+
+          $scope.facebookProfile = {
+            name: UserFacebookID.user.name,
+            picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
+            role: 'wizard'
           }
 
           console.log(">>>>>>  1. insert user");
