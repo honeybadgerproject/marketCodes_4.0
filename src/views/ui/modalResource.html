@@ -4,12 +4,7 @@
 	</div>
 	<div class="modal-body">
 		<label for="resource">{resource}:</label>
-			<br>
-			<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
-			<br>
-			<input type="text" class="form-control" placeholder="target definition" ng-model="resource.target_definition">
-			<br>
-			<div class="input-group">
+		<div class="input-group">
 		 	<div class="input-group-btn">
 			 	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></button>
 			 		<ul class="dropdown-menu">
@@ -25,8 +20,9 @@
 		 		<input type="text" class="form-control" aria-label="..." value="{{resource.resource_name}}">
 	 		</div><!-- /input-group -->
 			<br>
+			<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
 			<br>
-			<br>
+			<input type="text" class="form-control" placeholder="target definition" ng-model="resource.target_definition">
 			<br>
 
   </div>
