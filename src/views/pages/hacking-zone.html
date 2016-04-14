@@ -52,11 +52,11 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">{{resourcePanel.resource_title}}
-                      <div id="buttonPanel{{$index}}"  ng-click="toshow={{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;">-</div>
+                      <div id="buttonPanel"  ng-click="toshow = {{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;">-</div>
                     </h4>
                   </div>
                 </div>
-                <div id="boxPanel{{$index}}"  ng-show="toshow == {{$index}}" ng-animate="'animate'">
+                <div id="boxPanel"  ng-show="toshow == {{$index}}" ng-animate="animate">
                   <br>
                   <p>{{resourcePanel.resource_target}}</p>
                 </div>
