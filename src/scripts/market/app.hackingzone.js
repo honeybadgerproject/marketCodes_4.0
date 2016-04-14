@@ -3,6 +3,14 @@
 
 angular.module("app.hackingzone" , [])
 
+.directive('toggle', function() {
+    return function(scope, elem, attrs) {
+        scope.$on('event:toggle', function() {
+            elem.slideToggle();
+        });
+    };
+})
+
 
 // Root Controller
 .controller("hackingCtrl", ["$scope", "$http", "$modal","UserFacebookID",
@@ -27,6 +35,12 @@ angular.module("app.hackingzone" , [])
     		    { name: 'slack',      logo: 'images/resource/slack.jpg'},
     		    { name: 'evernote',   logo: 'images/resource/evernote.jpg'},
     		];
+
+        /*******  toggle   ***/
+
+        $scope.toggle = function() {
+          $scope.$broadcast('event:toggle');
+        }
 
         /***** contributor section  *********/
 
@@ -145,7 +159,7 @@ angular.module("app.hackingzone" , [])
             id_project: UserFacebookID.project_id,
             resource_logo:  newresource.resource_logo,
             resource_title: newresource.resource_title,
-            resource_target: newresource.resource_target
+            resource_target: resource.target_definition
         	}
         	console.log(resource_project);
             //newresource.user_owner = UserFacebookID.user.id;
@@ -156,7 +170,7 @@ angular.module("app.hackingzone" , [])
               {
                   $scope.modalInstance.close();
               }
-              refreshResourceZoneList();
+              refreshResourceList();
             });
           }
         };
