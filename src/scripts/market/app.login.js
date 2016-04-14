@@ -203,7 +203,7 @@ angular.module("app.login" , [])
           }
 
           console.log(">>>>>> facebookProfile");
-          console.log(facebookProfile);
+          console.log($scope.facebookProfile);
 
           console.log(">>>>>>  1. insert user");
           console.log(mainuserinfo);
