@@ -28,21 +28,7 @@ angular.module("app.hackingzone" , [])
     		    { name: 'evernote',   logo: 'images/resource/evernote.jpg'},
     		];
 
-        /*******  toggle   ***/
-
-/*        $scope.show_me = function (index) {
-      //  var box = event.target.parentElement;
-        var article = angular.element('.sortable').find('#boxPanel'+ index);
-        var articles = angular.element('.sortable').find('#buttonPanel'+ index);
-        // if already shown, hide it
-        if (article.hasClass('show'))
-            article.removeClass('show')
-        else // elsif not shown, hide all and show it
-        {
-            articles.removeClass('show');
-            article.addClass('show');
-        }
-      }*/
+        
 
         /***** contributor section  *********/
 
