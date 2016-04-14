@@ -110,6 +110,15 @@ angular.module("app.ctrls", [])
 		$scope.onThemeActive();
 	};
 
+	/***** nav bar ***/
+	$scope.facebookProfile = {
+            name: UserFacebookID.user.name,
+            picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
+            role: 'wizard'
+          }
+
+          console.log(">>>>>> facebookProfile");
+          console.log($scope.facebookProfile);
 
 
 }])
