@@ -28,7 +28,17 @@ angular.module("app.hackingzone" , [])
     		    { name: 'evernote',   logo: 'images/resource/evernote.jpg'},
     		];
 
-        
+      //  var clickedIndex[30];
+        /******* show and hidde panel ******/
+      /*  $scope.showPanel = function(index) {
+          if(clickedIndex[index] == 0) {
+
+          }
+          else {
+
+          }
+        } */
+
 
         /***** contributor section  *********/
 
@@ -147,7 +157,7 @@ angular.module("app.hackingzone" , [])
             id_project: UserFacebookID.project_id,
             resource_logo:  newresource.resource_logo,
             resource_title: newresource.resource_title,
-            resource_target: resource.target_definition
+            resource_target: newresource.resource_target
         	}
         	console.log(resource_project);
             //newresource.user_owner = UserFacebookID.user.id;
