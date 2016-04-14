@@ -5,7 +5,7 @@
 angular.module("app.ctrls", [])
 
 // Root Controller
-.controller("AppCtrl", ["$rootScope", "$scope", "$timeout", function($rs, $scope, $timeout) {
+.controller("AppCtrl", ["$rootScope", "$scope", "$timeout", "UserFacebookID", function($rs, $scope, $timeout, UserFacebookID) {
 	var mm = window.matchMedia("(max-width: 767px)");
 	$rs.isMobile = mm.matches ? true: false;
 
