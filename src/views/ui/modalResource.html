@@ -5,9 +5,9 @@
 	<div class="modal-body">
 		<label for="resource">{resource}:</label>
 		<div class="input-group">
-		 	<div class="input-group-btn">
+		 <!--	<div class="input-group-btn">-->
 			 <!--	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></button> -->
-			 <div class="dropdown">
+		<!--	 <div class="dropdown">
 			 <button class="btn btn-primary dropdown-toggle" type="button" data-toogle="dropdown">Type<span class="caret"></span></button>
 					<ul class="dropdown-menu">
 				 		<li><a ng-model="resource.resource_name" value='github' href="#">Github</a></li>
@@ -19,8 +19,8 @@
 						<li><a ng-model="resource.resource_name" value='blank' href="#">Blank</a></li>
 			 		</ul>
 				</div>
-		 	</div><!-- /btn-group -->
-		 	<input type="text" class="form-control" aria-label="..." value="{{resource.resource_name}}">
+		 	</div>--><!-- /btn-group -->
+		 	<input type="text" class="form-control" aria-label="..." ng-model="resource.resource_name">
 	 		</div><!-- /input-group -->
 			<br>
 			<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
