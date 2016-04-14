@@ -122,10 +122,30 @@ angular.module("app.hackingzone" , [])
           if(UserFacebookID.user.id) {
         	console.log(UserFacebookID.user.id);
         	console.log(UserFacebookID.project_id);
+
+        /*  $scope.resourceTypes = [
+              { name: 'github',     logo: 'images/resource/github.jpg'},
+              { name: 'asana',      logo: 'images/resource/asana.jpg'},
+              { name: 'bitbucket',  logo: 'images/resource/bitbucket.jpg'},
+              { name: 'slack',      logo: 'images/resource/slack.jpg'},
+              { name: 'evernote',   logo: 'images/resource/evernote.jpg'},
+          ];*/
+
+          if(newresource.resource_name == 'github') newresource.resource_logo = $scope.resourceTypes[0].logo;
+          else if(newresource.resource_name == 'asana')  newresource.resource_logo = $scope.resourceTypes[1].logo;
+          else if(newresource.resource_name == 'bitbucket')  newresource.resource_logo = $scope.resourceTypes[2].logo;
+          else if(newresource.resource_name == 'slack')  newresource.resource_logo = $scope.resourceTypes[3].logo;
+          else if(newresource.resource_name == 'evernote')  newresource.resource_logo = $scope.resourceTypes[4].logo;
+          else  newresource.resource_logo = 'blank';
+
+
         	var resource_project = {
         		resource_name: newresource.resource_name,
         		user_owner: UserFacebookID.user.id,
-            	id_project: UserFacebookID.project_id
+            id_project: UserFacebookID.project_id,
+            resource_logo:  newresource.resource_logo,
+            resource_title: newresource.resource_title,
+            resource_target: newresource.resource_target
         	}
         	console.log(resource_project);
             //newresource.user_owner = UserFacebookID.user.id;

@@ -4,21 +4,26 @@
 	</div>
 	<div class="modal-body">
 		<label for="resource">{resource}:</label>
-	<!--	<form role="form" class="form-horizontal">
-			
-			<div class="form-group">
-				<ui-select ng-model="resource.selected" search-enabled="true">
-					<ui-select-match placeholder="select a type">{{$select.selected.name}}</ui-select-match>
-					<ui-select-choices repeat="resourceType in resourceTypes">
-						<div ng-bind-html="resourceType.name "></div>
-					</ui-select-choices>
-				</ui-select>
-			</div>
+			<div class="input-group">
+		 	<div class="input-group-btn">
+			 	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></button>
+			 		<ul class="dropdown-menu">
+				 		<li><a ng-model="resource.resource_name" value='github'>Github</a></li>
+						<li><a ng-model="resource.resource_name" value='slack'>Slack</a></li>
+				 		<li><a ng-model="resource.resource_name" value='trello'>Trello</a></li>
+				 		<li><a ng-model="resource.resource_name" value='evernote'>Evernote</a></li>
+				 		<li><a ng-model="resource.resource_name" value='asana'>Asana</a></li>
+						<li><a ng-model="resource.resource_name" value='bitbucket'>Bitbucket</a></li>
+						<li><a ng-model="resource.resource_name" value='blank'>Blank</a></li>
+			 		</ul>
+		 		</div><!-- /btn-group -->
+		 		<input type="text" class="form-control" aria-label="..." value="{{resource.resource_name}}" disabled>
+	 		</div><!-- /input-group -->
 			<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
 			<br>
 			<input type="text" class="form-control" placeholder="target definition" ng-model="resource.target_definition">
 			<br>
-		</form>-->
+
   </div>
   <div class="modal-footer">
       <button class="btn btn-primary" ng-click="addnewresource(resource)" ng-click="$close()">OK</button>
