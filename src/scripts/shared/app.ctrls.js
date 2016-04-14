@@ -114,7 +114,7 @@ angular.module("app.ctrls", [])
 
 	/***** nav bar ***/
 
-	$scope.$apply(function () {
+	$scope.$watch('UserFacebookID.user.name', function() {
 		$scope.facebookProfile = {
 							name: UserFacebookID.user.name,
 							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
@@ -123,7 +123,10 @@ angular.module("app.ctrls", [])
 
 						console.log(">>>>>> facebookProfile");
 						console.log($scope.facebookProfile);
-        });
+
+	});
+
+
 
 
 
