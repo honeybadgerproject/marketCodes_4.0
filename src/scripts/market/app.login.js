@@ -45,7 +45,7 @@ angular.module("app.login" , [])
 
 
 // Root Controller
-.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" , "facebookProfile"
+.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" , "facebookProfile",
         function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID, facebookProfile) {
 
   //'loginCtrl', function($scope, $http, $timeout, $state, $cookies, $cookieStore, $window, Facebook, UserFacebookID
