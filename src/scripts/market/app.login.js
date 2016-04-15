@@ -213,6 +213,7 @@ angular.module("app.login" , [])
 
             $scope.facebookProfile.picture = pictureFacebook;
             console.log($scope.facebookProfile.picture);
+            $scope.facebookProfile.name = nameFacebook;
 
           $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
             console.log(response);
