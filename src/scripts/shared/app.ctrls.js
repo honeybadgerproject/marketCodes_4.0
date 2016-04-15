@@ -4,6 +4,12 @@
 
 angular.module("app.ctrls", [])
 
+.factory('facebookProfile', function() {
+		return {
+				refreshProfileFacebook();
+		};
+})
+
 // Root Controller
 .controller("AppCtrl", ["$rootScope", "$scope", "$timeout", "UserFacebookID", function($rs, $scope, $timeout, UserFacebookID) {
 	var mm = window.matchMedia("(max-width: 767px)");
@@ -116,19 +122,20 @@ angular.module("app.ctrls", [])
 	/***** nav bar ***/
 
 	//// >> on for emit
-	$scope.$on('refreshProfileFacebook', function () {
+	/*$scope.$on('refreshProfileFacebook', function () {
 		console.log("////>> called by emit " );
 		refreshProfileFacebook();
-	});
+	});*/
 
 	var refreshProfileFacebook = function() {
+		console.log(">>>>>> facebookProfile 1");
 		$scope.facebookProfile = {
 							name: UserFacebookID.user.name,
 							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
 							role: 'wizard'
 						}
 
-						console.log(">>>>>> facebookProfile");
+						console.log(">>>>>> facebookProfile 2");
 						console.log($scope.facebookProfile);
 	};
 

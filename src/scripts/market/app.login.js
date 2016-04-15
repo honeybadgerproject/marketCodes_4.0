@@ -45,8 +45,8 @@ angular.module("app.login" , [])
 
 
 // Root Controller
-.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" ,
-        function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID) {
+.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" , "facebookProfile"
+        function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID, facebookProfile) {
 
   //'loginCtrl', function($scope, $http, $timeout, $state, $cookies, $cookieStore, $window, Facebook, UserFacebookID
   //"$cookies", "$cookieStore",
@@ -197,7 +197,8 @@ angular.module("app.login" , [])
           }
 
           // call profileFacebook from nav bar
-          refreshProfileFacebook();
+        //  refreshProfileFacebook();
+          facebookProfile.refreshProfileFacebook();
 
 
           console.log(">>>>>>  1. insert user");
@@ -236,10 +237,10 @@ angular.module("app.login" , [])
     };
 
     ///// >>> emit
-     var refreshProfileFacebook = function(){
+  /*   var refreshProfileFacebook = function(){
       console.log("/////>>>> refreshProfileFacebook in emit");
       $scope.$emit('refreshProfileFacebook', {});// res - your data
-    };
+    };*/
 
     ///
     /// Logout
