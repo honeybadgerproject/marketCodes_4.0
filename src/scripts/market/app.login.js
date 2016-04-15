@@ -180,6 +180,9 @@ angular.module("app.login" , [])
 
         // call email
         var email;
+        var pictureFacebook;
+        var nameFacebook;
+        var roleFacebook = 'wizard';
         $http.get("https://graph.facebook.com/v2.2/me", {params: {access_token: UserFacebookID.access_token, fields: "email", format: "json" }}).then(function(result) {
           console.log(result);
           console.log(result.data.email);
@@ -197,21 +200,22 @@ angular.module("app.login" , [])
           }
 
           console.log(">>>>>> facebookProfile 1");
-      		$scope.facebookProfile = {
-      							name: UserFacebookID.user.name,
-      							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
-      							role: 'wizard'
-      		}
+          pictureFacebook = 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small';
+          nameFacebook =  UserFacebookID.user.name;
+
 
       		console.log(">>>>>> facebookProfile 2");
-      		console.log($scope.facebookProfile);
+      		console.log(pictureFacebook);
 
 
           console.log(">>>>>>  1. insert user");
           console.log(mainuserinfo);
 
+            $scope.facebookProfile.picture = pictureFacebook;
+            console.log(mainuserinfo);
+
           $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
-            console.log(response);
+            console.log($scope.facebookProfile.picture);
           });
           //********* end insert user  ******/
         }, function(error) {
