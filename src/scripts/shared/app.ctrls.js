@@ -122,7 +122,7 @@ angular.module("app.ctrls", [])
 		 function(newVal) {
 			 if (newVal) {
 			 	console.log(">>>> new value");
-				console.log(newValue);
+				console.log(newVal);
 			}
 		 }
 	);
