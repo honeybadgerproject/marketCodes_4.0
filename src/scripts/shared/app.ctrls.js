@@ -114,7 +114,7 @@ angular.module("app.ctrls", [])
 
 	/***** nav bar ***/
 
-	scope.$watch('UserFacebookID', function(newValue, oldValue) {
+	$scope.$watch('UserFacebookID', function(newValue, oldValue) {
 		console.log(">>>> new value");
 		console.log(newValue);
 		console.log(">>>> old value");
