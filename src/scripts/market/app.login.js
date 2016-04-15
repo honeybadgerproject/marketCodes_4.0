@@ -197,7 +197,7 @@ angular.module("app.login" , [])
           }
 
           // call profileFacebook from nav bar
-          refreshProfileFacebook()
+          //refreshProfileFacebook()
           ///// >>> emit
            var refreshProfileFacebook = function(){
             console.log("/////>>>> refreshProfileFacebook in emit");
