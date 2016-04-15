@@ -117,7 +117,7 @@ angular.module("app.ctrls", [])
 	/***** nav bar ***/
 
 
-	var refreshProfileFacebook = function($scope, ) {
+	var refreshProfileFacebook = function() {
 		console.log(">>>>>> facebookProfile 1");
 		$scope.facebookProfile = {
 							name: UserFacebookID.user.name,
