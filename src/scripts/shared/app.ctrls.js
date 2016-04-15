@@ -6,7 +6,7 @@ angular.module("app.ctrls", [])
 
 .factory('facebookProfile', function() {
 		return {
-				refreshProfileFacebook();
+				refreshProfileFacebook()
 		};
 })
 
