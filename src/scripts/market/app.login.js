@@ -45,8 +45,8 @@ angular.module("app.login" , [])
 
 
 // Root Controller
-.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" , "facebookProfile",
-        function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID, facebookProfile) {
+.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" ,
+        function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID) {
 
   //'loginCtrl', function($scope, $http, $timeout, $state, $cookies, $cookieStore, $window, Facebook, UserFacebookID
   //"$cookies", "$cookieStore",
@@ -198,7 +198,7 @@ angular.module("app.login" , [])
 
           // call profileFacebook from nav bar
         //  refreshProfileFacebook();
-          facebookProfile.refreshProfileFacebook();
+          //facebookProfile.refreshProfileFacebook();
 
 
           console.log(">>>>>>  1. insert user");

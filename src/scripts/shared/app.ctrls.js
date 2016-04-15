@@ -4,14 +4,9 @@
 
 angular.module("app.ctrls", [])
 
-.factory('facebookProfile', function() {
-		return {
-				refreshProfileFacebook: refreshProfileFacebook()
-		}
-})
 
 // Root Controller
-.controller("AppCtrl", ["$rootScope", "$scope", "$timeout", "UserFacebookID", "facebookProfile", function($rs, $scope, $timeout, UserFacebookID, facebookProfile) {
+.controller("AppCtrl", ["$rootScope", "$scope", "$timeout", "UserFacebookID", function($rs, $scope, $timeout, UserFacebookID) {
 	var mm = window.matchMedia("(max-width: 767px)");
 	$rs.isMobile = mm.matches ? true: false;
 
@@ -121,13 +116,8 @@ angular.module("app.ctrls", [])
 
 	/***** nav bar ***/
 
-	//// >> on for emit
-	/*$scope.$on('refreshProfileFacebook', function () {
-		console.log("////>> called by emit " );
-		refreshProfileFacebook();
-	});*/
 
-	var refreshProfileFacebook = function() {
+	var refreshProfileFacebook = function($scope, ) {
 		console.log(">>>>>> facebookProfile 1");
 		$scope.facebookProfile = {
 							name: UserFacebookID.user.name,
@@ -138,6 +128,14 @@ angular.module("app.ctrls", [])
 						console.log(">>>>>> facebookProfile 2");
 						console.log($scope.facebookProfile);
 	};
+
+	//// >> on for emit
+	/*$scope.$on('refreshProfileFacebook', function () {
+		console.log("////>> called by emit " );
+		refreshProfileFacebook();
+	});*/
+
+
 
 	/*scope.initNavProfile = function() {
 		$scope.facebookProfile = {
