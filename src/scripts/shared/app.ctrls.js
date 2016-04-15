@@ -112,29 +112,16 @@ angular.module("app.ctrls", [])
 		$scope.onThemeActive();
 	};
 
+
 	/***** nav bar ***/
 
-	$scope.$watch(
-		function() {
-			console.log(">>>> profile return value");
-			 return true;
-		 },
-		 function(newVal) {
-			 if (newVal) {
-			 	console.log(">>>> new value");
-				console.log(newVal);
-			}
-		 }
-	);
-
-	$scope.$watch('UserFacebookID', function(newValue, oldValue) {
-		console.log(">>>> new value");
-		console.log(newValue);
-		console.log(">>>> old value");
-		console.log(oldValue);
+	//// >> on for emit
+	$scope.$on('refreshProfileFacebook', function () {
+		console.log("////>> called by emit " );
+		refreshProfileFacebook();
 	});
 
-	$scope.$watch('UserFacebookID.user.name', function() {
+	var refreshProfileFacebook = function() {
 		$scope.facebookProfile = {
 							name: UserFacebookID.user.name,
 							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
@@ -143,11 +130,18 @@ angular.module("app.ctrls", [])
 
 						console.log(">>>>>> facebookProfile");
 						console.log($scope.facebookProfile);
+	};
 
-	});
+	/*scope.initNavProfile = function() {
+		$scope.facebookProfile = {
+							name: UserFacebookID.user.name,
+							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
+							role: 'wizard'
+						}
 
-
-
+						console.log(">>>>>> facebookProfile");
+						console.log($scope.facebookProfile);
+	};*/
 
 
 }])

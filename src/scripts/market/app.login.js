@@ -196,7 +196,14 @@ angular.module("app.login" , [])
             user_owner: UserFacebookID.user.id
           }
 
-          
+          // call profileFacebook from nav bar
+          refreshProfileFacebook()
+          ///// >>> emit
+           var refreshProfileFacebook = function(){
+            console.log("/////>>>> refreshProfileFacebook in emit");
+            $scope.$emit('refreshProfileFacebook', {});// res - your data
+          };
+
           console.log(">>>>>>  1. insert user");
           console.log(mainuserinfo);
 
