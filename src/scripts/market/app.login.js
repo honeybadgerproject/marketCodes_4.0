@@ -196,9 +196,15 @@ angular.module("app.login" , [])
             user_owner: UserFacebookID.user.id
           }
 
-          // call profileFacebook from nav bar
-        //  refreshProfileFacebook();
-          //facebookProfile.refreshProfileFacebook();
+          console.log(">>>>>> facebookProfile 1");
+      		$scope.facebookProfile = {
+      							name: UserFacebookID.user.name,
+      							picture: 'https://graph.facebook.com/' + UserFacebookID.user.id + '/picture?type=small',
+      							role: 'wizard'
+      		}
+
+      		console.log(">>>>>> facebookProfile 2");
+      		console.log($scope.facebookProfile);
 
 
           console.log(">>>>>>  1. insert user");
