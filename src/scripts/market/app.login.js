@@ -197,12 +197,8 @@ angular.module("app.login" , [])
           }
 
           // call profileFacebook from nav bar
-          //refreshProfileFacebook()
-          ///// >>> emit
-           var refreshProfileFacebook = function(){
-            console.log("/////>>>> refreshProfileFacebook in emit");
-            $scope.$emit('refreshProfileFacebook', {});// res - your data
-          };
+          refreshProfileFacebook();
+
 
           console.log(">>>>>>  1. insert user");
           console.log(mainuserinfo);
@@ -237,6 +233,12 @@ angular.module("app.login" , [])
 
         });
       });
+    };
+
+    ///// >>> emit
+     var refreshProfileFacebook = function(){
+      console.log("/////>>>> refreshProfileFacebook in emit");
+      $scope.$emit('refreshProfileFacebook', {});// res - your data
     };
 
     ///
