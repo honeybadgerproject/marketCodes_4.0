@@ -4,9 +4,39 @@
 
 angular.module("app.ctrls", [])
 
+.factory('profileFacebook', function(){
+  return {
+    picture: '',
+		name: '',
+		flag: false
+  }
+
+})
+
+
 
 // Root Controller
-.controller("AppCtrl", ["$rootScope", "$scope", "$timeout", "UserFacebookID", function($rs, $scope, $timeout, UserFacebookID) {
+.controller("AppCtrl", ["$rootScope", "$scope", "$timeout", "profileFacebook", function($rs, $scope, $timeout, profileFacebook) {
+
+
+	/****** watch profile  *****/
+
+	$scope.$watch(
+		function() {
+			 return profileFacebook.flag;
+		 },
+		 function(newVal) {
+			 if (newVal)
+			 	$scope.facebookProfile.name = profileFacebook.name;
+				$scope.facebookProfile.picture = profileFacebook.picture;
+				$scope.facebookProfile.role = 'wizard';
+
+			 console.log(">>>>>> facebookProfile 2");
+			 console.log($scope.facebookProfile);;
+		 }
+	);
+	/****** end watch profile ****/
+
 	var mm = window.matchMedia("(max-width: 767px)");
 	$rs.isMobile = mm.matches ? true: false;
 
@@ -115,6 +145,15 @@ angular.module("app.ctrls", [])
 
 
 	/***** nav bar ***/
+
+	console.log(">>>>>> facebookProfile in app.ctrls");
+	console.log(profileFacebook);
+
+	$scope.facebookProfile = {
+						name: profileFacebook.name;,
+						picture: profileFacebook.picture,
+						role: 'wizard'
+					}
 
 
 	var refreshProfileFacebook = function() {

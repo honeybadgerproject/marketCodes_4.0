@@ -45,8 +45,8 @@ angular.module("app.login" , [])
 
 
 // Root Controller
-.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" ,
-        function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID) {
+.controller("loginCtrl", ["$rootScope", "$scope", "$http", "$location", "$timeout", "$cookies", "$cookieStore", "$window", "Facebook", "UserFacebookID" , "profileFacebook",
+        function($rs, $scope, $http, $location, $timeout, $cookies, $cookieStore, $window, Facebook, UserFacebookID, profileFacebook) {
 
   //'loginCtrl', function($scope, $http, $timeout, $state, $cookies, $cookieStore, $window, Facebook, UserFacebookID
   //"$cookies", "$cookieStore",
@@ -82,6 +82,8 @@ angular.module("app.login" , [])
            $scope.facebookReady = true;
        }
     );
+
+    
 
     var userIsConnected = false;
 
@@ -215,6 +217,11 @@ angular.module("app.login" , [])
             console.log($scope.facebookProfile.picture);
             $scope.facebookProfile.name = nameFacebook;
             console.log($scope.facebookProfile.name);
+
+            profileFacebook.name = nameFacebook;
+            profileFacebook.picture = pictureFacebook;
+            profileFacebook.flag = true;
+
 
           $http.post('/mainuserinfo', mainuserinfo).success(function(response) {
             console.log(response);
