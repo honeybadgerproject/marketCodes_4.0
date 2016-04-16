@@ -150,7 +150,7 @@ angular.module("app.ctrls", [])
 	console.log(profileFacebook);
 
 	$scope.facebookProfile = {
-						name: profileFacebook.name;,
+						name: profileFacebook.name,
 						picture: profileFacebook.picture,
 						role: 'wizard'
 					}
