@@ -32,7 +32,7 @@ angular.module("app.ctrls", [])
 				$scope.facebookProfile.role = 'wizard';
 
 			 console.log(">>>>>> facebookProfile 2");
-			 console.log($scope.facebookProfile);;
+			 console.log($scope.facebookProfile);
 		 }
 	);
 	/****** end watch profile ****/
