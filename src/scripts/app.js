@@ -20,8 +20,8 @@
 		//"ngCookies",
 
 		/* custom modules */
-		"app.ctrls",
 		"app.login",
+		"app.ctrls",
 		"app.projectlist",
 		"app.hackingzone",
 		"app.directives",
