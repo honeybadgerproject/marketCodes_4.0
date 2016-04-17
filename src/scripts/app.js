@@ -173,6 +173,11 @@
 			controller: "loginCtrl"
 		});
 
+		$routeProvider.when("/pages/search", {
+			templateUrl: "views/pages/search.html",
+			controller: "searchCtrl"
+		});
+
 		$routeProvider.when("/dashboard", {
 			templateUrl: "views/dashboard.html",
 			resolve: {
