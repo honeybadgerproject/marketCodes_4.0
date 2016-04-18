@@ -37,10 +37,8 @@ angular.module("app.search" , [])
           };
 
         }
-  };
 
-
-}])
+}])  //#end controller
 
 // #end
 })()
