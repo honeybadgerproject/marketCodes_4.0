@@ -9,9 +9,9 @@
 	<!-- Search box -->
 	<li>
 		<div class="form-search hidden-xs" style="width: 450px">
-			<form id="site-search" action="#/pages/search"> <!--  action="#/pages/search" -->
+			<form id="site-search"> <!--  action="#/pages/search" -->
 				<input type="search" class="form-control" placeholder="search for a component/project" ng-model="searchlist.text_search">
-				<button type="submit" class="ion ion-ios-search-strong" ng-click="search()"></button>
+				<a ng-click="search()" href="#/pages/search" style="color: inherit" ><button type="submit" class="ion ion-ios-search-strong"></button><a>
 			</form>
 		</div>
 	</li>	<!-- #end search-box -->

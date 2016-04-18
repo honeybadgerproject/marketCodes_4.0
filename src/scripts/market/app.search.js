@@ -8,12 +8,17 @@ angular.module("app.search" , [])
 .controller("searchCtrl", ["$rootScope", "$scope", "$http",
         function($rs, $scope, $http) {
 
-          $scope.searchResults = {};
-          $scope.searchlist = {};
+
+          $scope.searchlist.counter = 1;
+          $scope.searchResults = {
+            project_title: 'project 1',
+            project_overview: 'overview del proyecto 1',
+            project_clasification:'1'
+          };
 
           /* find the word in the database */
         $scope.search = function() {
-
+          console.log(">>> search..");
           console.log("search text: " + $scope.searchlist.text_search);
 
         ///  if($scope.searchlist.text_search)
@@ -36,7 +41,7 @@ angular.module("app.search" , [])
 
         //  };
 
-        }
+      };
 
 }])  //#end controller
 

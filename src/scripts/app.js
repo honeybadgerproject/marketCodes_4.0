@@ -174,10 +174,10 @@
 			controller: "loginCtrl"
 		});
 
-		$routeProvider.when("/pages/search", {
+	/*	$routeProvider.when("/pages/search", {
 			templateUrl: "views/pages/search.html",
 			controller: "searchCtrl"
-		});
+		});*/
 
 		$routeProvider.when("/dashboard", {
 			templateUrl: "views/dashboard.html",
@@ -208,6 +208,19 @@
 				deps: ["$ocLazyLoad", function(a) {
 					return a.load({
 						name: "app.ctrls",
+						files: ["scripts/lazyload/controllers/materialCtrl.js"]
+					})
+				}]
+			}
+		});
+
+		// text angular loaded in /pages/search
+		$routeProvider.when("/pages/search", {
+			templateUrl: "views/pages/search.html" ,
+			resolve: {
+				deps: ["$ocLazyLoad", function(a) {
+					return a.load({
+						name: "app.search",
 						files: ["scripts/lazyload/controllers/materialCtrl.js"]
 					})
 				}]
