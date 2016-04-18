@@ -16,8 +16,8 @@ angular.module("app.search" , [])
 
           console.log("search text: " + $scope.searchlist.text_search);
 
-          if($scope.searchlist.text_search)
-          {
+        ///  if($scope.searchlist.text_search)
+      //    {
 
           /*  $http.get('/search/' + $scope.searchlist.text_search).success(function(response) {
               console.log("search...");
@@ -34,7 +34,7 @@ angular.module("app.search" , [])
             };
 
 
-          };
+        //  };
 
         }
 
