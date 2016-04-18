@@ -17,7 +17,7 @@ angular.module("app.search" , [])
 
           console.log(">>> inside search");
           $scope.searchlist = {};
-          $scope.searchResults = { };
+          $scope.searchResults = [];
 
           /* find the word in the database */
         $scope.search = function() {
