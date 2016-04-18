@@ -24,6 +24,7 @@
 		"app.ctrls",
 		"app.projectlist",
 		"app.hackingzone",
+		"app.search",
 		"app.directives",
 		"app.ui.ctrls",
 		"app.ui.directives",
