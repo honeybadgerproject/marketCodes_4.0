@@ -23,13 +23,13 @@
 				<!-- Search results -->
 				<div class="panel panel-lined mb20">
 					<div class="panel-body">
-						<div class="result mb20" ng-repeat="search in searchResults">
-							<h4 class="mb0 text-info">{{search.project_title}}</h4>
+						<div class="result mb20">  <!-- ng-repeat="search in searchResults" -->
+							<h4 class="mb0 text-info">{{searchResults.project_title}}</h4>
 							<!--<a href="javascript:;" class="small text-success">http://examplesite.com</a>-->
-							<p class="mt5 summary">{{search.project_overview}}</p>
+							<p class="mt5 summary">{{searchResults.project_overview}}</p>
 							<div class="tags">
 								<span>Clasification:&nbsp;</span>
-								<label class="label label-primary">{{search.project_clasification}}</label>
+								<label class="label label-primary">{{searchResults.project_clasification}}</label>
 							</div>
 							<hr/>
 						</div>
