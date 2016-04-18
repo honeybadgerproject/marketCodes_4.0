@@ -4,6 +4,13 @@
 
 angular.module("app.search" , [])
 
+/*.factory('SearchText', function() {
+    return {
+        text_search: ''
+    };
+})*/
+
+
 // Root Controller
 .controller("searchCtrl", ["$rootScope", "$scope", "$http",
         function($rs, $scope, $http) {
