@@ -12,7 +12,7 @@ angular.module("app.search" , [])
 
 
 // Root Controller
-.controller("searchCtrl", ["$rootScope", "$scope", "$http", "UserFacebookID"
+.controller("searchCtrl", ["$rootScope", "$scope", "$http", "UserFacebookID" ,
         function($rs, $scope, $http, UserFacebookID) {
 
         console.log(">>> inside search");
