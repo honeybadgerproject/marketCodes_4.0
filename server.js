@@ -12,14 +12,8 @@ var dbbuddy = mongojs('buddylist', ['buddylist']);
 var dbuserinfo = mongojs('userinfo', ['userinfo']);   // store the basic information of user
 var dbbraintree = mongojs('transactions', ['transactions']);
 
-
-
-
-app.use(express.static(__dirname + "/src"));
-app.use(bodyParser.json());
-
 /******** braintree *******/
-/*
+
 var config = {
   environment: 'Sandbox',
   publicKey: 'w9kvxgpmbsrf594z',
@@ -27,7 +21,16 @@ var config = {
   merchantId: '8z89z5gg7zt6x8x8'
 };
 var gateway = require('braintree-js')(config);
-*/
+
+/***************************/
+
+
+
+app.use(express.static(__dirname + "/src"));
+app.use(bodyParser.json());
+
+
+
 /********  models *********/
 
 var userinfo = require('./market-codes/userinfo').setUserInfo(app, dbuserinfo);
