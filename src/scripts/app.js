@@ -147,7 +147,7 @@
 			"icons/font-awesome", "icons/ionicons",
 			"forms/wizard",
 			"tables/tables",
-			"pages/signup", "pages/404", "pages/forget-pass", "pages/lock-screen", "pages/invoice", "pages/timeline"
+			"pages/signup", "pages/404", "pages/forget-pass", "pages/lock-screen", "pages/invoice", "pages/payment", "pages/timeline"
 		];
 
 		function setRoutes(route) {

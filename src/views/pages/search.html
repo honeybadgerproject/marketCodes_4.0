@@ -27,6 +27,7 @@
 							<h4 class="mb0 text-info">{{searchResults.project_title}}</h4>
 							<!--<a href="javascript:;" class="small text-success">http://examplesite.com</a>-->
 							<p class="mt5 summary">{{searchResults.project_overview}}</p>
+							<p><input class="button" ng-model="searchResults.price" ng-click="selectProjectId(searchResults.project_id)" href="#/payment"></p>
 							<div class="tags">
 								<span>Clasification:&nbsp;</span>
 								<label class="label label-primary">{{searchResults.project_clasification}}</label>

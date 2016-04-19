@@ -1,0 +1,32 @@
+<div class="page page-search" ng-controller="searchCtrl">
+
+	<div class="page-wrap">
+
+		<div class="row">
+			<div class="col-md-6">
+        <form>
+          <div id="payment-form"></div>
+          <input type="submit" value="Pay $10" ng-click="process()">
+        </form>
+			</div>
+      <div class="col-md-6">
+
+      </div>
+		</div> <!-- #end row -->
+
+	</div> <!-- #end page-wrap -->
+  <script>
+  // We generated a client token for you so you can test out this code
+  // immediately. In a production-ready integration, you will need to
+  // generate a client token on your server (see section below).
+
+  // pass braintree token to server side
+  var clientToken = "sandbox_yjjdp7fm_8z89z5gg7zt6x8x8";
+
+  braintree.setup(clientToken, "dropin", {
+    container: "payment-form"
+  });
+
+  </script>
+
+</div>
