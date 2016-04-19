@@ -10,12 +10,23 @@ var dbtabprivate = mongojs('notelistprivate', ['notelistprivate']);
 var dbbuddy = mongojs('buddylist', ['buddylist']);
 //var dbbuddy = mongojs('contributorlist', ['contributorlist']);
 var dbuserinfo = mongojs('userinfo', ['userinfo']);   // store the basic information of user
+var dbbraintree = mongojs('transactions', ['transactions]');
 
 
 
 
 app.use(express.static(__dirname + "/src"));
 app.use(bodyParser.json());
+
+/******** braintree *******/
+
+var config = {
+  environment: 'Sandbox',
+  publicKey: 'w9kvxgpmbsrf594z',
+  privateKey: 'cbefff229a42fa94c3138a70584229bf',
+  merchantId: '8z89z5gg7zt6x8x8'
+};
+var gateway = require('braintree-js')(config);
 
 /********  models *********/
 
@@ -26,6 +37,7 @@ var resources = require('./market-codes/resources').setResources(app, dbsrc);
 var tabs = require('./market-codes/tablist').setTabs(app, dbtab);
 var privatetabs = require('./market-codes/privatetablist').setPrivateTabs(app, dbtabprivate);
 var buddy = require('./market-codes/buddylist').setBuddy(app, dbbuddy);
+var transaction = require('market-codes/transaction').setBraintree(app, dbbraintree, gateway);
 //var contributor = require('./market-codes/contributor').setContributor(app, dbbuddy);
 
 /******** projectlist ******/
