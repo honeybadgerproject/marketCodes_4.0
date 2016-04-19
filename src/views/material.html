@@ -7,7 +7,13 @@
 
 	<div class="page-wrap">
 		<div class="row">
-			<h1>Profile</h1>
+			<div class="col-md-6">
+				<h1>Historial</h1>
+			</div>
+			<div class="col-md-6" ng-init="refreshPurchasedProjects()">
+				<div ng-repeat="project in purchasedlist">
+				</div>
+			</div>
 		</div>
 	</div> <!-- #end page-wrap -->
 </div>

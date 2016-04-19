@@ -271,7 +271,7 @@
 
 
 		// Material Controller (For demo)
-		$routeProvider.when("/profile", {
+		$routeProvider.when("/storage", {
 			templateUrl: "views/material.html",
 			resolve: {
 				deps: ["$ocLazyLoad", function(a) {

@@ -39,6 +39,11 @@ angular.module("app.search" , [])
               $http.post('/checkout', amount).success(function(response) {
                 console.log(response);
                 sucess = response;
+
+                /// store the database
+                $http.post('/storepayment', customer).success(function(response) {
+                  console.log(response);
+                });
               });
 
             });
