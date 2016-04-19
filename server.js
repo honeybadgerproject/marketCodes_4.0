@@ -40,7 +40,7 @@ var resources = require('./market-codes/resources').setResources(app, dbsrc);
 var tabs = require('./market-codes/tablist').setTabs(app, dbtab);
 var privatetabs = require('./market-codes/privatetablist').setPrivateTabs(app, dbtabprivate);
 var buddy = require('./market-codes/buddylist').setBuddy(app, dbbuddy);
-//var transaction = require('market-codes/transaction').setBraintree(app, dbbraintree, gateway);
+var transaction = require('market-codes/transaction').setBraintree(app, dbbraintree, gateway);
 
 /******** projectlist ******/
 
