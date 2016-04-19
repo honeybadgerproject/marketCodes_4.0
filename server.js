@@ -10,7 +10,7 @@ var dbtabprivate = mongojs('notelistprivate', ['notelistprivate']);
 var dbbuddy = mongojs('buddylist', ['buddylist']);
 //var dbbuddy = mongojs('contributorlist', ['contributorlist']);
 var dbuserinfo = mongojs('userinfo', ['userinfo']);   // store the basic information of user
-var dbbraintree = mongojs('transactions', ['transactions]');
+var dbbraintree = mongojs('transactions', ['transactions']);
 
 
 
