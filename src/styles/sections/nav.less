@@ -62,7 +62,7 @@
 		}
 	}
 	.nav-foot {
-		----background: darken(@site-nav-bg, 6%);
+		background: darken(@site-nav-bg, 6%);
 		position: fixed;
 		bottom: 0;
 		width: @site-nav-width;
@@ -162,14 +162,14 @@
 		}
 
 		li.active a, li.open > a {
-			----background: darken(@site-nav-bg, 3%);
+			background: darken(@site-nav-bg, 3%);
 			color: @m-gray-dark;
 			.text {color: @site-nav-active-color; }
 			&:hover {color: @site-nav-color}
 			i.ion {
 				color: #fff;
 				border-color: lighten(@site-nav-active-color, 15%);
-				----background: @site-nav-active-color;
+				---background: @site-nav-active-color;
 			}
 		}
 	}
@@ -179,14 +179,14 @@
 	.site-nav .nav-list li .inner-drop {
 		display: none;
 		font-size: @font-size-base - 1;
-		----background: #fff;
+		background: #fff;
 		a {
 			padding: @padding-large-vertical 0;
 			padding-left: 55px;
 			position: relative;
 			.transition(.3s ease-in-out);
 			&:hover {
-				----background: darken(@site-nav-bg, 5%);
+				background: darken(@site-nav-bg, 5%);
 				color: @m-gray-dark;
 			}
 		}
