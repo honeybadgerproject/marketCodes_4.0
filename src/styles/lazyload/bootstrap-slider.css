@@ -1,8 +1,8 @@
 /* =========================================================
  * bootstrap-slider.js
  *
- * Maintainers: 
- *		Kyle Kemp 
+ * Maintainers:
+ *		Kyle Kemp
  *			- Twitter: @seiyria
  *			- Github:  seiyria
  *		Rohit Kalkur
@@ -118,7 +118,7 @@
 }
 .slider-selection {
   position: absolute;
-  background: #3f51b5;
+  ----background: #3f51b5;
   border-radius: 2px;
 }
 .slider-handle {
