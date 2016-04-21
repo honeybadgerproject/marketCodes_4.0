@@ -40,38 +40,58 @@
 <body ng-app="app"
 	id="app" custom-page
 	class="app off-canvas {{themeActive}}" ng-class="{'nav-expand': navFull, 'body-full': bodyFull}"
-	ng-controller="AppCtrl" style="background: #fff url('https://images.unsplash.com/photo-1437382944886-45a9f73d4158?crop=entropy&fit=crop&fm=jpg&h=800&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1600' )">
+	ng-controller="AppCtrl">
+
+	<!-- style="background: #fff url('https://images.unsplash.com/photo-1437382944886-45a9f73d4158?crop=entropy&fit=crop&fm=jpg&h=800&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1600' )" -->
+	<!-- Banner Area
+    ====================================================== -->
+  <section id="home">
+  	<div id="particles">
+    	<div class="cont-area">
+      	<div class="container banner-area">
 
 
-	<header class="site-head" ng-controller="HeadCtrl"
-		id="site-head" ng-class="{'fixedHeader': fixedHeader}"
-		ng-include=" 'views/header.html' ">
-		<!-- linked header (static) view -->
-	</header>
+					<header class="site-head" ng-controller="HeadCtrl"
+						id="site-head" ng-class="{'fixedHeader': fixedHeader}"
+						ng-include=" 'views/header.html' ">
+						<!-- linked header (static) view -->
+					</header>
 
 
-	<!-- main-container -->
-	<div class="main-container clearfix" ng-class="{'nav-expand': navFull, 'nav-horizontal': navHorizontal}">
-		<aside class="nav-wrap" ng-class="{'nav-expand': navFull, 'nav-offcanvas': navOffCanvas}"
-			id="site-nav" custom-scrollbar
-			ng-include=" 'views/nav.html' ">
+					<!-- main-container -->
+					<div class="main-container clearfix" ng-class="{'nav-expand': navFull, 'nav-horizontal': navHorizontal}">
+						<aside class="nav-wrap" ng-class="{'nav-expand': navFull, 'nav-offcanvas': navOffCanvas}"
+						id="site-nav" custom-scrollbar
+						ng-include=" 'views/nav.html' ">
 
-		</aside>
+					</aside>
 
-		<!-- content-here -->
-		<div ng-class="{'nav-expand': navFull, 'fixedHeader': fixedHeader}"
-			class="content-container"
-			id="content"
-			ng-view>
+					<!-- content-here -->
+					<div ng-class="{'nav-expand': navFull, 'fixedHeader': fixedHeader}"
+						class="content-container"
+						id="content"
+						ng-view>
+					</div>
+
+				</div> <!-- #end main-container -->
+
+
+			</div>
 		</div>
+		<!-- Start: Banner Bottom -->
+		<div class="banner-btm-img"><img src="images/design/buildings.png" alt=""></div>
+		<!-- End: Banner Bottom -->
+	</div>
+</section>
+<!-- =================================================
+Banner Area End -->
 
-	</div> <!-- #end main-container -->
 
-	<!-- new design  --->
+				<!-- new design  --->
 
 	<!-- Banner Area
     ====================================================== -->
-    <section id="home">
+  <!--  <section id="home">
     	<div id="particles">
 
             <div class="cont-area">
@@ -80,14 +100,14 @@
                     <h1>new design</h1>
                 </div>
 
-            </div>
+            </div>-->
 
             <!-- Start: Banner Bottom -->
-            <div class="banner-btm-img"><img src="img/buildings.png" alt=""></div>
+        <!--    <div class="banner-btm-img"><img src="images/design/buildings.png" alt=""></div>-->
             <!-- End: Banner Bottom -->
-
+<!--
     	</div>
-    </section>
+    </section>-->
     <!-- =================================================
     Banner Area End -->
 
