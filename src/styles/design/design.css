@@ -61,17 +61,6 @@ html, body {
 	background-color:#ffffff;
 }
 
-/* Text Styling */
-
-a, a:hover, a:active, a:visited, a:link {
-    outline:none;
-    -webkit-transition: all 0.5s ease 0s;
-    -moz-transition: all 0.5s ease 0s;
-    -ms-transition: all 0.5s ease 0s;
-    transition: all 0.5s ease 0s;
-	text-decoration:none;
-}
-
 /* Headings */
 
 h1 {
@@ -117,22 +106,6 @@ h6 {
 	color:#333333;
 	font-weight:700;
 }
-hr {
-	padding:0 0 0 0;
-	margin:0 0 10px 0;
-	display:inline-table;
-	width:85px;
-	height:6px;
-	background:rgba(0,0,0,0.3);
-	border:0;
-}
-hr.special {
-	padding:0 0 0 0;
-	margin:20px 0 0 0;
-	border:0;
-	height:34px;
-	background:url(../img/hr-spec.png) no-repeat center center;
-}
 .medium-txt {
 	padding:10px 10%;
 	font-size:24px;
@@ -141,9 +114,6 @@ hr.special {
 	font-weight:300;
 	font-style:italic;
 	color:#333333;
-}
-.color {
-	color:#1e9fb4;
 }
 
 /* animation styles */
