@@ -282,11 +282,11 @@ h6 {
 .cont-area {
   position: absolute;
   left: 0;
-  top:25%;
-  padding: 0 20px;
-  width: 100%;
-  text-align: center;
-  height:auto!important;
+  top:0px;
+  ----padding: 0 20px;
+  ----width: 100%;
+  ----text-align: center;
+  -----height:auto;
   z-index:30;
 }
 .banner-area {
@@ -2259,13 +2259,13 @@ h2 {
 	font-size:50px;
 }
 .cont-area {
-	top:35%;
+	top:0px;
 }
 .about-top-area .top-float-img .image-container {
 	bottom:20px;
 }
 .col-content {
-	padding-top:30px;
+	padding-top:0px;
 }
 .story-cont {
 	padding-bottom:40px;
@@ -2439,7 +2439,7 @@ h5 {
 	min-height:600px;
 }
 .cont-area {
-	top:10%;
+	top:0px;
 }
 .about-top-area .top-float-img .image-container {
 	bottom:70px;
