@@ -2302,7 +2302,7 @@ fieldset[disabled] .btn-youtube.active {
   border: 1px solid #e4e4e4;
 }
 .tabs-vertical-right .nav-tabs > li.active > a {
-  background: #f7f7f7;
+  background: #222;
   border-bottom-color: #e4e4e4;
 }
 .tabs-vertical-right .tab-content {
