@@ -33,7 +33,7 @@ tags-input .tags .tag-item {
   color: #fff;
 }
 tags-input .tags .tag-item.selected {
-  background-color: #f7f7f7;
+  background-color: #555;
   color: #545454;
   border-color: #f7f7f7;
 }
