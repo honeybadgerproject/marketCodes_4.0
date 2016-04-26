@@ -125,6 +125,13 @@ h6 {
 	color:#333333;
 }
 
+/* active tab */
+
+.nav-wrap .site-nav .nav-list li.active a, .main-container .nav-wrap .site-nav .nav-list li.open > a {
+  background: #222;
+  color: #616161;
+}
+
 /* animation styles */
 
 .animated {
