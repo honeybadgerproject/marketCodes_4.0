@@ -128,8 +128,8 @@ h6 {
 /* active tab */
 
 .nav-wrap .site-nav .nav-list li.active a, .main-container .nav-wrap .site-nav .nav-list li.open > a {
-  background: #222;
-  color: #616161;
+  background: #222 !important;
+  color: #616161 !important;
 }
 
 /* animation styles */
