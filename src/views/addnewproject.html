@@ -41,8 +41,18 @@
                   </md-input-container>
                 </div>
 								<!-- dropdown -->
-								<!--<div class="btn-group-vertical">-->
-								<div class="input-append btn-group">
+								<div class="btn-group-vertical">
+									<!-- Single Select -->
+								<div class="form-group">
+									<label class="control-label small">Single Select - default</label>
+									<ui-select ng-model="person.selected" search-enabled="true">
+										<ui-select-match placeholder="Select a person">{{$select.selected.name}}</ui-select-match>
+										<ui-select-choices repeat="person in people">
+											<div ng-bind-html="person.name | highlight: $select.search"></div>
+											<small>email: {{person.email}}</small>
+										</ui-select-choices>
+									</ui-select>
+								</div>
 			          	<div class="btn-group dropdown" dropdown>
 				          	<button class="btn btn-pink dropdown-toggle" dropdown-toggle md-ink-ripple>stage:&nbsp;<span class="caret"></span></button>
 										<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
