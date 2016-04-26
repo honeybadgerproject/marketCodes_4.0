@@ -8,20 +8,22 @@ angular.module("app.projectlist" , [])
 .controller("projectListCtrl", ["$rootScope", "$scope", "$http", "$timeout", "$window", "Facebook", "UserFacebookID" ,
         function($rs, $scope, $http, $timeout, $window, Facebook, UserFacebookID) {
 
+
+
           $scope.initStage = function(newproject) {
             newproject.phase = "stage: ";
           };
 
-          $scope.stage1 = function() {
+          $scope.stage1 = function(newproject) {
             newproject.phase = "Stage 1";
           };
 
-          $scope.stage2 = function() {
+          $scope.stage2 = function(newproject) {
             newproject.phase = "Stage 2";
           };
 
-          $scope.stage3 = function() {
-            newproject.phase = "Stage 3";            
+          $scope.stage3 = function(newproject) {
+            newproject.phase = "Stage 3";
           };
 
 

@@ -47,13 +47,13 @@
 				          	<button class="btn btn-pink dropdown-toggle" ng-init="initStage(newproject)" dropdown-toggle md-ink-ripple>{{newproject.phase}}&nbsp;<span class="caret"></span></button>
 								<!--		<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">-->
 				            	<ul class="dropdown-menu">
-				              	<li><a ng-click="stage1()">Stage 1</a></li>
+				              	<li><a ng-click="stage1(newproject)">Stage 1</a></li>
 												<li class="dropdown-header">new idea to work on it</li>
 												<li class="divider"></li>
-				                <li><a ng-click="stage2()">Stage 2</a></li>
+				                <li><a ng-click="stage2(newproject)">Stage 2</a></li>
 													<li class="dropdown-header">almost done tiwh oportunity to participate</li>
 												<li class="divider"></li>
-				                <li><a ng-click="stage3()">Stage 3</a></li>
+				                <li><a ng-click="stage3(newproject)">Stage 3</a></li>
 													<li class="dropdown-header">used as you want</li>
 				              </ul>
 									</div>
