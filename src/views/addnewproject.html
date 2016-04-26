@@ -42,34 +42,22 @@
                 </div>
 								<!-- dropdown -->
 								<div class="btn-group-vertical">
-			               			<button type="button" class="btn btn-default ion ion-gear-a" md-ink-ripple></button>
-				                    <div class="btn-group dropdown" dropdown>
-				                        <button class="btn btn-pink dropdown-toggle ion ion-help-buoy" dropdown-toggle md-ink-ripple>&nbsp;<span class="caret"></span></button>
-				                        <ul class="dropdown-menu">
-				                            <li><a href="j:;">Action</a></li>
-				                            <li><a href="j:;">Another action</a></li>
-				                            <li><a href="j:;">Something else here</a></li>
-				                            <li class="divider"></li>
-				                            <li><a href="j:;">Separated link</a></li>
-				                        </ul>
-				                    </div>
-				                    <button type="button" class="btn btn-default ion ion-trash-a" md-ink-ripple></button>
-				                </div> <!-- #end btn-group-vertical -->
+			          	<div class="btn-group dropdown" dropdown>
+				          	<button class="btn btn-pink dropdown-toggle" dropdown-toggle md-ink-ripple>stage:&nbsp;<span class="caret"></span></button>
+				            	<ul class="dropdown-menu">
+				              	<li><a href="j:;" ng-model="newproject.phase" value="Stage 1">Stage 1</a></li>
+												<li class="dropdown-header">new idea to work on it</li>
+												<li class="divider"></li>
+				                <li><a href="j:;" ng-model="newproject.phase" value="Stage 2">Stage 2</a></li>
+													<li class="dropdown-header">almost done tiwh oportunity to participate</li>
+												<li class="divider"></li>
+				                <li><a href="j:;" ng-model="newproject.phase" value="Stage 3">Stage 3</a></li>
+													<li class="dropdown-header">used as you want</li>
+				              </ul>
+									</div>
+									<input type="text" value="{{newproject.phase}}" disabled>
+				        </div> <!-- #end btn-group-vertical -->
 								<!-- end dropdown -->
-								<div class="dropdown" layout layout-sm="column">
-    							<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Tutorials
-    							<span class="caret"></span></button>
-    							<ul class="dropdown-menu">
-      							<li><a href="#">etapa 1</a></li>
-										<li class="dropdown-header">etaba body 1</li>
-										<li class="divider"></li>
-										<li><a href="#">etapa 2</a></li>
-										<li class="dropdown-header">etaba body 2</li>
-										<li class="divider"></li>
-										<li><a href="#">etapa 3</a></li>
-										<li class="dropdown-header">etaba body 3</li>
-    							</ul>
-  							</div>
                 <div layout layout-sm="column">
                   <md-input-container style="width:80%">
                     <label>Overview</label>
