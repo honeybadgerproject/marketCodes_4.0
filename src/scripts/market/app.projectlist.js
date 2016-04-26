@@ -8,6 +8,9 @@ angular.module("app.projectlist" , [])
 .controller("projectListCtrl", ["$rootScope", "$scope", "$http", "$timeout", "$window", "Facebook", "UserFacebookID" ,
         function($rs, $scope, $http, $timeout, $window, Facebook, UserFacebookID) {
 
+          $scope.initStage = function(newproject) {
+            newproject.phase = "stage: ";            
+          };
 
 		///// >>> emit
     	var refreshProjectList = function(){
