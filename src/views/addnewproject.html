@@ -40,6 +40,22 @@
                     <input ng-model="newproject.title" md-maxlength="50">
                   </md-input-container>
                 </div>
+								<!-- dropdown -->
+								<div class="input-group-btn">
+					 				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type <span class="caret"></span></button>
+					 				<div class="dropdown">
+					 			 		<button class="btn btn-primary dropdown-toggle" type="button" data-toogle="dropdown">Type<span class="caret"></span></button>
+					 					<ul class="dropdown-menu">
+					 				 		<li><a ng-model="resource.resource_name" value='github' href="#">Github</a></li>
+					 						<li><a ng-model="resource.resource_name" value='slack' href="#">Slack</a></li>
+					 				 		<li><a ng-model="resource.resource_name" value='trello'href="#">Trello</a></li>
+					 				 		<li><a ng-model="resource.resource_name" value='evernote' href="#">Evernote</a></li>
+					 				 		<li><a ng-model="resource.resource_name" value='asana' href="#">Asana</a></li>
+					 						<li><a ng-model="resource.resource_name" value='bitbucket' href="#">Bitbucket</a></li>
+					 						<li><a ng-model="resource.resource_name" value='blank' href="#">Blank</a></li>
+					 			 		</ul>
+					 				</div>
+					 		 	</div>
                 <div layout layout-sm="column">
                   <md-input-container style="width:80%">
                     <label>Overview</label>
