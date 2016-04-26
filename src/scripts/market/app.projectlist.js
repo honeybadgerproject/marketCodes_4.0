@@ -9,8 +9,21 @@ angular.module("app.projectlist" , [])
         function($rs, $scope, $http, $timeout, $window, Facebook, UserFacebookID) {
 
           $scope.initStage = function(newproject) {
-            newproject.phase = "stage: ";            
+            newproject.phase = "stage: ";
           };
+
+          $scope.stage1 = function() {
+            newproject.phase = "Stage 1";
+          };
+
+          $scope.stage2 = function() {
+            newproject.phase = "Stage 2";
+          };
+
+          $scope.stage3 = function() {
+            newproject.phase = "Stage 3";            
+          };
+
 
 		///// >>> emit
     	var refreshProjectList = function(){
