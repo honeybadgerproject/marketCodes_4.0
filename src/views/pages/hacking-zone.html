@@ -27,13 +27,14 @@
               </div>
             </div> <!-- #end btn-group-vertical -->
       		  <br>
+            <br>
       		  <input type="text" class="form-control" style="color:#eee" id="resource" placeholder="title" ng-model="resource.resource_title">
       		  <br>
       		  <input type="text" class="form-control" style="color:inherit" placeholder="target definition" ng-model="resource.resource_target">
       		  <br>
 
           </div><!-- /input-group -->
-          <button class="btn btn-pink" style="width:100%" ng-click="openDialogContributor()">+ Add a Resource</button>
+          <button class="btn btn-pink" style="width:100%" ng-click="addnewresource(resource)">+ Add a Resource</button>
 
         </div>
         <div class="col-md-6"> <!-- subheader -->
@@ -85,12 +86,12 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">{{resourcePanel.resource_title}}
-                      <div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" >-</div>
+                      <div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" data-toggle="collapse" data-target="#boxPanel{{$index}}">-</div>
                       <!--<div id="buttonPanel"  ng-click="tohide == {{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;" >+</div>-->
                     </h4>
                   </div>
                 </div>
-                <div id="boxPanel">
+                <div id="boxPanel{{$index}}" class="collapse">
                   <br>
                   <p>{{resourcePanel.resource_target}}</p>
                 </div>
