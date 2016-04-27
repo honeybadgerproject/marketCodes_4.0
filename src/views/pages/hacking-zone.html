@@ -3,12 +3,26 @@
     <div class="row">
       <!-- sub-header -->
       <div class="row">
-			  <div class="col-md-2">
-				    <a ng-click="openDialogContributor()"><h4 class="text-light text-bold">Members</h4></a>
+        <div class="col-md-2">
+				    <a><h4 class="text-light text-bold" style="color:#fff">{ Resources }</h4></a>
         </div>
         <div class="col-md-4"></div>
+        <div class="col-md-2">
+				    <a><h4 class="text-light text-bold" style="color:#fff">@ Members</h4></a>
+        </div>
       </div>
       <div class="row">
+        <div class="col-md-6"> <!--new resource -->
+          <div class="panel panel-lined panel-hovered panel-stacked">
+            <input type="text" class="form-control" aria-label="..." ng-model="resource.resource_name">
+      	 		</div><!-- /input-group -->
+      			<br>
+      			<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
+      			<br>
+      			<input type="text" class="form-control" placeholder="target definition" ng-model="resource.resource_target">
+      			<br>
+          </div>
+        </div>
         <div class="col-md-6"> <!-- subheader -->
 				  <div class="panel panel-lined panel-hovered panel-stacked"> <!-- mb20 -->
 					  <div class="panel-body" style="padding: 0; margin: 5px 0">
@@ -33,7 +47,7 @@
 						  </md-content>
 					</div>
 				</div>
-        <button class="btn btn-pink" style="width:100%">+ Add a Member</button>
+        <button class="btn btn-pink" style="width:100%" ng-click="openDialogContributor()">+ Add a Member</button>
 			</div> <!-- #end sub-header -->
     </div>
     </div> <!--  #end row tag -->
