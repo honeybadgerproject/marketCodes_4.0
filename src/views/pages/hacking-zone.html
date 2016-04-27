@@ -13,14 +13,25 @@
       </div>
       <div class="row">
         <div class="col-md-6"> <!--new resource -->
-          <div class="panel panel-lined panel-hovered panel-stacked">
-            <input type="text" class="form-control" aria-label="..." ng-model="resource.resource_name">
-      	 	</div><!-- /input-group -->
-      		<br>
-      		<input type="text" class="form-control" id="resource" placeholder="title" ng-model="resource.resource_title">
-      		<br>
-      		<input type="text" class="form-control" placeholder="target definition" ng-model="resource.resource_target">
-      		<br>
+          <div class="panel">
+            <!-- dropdown -->
+            <div class="btn-group-vertical">
+              <!-- Single Select -->
+              <div class="btn-group dropdown" dropdown>
+                <button class="btn btn-pink dropdown-toggle" ng-init="initType(resource)" dropdown-toggle md-ink-ripple>{{resource.type}}&nbsp;<span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a ng-click="typeGithub(resource)">Github</a></li>
+                    <li><a ng-click="typeSlack(resource)">Slack</a></li>
+                    <li><a ng-click="typeEvernote(resource)">Evernote</a></li>
+                  </ul>
+              </div>
+            </div> <!-- #end btn-group-vertical -->
+      		  <br>
+      		  <input type="text" class="form-control" style="color:#eee" id="resource" placeholder="title" ng-model="resource.resource_title">
+      		  <br>
+      		  <input type="text" class="form-control" style="color:#eee" placeholder="target definition" ng-model="resource.resource_target">
+      		  <br>
+          </div><!-- /input-group -->
         </div>
         <div class="col-md-6"> <!-- subheader -->
 				  <div class="panel panel-lined panel-hovered panel-stacked"> <!-- mb20 -->
