@@ -39,6 +39,23 @@ angular.module("app.hackingzone" , [])
           }
         } */
 
+        /**** initType ****/
+        $scope.initType = function(resource) {
+          return resource.type = "resource type:";
+        };
+
+        $scope.typeGithub = function(resource) {
+          return resource.type = "github";
+        };
+
+        $scope.typeEvernote = function(resource) {
+          return resource.type = "evernote";
+        };
+
+        $scope.typeSlack = function(resource) {
+          return resource.type = "slack";
+        };
+
 
         /***** contributor section  *********/
 
