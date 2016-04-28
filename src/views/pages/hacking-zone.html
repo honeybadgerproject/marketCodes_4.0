@@ -86,15 +86,20 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">{{resourcePanel.resource_title}}
-                      <div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" data-toggle="collapse" data-target="#boxPanel{{$index}}">-</div>
+                      <!--<div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" data-toggle="collapse" data-target="#boxPanel{{$index}}">-</div>
+                      -->
                       <!--<div id="buttonPanel"  ng-click="tohide == {{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;" >+</div>-->
+                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo{{$index}}">-</button>
+                      <div id="demo{{$index}}" class="collapse">
+                        <p>{{resourcePanel.resource_target}}</p>
+                      </div>
                     </h4>
                   </div>
                 </div>
-                <div id="boxPanel{{$index}}" class="collapse">
+              <!--  <div id="boxPanel{{$index}}" class="collapse">
                   <br>
                   <p>{{resourcePanel.resource_target}}</p>
-                </div>
+                </div> -->
                 <!-- end media heading -->
               </div>
             </div>
