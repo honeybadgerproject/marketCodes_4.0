@@ -76,34 +76,41 @@
         </div>-->
         <!-- panels sortables -->
         <div class="row" id="sortable">
-          <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <!--   media heading  -->
-                <div class="media">
-                  <div class="media-left">
-                    <img class="media-object" src="{{resourcePanel.resource_logo}}" alt="..." style=" width: 35px; height: 35px;">
-                  </div>
-                  <div class="media-body">
-                    <h4 class="media-heading">{{resourcePanel.resource_title}}
-                      <!--<div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" data-toggle="collapse" data-target="#boxPanel{{$index}}">-</div>
-                      -->
-                      <!--<div id="buttonPanel"  ng-click="tohide == {{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;" >+</div>-->
-                      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo{{$index}}">-</button>
-                      <div id="demo{{$index}}" class="collapse">
-                        <p>{{resourcePanel.resource_target}}</p>
+          <accordion class="accordion-panel">
+            <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <!-- accordion -->
+				          <accordion-group is-open="status.open">
+						        <accordion-heading>
+                      <!--   media heading  -->
+                      <div class="media">
+                        <div class="media-left">
+                          <img class="media-object" src="{{resourcePanel.resource_logo}}" alt="..." style=" width: 35px; height: 35px;">
+                        </div>
+                        <div class="media-body">
+                          <h4 class="media-heading">{{resourcePanel.resource_title}}
+                            <!--<div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" data-toggle="collapse" data-target="#boxPanel{{$index}}">-</div>
+                            -->
+                            <!--<div id="buttonPanel"  ng-click="tohide == {{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;" >+</div>-->
+                            <i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.open, 'ion-chevron-right': !status.open}"></i>
+                          </h4>
+                        </div>
                       </div>
-                    </h4>
-                  </div>
-                </div>
-              <!--  <div id="boxPanel{{$index}}" class="collapse">
+                      <!-- end heading -->
+							<!--I can have markup, too!<i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.open, 'ion-chevron-right': !status.open}"></i>-->
+						      </accordion-heading>
                   <br>
                   <p>{{resourcePanel.resource_target}}</p>
-                </div> -->
+					      </accordion-group>
+
+				<!-- #end accordion -->
+
                 <!-- end media heading -->
               </div>
             </div>
           </div>
+          </accordion>
         </div>
         <!-- end panels sortables -->
       <!--  <tabset class="tabs-vertical">
