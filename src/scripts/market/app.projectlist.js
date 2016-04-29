@@ -28,11 +28,14 @@ angular.module("app.projectlist" , [])
 
           $scope.refreshProjectSettings = function(newproject) {
 
-            $http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
-        			console.log("refresh settings");
-        			$scope.newproject = response;
+            var listParams = {
+              user_owner: UserFacebookID.user.id,
+              project_id: UserFacebookID.project_id
+            };
+            $http.post('/contributorslistowner', listParams).success(function(response) {
               console.log(response);
-        		});
+              $scope.newproject = response;
+            });
 
 
           }
