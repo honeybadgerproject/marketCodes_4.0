@@ -9,6 +9,19 @@ exports.setProjectList = function(app, db) {
 
     });
 
+
+    app.post('/getProjectWithId', function(req, res) {
+      console.log(req.body);
+
+
+      db.projectlist.find({"_id" : req.body.id_project } ,
+                                    { $push: { "user_owner": req.body.user_owner  }} , function(err, docs) {
+        res.json(docs);
+      });
+
+    });
+
+
     // create a new project
     app.post('/projectlist', function(req, res) {
       console.log(req.body);
