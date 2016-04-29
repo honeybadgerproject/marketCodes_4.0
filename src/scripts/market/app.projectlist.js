@@ -26,12 +26,13 @@ angular.module("app.projectlist" , [])
             newproject.phase = "Stage 3";
           };
 
-          $scope.refreshProjectSettings = function() {
+          $scope.refreshProjectSettings = function(newproject) {
 
             $http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
-        			console.log("refresh");
+        			console.log("refresh settings");
         			$scope.newproject = response;
         		});
+
 
           }
 
