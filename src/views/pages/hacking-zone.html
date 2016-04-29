@@ -76,13 +76,13 @@
         </div>-->
         <!-- panels sortables -->
         <div class="row" id="sortable">
-          <accordion class="accordion-panel">
+          <!--<accordion class="accordion-panel">-->
             <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
               <div class="panel panel-default">
                 <div class="panel-body">
                   <!-- accordion -->
-				          <accordion-group is-open="status.open">
-						        <accordion-heading>
+				        <!--  <accordion-group is-open="status.open">
+						        <accordion-heading>-->
                       <!--   media heading  -->
                       <div class="media">
                         <div class="media-left">
@@ -99,18 +99,18 @@
                       </div>
                       <!-- end heading -->
 							<!--I can have markup, too!<i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.open, 'ion-chevron-right': !status.open}"></i>-->
-						      </accordion-heading>
+						      <!--</accordion-heading>-->
                   <br>
                   <p>{{resourcePanel.resource_target}}</p>
-					      </accordion-group>
+					    <!--  </accordion-group>-->
 
 				<!-- #end accordion -->
 
                 <!-- end media heading -->
-              </div> 
+              </div>
             </div>
           </div>
-          </accordion>
+          <!--</accordion>-->
         </div>
         <!-- end panels sortables -->
       <!--  <tabset class="tabs-vertical">
