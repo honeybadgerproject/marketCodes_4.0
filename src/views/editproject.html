@@ -1,4 +1,4 @@
-<div class="page page-email" ng-controller="projectListCtrl">
+<div class="page page-email" ng-controller="projectListCtrl" ng-init="refreshProjectSettings()">
 
 	<!--<ol class="breadcrumb breadcrumb-small">
 		<li>Home</li>
@@ -22,72 +22,90 @@
 			      <!-- input form -->
 			      <div class="col-md-9">
 			        <div class="panel panel-lined panel-hovered panel-stacked mb20">
-			          <!--<div class="panel-heading">Basic Usage</div>-->
-			          <div class="panel-body" ng-controller="MdInputDemo">
-			            <md-content md-theme="docs-dark" layout-padding>
-			              <form name="userForm">
-			              	<!-- title field -->
-			      			<div>
-			        			<label>proyect clasification:</label>
-			        			<br><br>
-			        			<div class="radio">
-			          				<label>
-			            				<input type="radio" name="optionsRadios" value="1" ng-model="project.classification" ng-vale="1">
-			            					1. In progress and with opotunity to participate.
-			          				</label>
-			        			</div>
-			        			<br>
-			        			<div class="radio">
-			          				<label>
-			            				<input type="radio" name="optionsRadios" value="2" ng-model="project.classification" ng-vale="2">
-			            					2. Finished but not mature and with opotunity to add your own work.
-			          				</label>
-			        			</div>
-			        			<br>
-			        			<div class="radio">
-			          				<label>
-			            				<input type="radio" name="optionsRadios" value="3" ng-model="project.classification" ng-vale="3">
-			            					3. Finished and mature project, ready to use.
-			          				</label>
-			        			</div>
+                <div class="panel-body" ng-controller="MdInputDemo">
+                  <md-content md-theme="docs-dark" layout-padding>
+                    <form name="userForm">
+                    	<!-- title field -->
+            		      <div layout layout-sm="column">
+      									<div class="form-group col-md-12">
+      										<label class="col-md-2 control-label">Title:</label>
+      										<div class="col-md-10">
+      											<input type="password" class="form-control" placeholder="title here" ng-model="newproject.title">
+      										</div>
+      									</div>
+      								</div>
+      								<br>
+      								<!-- dropdown -->
+      								<div layout layout-sm="column">
+      									<div class="form-group col-md-12">
+      										<label class="col-md-3 control-label">Select the stage:</label>
+      										<div class="col-md-9">
+      											<!-- Single Select -->
+      											<div class="btn-group dropdown" style="width:50%" dropdown>
+      												<button class="btn btn-pink dropdown-toggle" ng-init="initStage(newproject)" dropdown-toggle md-ink-ripple>{{newproject.phase}}&nbsp;<span class="caret"></span></button>
+      										<!--		<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">-->
+      													<ul class="dropdown-menu">
+      														<li><a ng-click="stage1(newproject)">Stage 1</a></li>
+      														<li class="dropdown-header">new idea to work on it</li>
+      														<li class="divider"></li>
+      														<li><a ng-click="stage2(newproject)">Stage 2</a></li>
+      															<li class="dropdown-header">almost done tiwh oportunity to participate</li>
+      														<li class="divider"></li>
+      														<li><a ng-click="stage3(newproject)">Stage 3</a></li>
+      															<li class="dropdown-header">used as you want</li>
+      													</ul>
+      											</div>
+      										</div>
+      									</div>
+      								</div>
 
-			      			</div>
-									<br>
-			                <div layout layout-sm="column">
-			                  <md-input-container>
-			                    <label>Title</label>
-			                    <input ng-model="project.title" md-maxlength="50">
-			                  </md-input-container>
-			                </div>
-			                <div layout layout-sm="column">
-			                  <md-input-container style="width:80%">
-			                    <label>Overview</label>
-			                    <textarea ng-model="project.overview" columns="1" md-maxlength="150"></textarea> <!-- disable -->
-			                  </md-input-container>
-			                </div>
-			                <div layout layout-sm="column">
-			                  <md-input-container flex>
-			                    <label>Content</label>
-			                    <textarea ng-model="project.content" columns="1" md-maxlength="350"></textarea>
-			                  </md-input-container>
-			                </div>
-											<div class="ui-radio ui-radio-pink">
-												<label class="ui-radio-inline">
-													<input type="radio" ng-model="project.price" value="none">
-													<span>Not Rated</span>
-												</label>
-												<label class="ui-radio-inline">
-													<input type="radio" ng-model="project.price" value="free">
-													<span>Free</span>
-												</label>
-												<label class="ui-radio-inline">
-													<input type="radio" ng-model="project.price" value="cost">
-													<span>Price $:<input ng-model="project.price"></span>
-												</label>
-											</div>
-			              </form>
-			            </md-content>
-			          </div>
+      				      	<!-- textarea control -->
+      								<div layout layout-sm="column">
+      									<div class="form-group col-md-12">
+      										<label class="col-md-2 control-label">Overview:</label>
+      										<div class="col-md-10">
+      											<textarea ng-model="newproject.overview" rows="3" class="form-control resize-v" placeholder="overview here" style="width:100%"></textarea>
+      										</div>
+      									</div>
+      								</div>
+                      <div layout layout-sm="column">
+      									<div class="form-group col-md-12">
+      										<label class="col-md-2 control-label">Content:</label>
+      										<div class="col-md-10">
+      											<textarea ng-model="newproject.content" rows="6" class="form-control resize-v" placeholder="content here" style="width:100%"></textarea>
+      										</div>
+      									</div>
+                      </div>
+      								<br><br>
+      								<div layout layout-sm="column">
+      									<div class="form-group col-md-12">
+
+      										<div class="ui-radio ui-radio-pink">
+      											<label class="ui-radio-inline">
+      												<input type="radio" ng-model="newproject.methodprice" value="none">
+      												<span>Not Rated</span>
+      											</label>
+      											<label class="ui-radio-inline">
+      												<input type="radio" ng-model="newproject.methodprice" value="free">
+      												<span>Free</span>
+      											</label>
+      											<label class="ui-radio-inline">
+      												<input type="radio" ng-model="newproject.methodprice" value="cost">
+      												<span>Price $:<input type="text" ng-model="newproject.price"></span>
+      											</label>
+      										</div>
+      									</div>
+      								</div>
+
+                    <!--  <div layout layout-sm="column">
+                        <md-input-container style="width:20%">
+                          <label>Price $</label>
+                          <input ng-model="newproject.price" disable>
+                        </md-input-container>
+                      </div>-->
+                    </form>
+                  </md-content>
+                </div>
 			        </div>
 			      </div> <!-- #col -->
     </div> <!-- row -->

@@ -8,7 +8,7 @@ angular.module("app.projectlist" , [])
 .controller("projectListCtrl", ["$rootScope", "$scope", "$http", "$timeout", "$window", "Facebook", "UserFacebookID" ,
         function($rs, $scope, $http, $timeout, $window, Facebook, UserFacebookID) {
 
-
+          $scope.newproject = {};
 
           $scope.initStage = function(newproject) {
             newproject.phase = "stage";
@@ -25,6 +25,15 @@ angular.module("app.projectlist" , [])
           $scope.stage3 = function(newproject) {
             newproject.phase = "Stage 3";
           };
+
+          $scope.refreshProjectSettings = function() {
+
+            $http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
+        			console.log("refresh");
+        			$scope.newproject = response;
+        		});
+
+          }
 
 
 		///// >>> emit
