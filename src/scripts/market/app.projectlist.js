@@ -34,7 +34,7 @@ angular.module("app.projectlist" , [])
             };
             console.log(listParams);
 
-      		$http.post('/getProjectWithId' + listParams).success(function(response) {
+      		$http.post('/getProjectWithId',listParams).success(function(response) {
       			console.log("refresh settings");
       			$scope.newproject = response;
       		});
