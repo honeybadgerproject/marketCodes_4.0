@@ -108,19 +108,24 @@
 									</div>
                 </div>
 								<br><br>
-								<div class="ui-radio ui-radio-pink">
-									<label class="ui-radio-inline">
-										<input type="radio" ng-model="newproject.methodprice" value="none">
-										<span>Not Rated</span>
-									</label>
-									<label class="ui-radio-inline">
-										<input type="radio" ng-model="newproject.methodprice" value="free">
-										<span>Free</span>
-									</label>
-									<label class="ui-radio-inline">
-										<input type="radio" ng-model="newproject.methodprice" value="cost">
-										<span>Price $:<input type="text" ng-model="newproject.price"></span>
-									</label>
+								<div layout layout-sm="column">
+									<div class="form-group col-md-12">
+
+										<div class="ui-radio ui-radio-pink">
+											<label class="ui-radio-inline">
+												<input type="radio" ng-model="newproject.methodprice" value="none">
+												<span>Not Rated</span>
+											</label>
+											<label class="ui-radio-inline">
+												<input type="radio" ng-model="newproject.methodprice" value="free">
+												<span>Free</span>
+											</label>
+											<label class="ui-radio-inline">
+												<input type="radio" ng-model="newproject.methodprice" value="cost">
+												<span>Price $:<input type="text" ng-model="newproject.price"></span>
+											</label>
+										</div>
+									</div>
 								</div>
 
               <!--  <div layout layout-sm="column">
