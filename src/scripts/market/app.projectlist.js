@@ -31,6 +31,7 @@ angular.module("app.projectlist" , [])
             $http.get('/refreshProjectWithUser/' + UserFacebookID.user.id).success(function(response) {
         			console.log("refresh settings");
         			$scope.newproject = response;
+              console.log(response);
         		});
 
 
