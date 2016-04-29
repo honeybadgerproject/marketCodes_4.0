@@ -11,7 +11,7 @@ angular.module("app.projectlist" , [])
 
 
           $scope.initStage = function(newproject) {
-            newproject.phase = "stage: ";
+            newproject.phase = "stage";
           };
 
           $scope.stage1 = function(newproject) {
