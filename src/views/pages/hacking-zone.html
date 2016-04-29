@@ -82,7 +82,7 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">{{resourcePanel.resource_title}}
-                      <i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.isOpen, 'ion-chevron-right': !status.isOpen}"></i>
+                      <i class="right mt2 ion small" ng-click="changeIsOpen(status.isOpen)" ng-class="{'ion-chevron-down': status.isOpen, 'ion-chevron-right': !status.isOpen}"></i>
                     </h4>
                   </div>
                 </div>
