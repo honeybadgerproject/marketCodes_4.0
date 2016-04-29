@@ -71,72 +71,34 @@
       <a ng-click="openDialogResource()"><h4 class="text-light text-bold">+ Add resource</h4></a>
       <!-- variation one -->
       <div class="col-md-12 mb20">
-        <!--<div class="page-tabs-lead mb20">
-          <h4 class="text-light">Public Notes  &nbsp;&nbsp;<a style="font-size: 14px;font-weight: 500" ng-click="addnewtab()">+ add resource</a></h4>
-        </div>-->
-        <!-- panels sortables -->
-        <div class="row" id="sortable">
-          <!--<accordion class="accordion-panel">-->
-            <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <!-- accordion -->
-				        <!--  <accordion-group is-open="status.open">
-						        <accordion-heading>-->
-                      <!--   media heading  -->
-                      <div class="media">
-                        <div class="media-left">
-                          <img class="media-object" src="{{resourcePanel.resource_logo}}" alt="..." style=" width: 35px; height: 35px;">
-                        </div>
-                        <div class="media-body">
-                          <h4 class="media-heading">{{resourcePanel.resource_title}}
-                            <!--<div id="buttonPanel"  style=" width: 25px;height: 23px;float:right;cursor:pointer;" data-toggle="collapse" data-target="#boxPanel{{$index}}">-</div>
-                            -->
-                            <!--<div id="buttonPanel"  ng-click="tohide == {{$index}}" style=" width: 25px;height: 23px;float:right;cursor:pointer;" >+</div>-->
-                            <i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.open, 'ion-chevron-right': !status.open}"></i>
-                          </h4>
-                        </div>
-                      </div>
-                      <!-- end heading -->
-							<!--I can have markup, too!<i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.open, 'ion-chevron-right': !status.open}"></i>-->
-						      <!--</accordion-heading>-->
-                  <br>
-                  <p>{{resourcePanel.resource_target}}</p>
-					    <!--  </accordion-group>-->
-
-				<!-- #end accordion -->
-
+        <div class="row" id="sortable" ng-init="status = {isOpen: false}" is-open="status.isOpen">
+          <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <!--   media heading  -->
+                <div class="media">
+                  <div class="media-left">
+                      <img class="media-object" src="{{resourcePanel.resource_logo}}" alt="..." style=" width: 35px; height: 35px;">
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">{{resourcePanel.resource_title}}
+                      <i class="right mt2 ion small" ng-class="{'ion-chevron-down': status.isOpen, 'ion-chevron-right': !status.isOpen}"></i>
+                    </h4>
+                  </div>
+                </div>
                 <!-- end media heading -->
+                <div ng-show="status.isOpen">
+			            <br>
+                  <p>{{resourcePanel.resource_target}}</p>
+                </div>
+              <!--  </accordion-group>-->
               </div>
             </div>
-          </div>
-          <!--</accordion>-->
-        </div>
-        <!-- end panels sortables -->
-      <!--  <tabset class="tabs-vertical">
-          <tab ng-repeat="tabs in notelist" heading="{{tabs.tab_name}}" ng-click="selectTab($index)">
-            <div class="clearfix">
-              <div class="panel panel-default panel-hovered panel-stacked mb20">
+          </div> <!-- end col -->
+        </div> <!-- end row sortable -->
 
-      						<form class="form-inline" role="form">
-      							<div class="form-group">
-      								<div class="input-group">
-      									<span class="input-group-addon ion ion-compose"></span>
-      									<input type="text" class="form-control" placeholder="Enter tab name here..." ng-model="tabs.tab_name">
-      								</div>
-      							  <textarea ng-model="tabs.tab_content" columns="1" style="height: 100%; min-height: 300px; width: 100%">{{tabs.tab_content}}</textarea>
-      							</div>
-      						</form>
-
-      				</div>
-              <button type="submit" class="btn btn-pink btn-sm" ng-click="updatetab(tabs)">Save</button>
-              <div style="color: inherit" class="right ion ion-android-delete" ng-click="removetab(tabs._id)"></div>
-
-            </div>
-          </tab>
-        </tabset> -->
       </div>
-      <!-- #end variation one -->
+      <!-- #end variation one  col-->
     </div>
     <!-- #end row -->
     <script>
