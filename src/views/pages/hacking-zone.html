@@ -73,7 +73,7 @@
       <div class="col-md-12 mb20">
         <div class="row" id="sortable">
           <div class="col-sm-6 col-md-4" ng-repeat="resourcePanel in resourcelist">
-            <div class="panel panel-default" ng-init="status{{$index}} = {isOpen: false}" is-open="status{{$index}}.isOpen">
+            <div class="panel panel-default" ng-init="status = {isOpen: false}" is-open="status.isOpen">
               <div class="panel-body">
                 <!--   media heading  -->
                 <div class="media">
@@ -82,13 +82,12 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading">{{resourcePanel.resource_title}}
-                      <i class="right mt2 ion small"  ng-class="{'ion-chevron-down': status{{$index}}.isOpen, 'ion-chevron-right': !status{{$index}}.isOpen}"></i>
-                      <!-- ng-click="changeIsOpen(status{{$index}})" -->
+                      <i class="right mt2 ion small" ng-click="changeIsOpen(status)" ng-class="{'ion-chevron-down': status.isOpen, 'ion-chevron-right': !status.isOpen}"></i>
                     </h4>
                   </div>
                 </div>
                 <!-- end media heading -->
-                <div ng-show="status{{$index}}.isOpen">
+                <div ng-show="status.isOpen">
 			            <br>
                   <p>{{resourcePanel.resource_target}}</p>
                 </div>

@@ -56,7 +56,7 @@ angular.module("app.hackingzone" , [])
           return resource.type = "slack";
         };
 
-        $scope.changeIsOpen = function(status) {
+      $scope.changeIsOpen = function(status) {
           if(status.isOpen == true) status.isOpen = false;
           else status.isOpen = true;
         };
