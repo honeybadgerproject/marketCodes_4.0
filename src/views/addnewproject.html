@@ -37,7 +37,7 @@
       		      <div layout layout-sm="column">
                   <md-input-container>
                     <label>Title</label>
-                    <input ng-model="newproject.title" md-maxlength="50">
+                    <input ng-model="newproject.title">
                   </md-input-container>
                 </div>
 								<!-- dropdown -->
@@ -60,12 +60,19 @@
 
 				        </div> <!-- #end btn-group-vertical -->
 								<!-- end dropdown -->
-                <div layout layout-sm="column">
+								<!-- textarea control -->
+							<div class="form-group">
+								<label class="col-md-3 control-label">Overview</label>
+								<div class="col-md-9">
+									<textarea ng-model="newproject.overview" rows="5" class="form-control resize-v" placeholder="overview here"></textarea>
+								</div>
+							</div>
+                <!--<div layout layout-sm="column">
                   <md-input-container style="width:80%">
                     <label>Overview</label>
-                    <textarea ng-model="newproject.overview" columns="1" md-maxlength="150"></textarea> <!-- disable -->
+                    <textarea ng-model="newproject.overview" columns="1" md-maxlength="150"></textarea>
                   </md-input-container>
-                </div>
+                </div>-->
                 <div layout layout-sm="column">
                   <md-input-container flex>
                     <label>Content</label>
