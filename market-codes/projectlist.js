@@ -14,7 +14,7 @@ exports.setProjectList = function(app, db) {
       console.log(req.body);
 
 
-      db.projectlist.find({$or: [{user_owner:{owner:id, role: "admin"}},{user_owner:{owner:id, role: "super"}}], "_id" : req.body.id_project } , function(err, docs) {
+      db.projectlist.find({"_id" : req.body.id_project } , function(err, docs) {
         res.json(docs);
       });
 
