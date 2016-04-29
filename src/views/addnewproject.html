@@ -35,12 +35,6 @@
               <form name="userForm">
               	<!-- title field -->
       		      <div layout layout-sm="column">
-                  <md-input-container>
-                    <label>Title</label>
-                    <input ng-model="newproject.title">
-                  </md-input-container>
-                </div>
-								<div layout layout-sm="column">
 									<div class="form-group col-md-12">
 										<label class="col-md-2 control-label">Title:</label>
 										<div class="col-md-10">
@@ -48,13 +42,14 @@
 										</div>
 									</div>
 								</div>
+								<br>
 								<!-- dropdown -->
 								<div layout layout-sm="column">
 									<div class="form-group col-md-12">
-										<label class="col-md-2 control-label">Select the stage:</label>
-										<div class="col-md-10">
+										<label class="col-md-3 control-label">Select the stage:</label>
+										<div class="col-md-9">
 											<!-- Single Select -->
-											<div class="btn-group dropdown" dropdown>
+											<div class="btn-group dropdown" style="width:50%" dropdown>
 												<button class="btn btn-pink dropdown-toggle" ng-init="initStage(newproject)" dropdown-toggle md-ink-ripple>{{newproject.phase}}&nbsp;<span class="caret"></span></button>
 										<!--		<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">-->
 													<ul class="dropdown-menu">
@@ -112,6 +107,7 @@
 										</div>
 									</div>
                 </div>
+								<br><br>
 								<div class="ui-radio ui-radio-pink">
 									<label class="ui-radio-inline">
 										<input type="radio" ng-model="newproject.price" value="none">
@@ -123,7 +119,7 @@
 									</label>
 									<label class="ui-radio-inline">
 										<input type="radio" ng-model="newproject.price" value="cost">
-										<span>Price $:<input ng-model="newproject.price"></span>
+										<span>Price $:<input type="text" ng-model="newproject.price"></span>
 									</label>
 								</div>
 
