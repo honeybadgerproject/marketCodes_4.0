@@ -32,13 +32,14 @@ angular.module("app.projectlist" , [])
               user_owner: UserFacebookID.user.id,
               project_id: UserFacebookID.project_id
             };
-            $http.post('/contributorslistowner', listParams).success(function(response) {
-              console.log(response);
-              $scope.newproject = response;
-            });
+            console.log(listParams);
 
+      		$http.post('/getProjectWithId' + listParams).success(function(response) {
+      			console.log("refresh settings");
+      			$scope.newproject = response;
+      		});
 
-          }
+        }
 
 
 		///// >>> emit
