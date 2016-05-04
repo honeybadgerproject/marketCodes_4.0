@@ -52,5 +52,5 @@ var transaction = require('./market-codes/transaction').setBraintree(app, dbbrai
 
 /**************************/
 
-app.listen(3000);
-console.log("Server running port 3000");
+app.listen(80);
+console.log("Server running port 80");
